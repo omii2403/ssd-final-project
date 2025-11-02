@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import decimal_To_Binary`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: decimal_To_Binary
+Signature: def decimal_To_Binary(N: int) -> int
+Spec: decimal_To_Binary(N) takes a non-negative integer N and returns an integer whose decimal representation is the binary digits of N.
+Example: decimal_To_Binary(5) -> 101. For N=0 return 0.
+Constraints: N is integer >= 0

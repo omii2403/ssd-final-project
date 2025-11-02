@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import decimal_To_Binary`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: set_Right_most_Unset_Bit
+Signature: def set_Right_most_Unset_Bit(n: int) -> int
+Spec: set_Right_most_Unset_Bit(n) takes a non-negative integer n and sets the rightmost unset (0) bit to 1, returning the new integer. If all bits are set, it returns n unchanged.
+Example: set_Right_most_Unset_Bit(10) -> 11 (binary 1010 -> 1011). For n=7 (binary 111), it returns 7.
+Constraints: n is a non-negative integer

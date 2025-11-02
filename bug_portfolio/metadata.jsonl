@@ -1,0 +1,18 @@
+{
+  "id": "decimal_binary",
+  "name": "decimal_To_Binary",
+  "spec": "decimal_To_Binary(N) takes a non-negative integer N and returns an integer whose decimal representation is the binary digits of N. For example, decimal_To_Binary(5) -> 101. For N=0 return 0.",
+  "constraints": "N is integer >= 0"
+}
+{
+  "id": "sum_of_alternates",
+  "name": "sum_of_alternates",
+  "spec": "sum_of_alternates(test_tuple) takes a tuple of integers and returns a tuple containing two sums: the sum of elements at odd indices and the sum of elements at even indices.",
+  "constraints": "test_tuple is a tuple of integers"
+}
+{
+  "id" : "right_most_unset_bit",
+  "name": "set_Right_most_Unset_Bit",
+  "spec": "set_Right_most_Unset_Bit(n) takes a non-negative integer n and sets the rightmost unset (0) bit to 1, returning the new integer. If all bits are set, it returns n unchanged.",
+  "constraints": "n is a non-negative integer"
+}
