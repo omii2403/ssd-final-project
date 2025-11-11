@@ -40,7 +40,9 @@ def extract_and_format(input_path, output_path, start_line=450, end_line=850):
             try:
                 data = json.loads(line)
                 raw_code = data.get("code", "")
+                description = data.get("text", "")
                 formatted_code = format_escaped_code(raw_code)
+                formatted_blocks.append(f"# ---- Description from line {line_number} ----\n# {description}\n")
                 formatted_blocks.append(f"# ---- Function from line {line_number} ----\n{formatted_code}\n")
             except json.JSONDecodeError:
                 print(f"Skipping malformed JSON at line {line_number}")
