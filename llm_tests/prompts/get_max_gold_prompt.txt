@@ -1,0 +1,17 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import get_max_gold`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: get_max_gold
+Signature: def get_max_gold(gold: List[List[int]], m: int, n: int) -> int
+Spec: get_maxgold(gold, m, n) takes a 2D list 'gold' representing the amount of gold in each cell of a mine with m rows and n columns. The function returns the maximum amount of gold that can be collected starting from any cell in the first column and moving to the right, right-up, or right-down until reaching the last column.
+Example: get_maxgold([[1, 3, 1, 5],
+                       [2, 2, 4, 1],
+                       [5, 0, 2, 3],
+                       [0, 6, 1, 2]], 4, 4) -> 16
+Constraints: gold is a 2D list of non-negative integers with dimensions m x n, where m and n are positive integers.

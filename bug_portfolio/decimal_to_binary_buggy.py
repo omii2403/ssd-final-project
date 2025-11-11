@@ -1,6 +1,6 @@
 def decimal_To_Binary(N): 
     B_Number = 0
-    cnt = 0
+    cnt = 1
     while (N != 0): 
         rem = N % 2
         c = pow(10,cnt)  
