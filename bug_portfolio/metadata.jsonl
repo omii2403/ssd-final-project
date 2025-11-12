@@ -1,29 +1,21 @@
-{
-  "id": 33,
-  "name": "decimal_To_Binary",
-  "spec": "decimal_To_Binary(N) takes a non-negative integer N and returns an integer whose decimal representation is the binary digits of N. For example, decimal_To_Binary(5) -> 101. For N=0 return 0.",
-  "constraints": "N is integer >= 0"
-}
+
 {
   "id" : 671,
   "name": "set_Right_most_Unset_Bit",
   "spec": "set_Right_most_Unset_Bit(n) takes a non-negative integer n and sets the rightmost unset (0) bit to 1, returning the new integer. If all bits are set, it returns n unchanged.",
-  "constraints": "n is a non-negative integer"
+  "constraints": "n is a non-negative integer",
+  "bug_description": "When n = 0, the function returns 0 instead of 1"
 }
 
 {
   "id": 423,
   "name": "gold_mine_problem",
   "spec": "get_max_gold(gold, m, n) takes a 2D list 'gold' representing the amount of gold in each cell of a mine with m rows and n columns. The function returns the maximum amount of gold that can be collected starting from any cell in the first column and moving to the right, right-up, or right-down until reaching the last column.",
-  "constraints": "gold is a 2D list of non-negative integers with dimensions m x n, where m and n are positive integers."
+  "constraints": "gold is a 2D list of non-negative integers with dimensions m x n, where m and n are positive integers.",
+  "bug_description": "The final answer calculation loop doesn't check for the last row's first element. ie loop is running till m-2"
 }
 
-{
-  "id": 423,
-  "name": "gold_mine_problem",
-  "spec": "get_max_gold(gold, m, n) takes a 2D list 'gold' representing the amount of gold in each cell of a mine with m rows and n columns. The function returns the maximum amount of gold that can be collected starting from any cell in the first column and moving to the right, right-up, or right-down until reaching the last column.",
-  "constraints": "gold is a 2D list of non-negative integers with dimensions m x n, where m and n are positive integers."
-}
+
 
 {
   "id": 334,
@@ -33,7 +25,14 @@
   "constraints": "a, b, c are positive real numbers."
 }
 
-
+{
+   "id": 522,
+   "name": "bitonic subsequence",
+   "bug_description": "Changed the strict inequality operator > to non-strict inequality operator >= in the Longest Increasing Subsequence (LIS) comparison on line 6. The condition was changed from arr[i] > arr[j] to arr[i] >= arr[j].",
+   
+    "spec": "lbs(arr) takes a list of integers and returns the length of the longest bitonic subsequence. A bitonic subsequence is a subsequence that first strictly increases and then strictly decreases. Either the increasing or decreasing part can be empty. For example, [1,2,3,2,1] has a longest bitonic subsequence of length 5. The subsequence [1,11,2,10,4,5,2,1] has longest bitonic subsequence length 6.",
+    "constraints": "arr is a list of integers, can be empty or have duplicates",
+}
 {
   "id": 592,
   "name": "binomial coefficient",
