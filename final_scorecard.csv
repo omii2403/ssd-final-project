@@ -1,5 +1,5 @@
 Metric,Count
-Bugs found only by LLM tests,1
-Bugs found only by Human properties,1
-Bugs found by both,6
+Bugs found only by LLM tests,0
+Bugs found only by Human properties,0
+Bugs found by both,3
 Bugs found by neither,0

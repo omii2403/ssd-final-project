@@ -2,8 +2,4 @@ Function,LLM Found,Human Found
 set_Right_most_Unset_Bit,Yes,Yes
 find_Max,No,Yes
 gold_mine_problem,Yes,Yes
-check_Validity,Yes,Yes
-bitonic_subsequence,Yes,Yes
-binomial_Coeff,Yes,Yes
-bell_Number,Yes,Yes
-max_chain_length,Yes,No
+sumofFactors,Yes,Yes
