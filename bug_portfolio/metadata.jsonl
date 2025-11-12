@@ -17,9 +17,23 @@
   "id": 453,
   "name": "sumofFactors",
   "spec": "sumofFactors is python function to find the sum of even factors of a number. The function takes a positive integer n as input and returns the sum of all its even factors.",
-  "example": "For example, sumofFactors(12) returns 18, since the even factors of 12 are 2, 4, 6, and 12, and their sum is 2 + 4 + 6 + 12 = 24.",
   "constraints": "n is a positive integer",
   "bug_description": "The function doesn't correctly handle the case when n is 2. It should return 2 as the sum of even factors but due to a missing condition, it returns 3 instead."
-
 }
-  
+
+{
+  "id": 657, 
+  "name": "first_Digit",
+  "spec": "first_Digit(n) takes a non-negative integer n and returns the first digit of n! (n factorial).",
+  "constraints": "n is a non-negative integer", 
+  "example": "For example, first_Digit(5) returns 1 since 5! = 120 and the first digit is 1.",
+  "bug_description": " The while loop that removes trailing digits runs only while fact is greater than 10, which causes it to stop prematurely when fact is exactly 10, leading to incorrect results for certain inputs.";
+}  
+
+{
+  "id": 663,
+  "name": "find_max_val",
+  "spec": "find_max_val(n, x, y) takes three integers n, x, and y, and returns the largest integer k such that 0 <= k <= n and k modulo x equals y. If no such k exists, it returns -1.",
+  "constraints": "n, x, and y are integers with n >= 0, x > 0, and 0 <= y < x.",
+  "bug_description": "return (ans if (ans > 0 and ans <= n) else -1) should be return (ans if (ans >= 0 and ans <= n) else -1) to correctly handle the case when k = 0 is a valid solution."
+}

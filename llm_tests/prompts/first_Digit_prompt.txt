@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import first_Digit`.  
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: first_Digit
+Signature: def first_Digit(n: int) -> int 
+Spec: "first_Digitis python function to find the sum of even factors of a number. The function takes a positive integer n as input and returns the sum of all its even factors." 
+Example:"  "example": "For example, first_Digit(5) returns 1 since 5! = 120 and the first digit is 1.",
+"constraints": "n is a non-negative integer", 
