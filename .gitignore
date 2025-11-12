@@ -1,2 +1,10 @@
 .hypothesis
 .pytest_cache
+llm_tests\generated_tests\__pycache__\
+human_tests\__pycache__\
+bug_portfolio\__pycache__\
+.vscode\
+venv\
+results_summary.csv
+final_scorecard.csv
+.ipynb_checkpoints\

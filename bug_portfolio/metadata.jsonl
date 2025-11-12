@@ -45,8 +45,7 @@
   "spec": "find_max_val(n, x, y) takes three integers n, x, and y, and returns the largest integer k such that 0 <= k <= n and k modulo x equals y. If no such k exists, it returns -1.",
   "constraints": "n, x, and y are integers with n >= 0, x > 0, and 0 <= y < x.",
   "bug_description": "return (ans if (ans > 0 and ans <= n) else -1) should be return (ans if (ans >= 0 and ans <= n) else -1) to correctly handle the case when k = 0 is a valid solution."
-
-
+}
 
 {
   "id": 334,
