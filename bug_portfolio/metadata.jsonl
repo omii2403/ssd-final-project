@@ -1,16 +1,4 @@
 {
-  "id": 33,
-  "name": "decimal_To_Binary",
-  "spec": "decimal_To_Binary(N) takes a non-negative integer N and returns an integer whose decimal representation is the binary digits of N. For example, decimal_To_Binary(5) -> 101. For N=0 return 0.",
-  "constraints": "N is integer >= 0"
-}
-{
-  "id": 324,
-  "name": "sum_of_alternates",
-  "spec": "sum_of_alternates(test_tuple) takes a tuple of integers and returns a tuple containing two sums: the sum of elements at odd indices and the sum of elements at even indices.",
-  "constraints": "test_tuple is a tuple of integers"
-}
-{
   "id" : 671,
   "name": "set_Right_most_Unset_Bit",
   "spec": "set_Right_most_Unset_Bit(n) takes a non-negative integer n and sets the rightmost unset (0) bit to 1, returning the new integer. If all bits are set, it returns n unchanged.",
@@ -23,3 +11,13 @@
   "spec": "get_max_gold(gold, m, n) takes a 2D list 'gold' representing the amount of gold in each cell of a mine with m rows and n columns. The function returns the maximum amount of gold that can be collected starting from any cell in the first column and moving to the right, right-up, or right-down until reaching the last column.",
   "constraints": "gold is a 2D list of non-negative integers with dimensions m x n, where m and n are positive integers."
 }
+{
+  "id": 453,
+  "name": "sumofFactors",
+  "spec": "sumofFactors is python function to find the sum of even factors of a number. The function takes a positive integer n as input and returns the sum of all its even factors.",
+  "example": "For example, sumofFactors(12) returns 18, since the even factors of 12 are 2, 4, 6, and 12, and their sum is 2 + 4 + 6 + 12 = 24.",
+  "constraints": "n is a positive integer",
+  "bug_description": "The function doesn't correctly handle the case when n is 2. It should return 2 as the sum of even factors but due to a missing condition, it returns 3 instead."
+
+}
+  

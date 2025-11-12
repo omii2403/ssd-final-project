@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import sumofFactors`. 
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: sumofFactors 
+Signature: def sumofFactors(n: int) -> int 
+Spec: "sumofFactors is python function to find the sum of even factors of a number. The function takes a positive integer n as input and returns the sum of all its even factors." 
+Example:"For example, sumofFactors(12) returns 18, since the even factors of 12 are 2, 4, 6, and 12, and their sum is 2 + 4 + 6 + 12 = 24."
+"constraints": "n is a positive integer",
