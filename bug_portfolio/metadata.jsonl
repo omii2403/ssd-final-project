@@ -7,6 +7,14 @@
 }
 
 {
+  "id": 550,
+  "name": "find_Max",
+  "spec": "find_Max(arr, low, high) takes a list 'arr' (sorted and rotated array) and two indices 'low' and 'high', and returns the maximum value in the sublist arr[low:high+1] using a divide-and-conquer approach.",
+  "constraints": "arr is a list of integers, and low and high are valid indices within the bounds of arr.",
+  "bug_description": "the condition if (arr[low] >= arr[mid]) should be if (arr[low] > arr[mid]), as using >= can cause incorrect recursion and miss the maximum element in certain cases."
+}
+
+{
   "id": 423,
   "name": "gold_mine_problem",
   "spec": "get_max_gold(gold, m, n) takes a 2D list 'gold' representing the amount of gold in each cell of a mine with m rows and n columns. The function returns the maximum amount of gold that can be collected starting from any cell in the first column and moving to the right, right-up, or right-down until reaching the last column.",
