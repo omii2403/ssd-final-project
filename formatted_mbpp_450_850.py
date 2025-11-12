@@ -1,3 +1,7 @@
+# ---- Description from line 450 ----
+# Write a function to extract specified size of strings from a give list of string values.
+
+
 # ---- Function from line 450 ----
 def extract_string(str, l):
 
@@ -6,12 +10,20 @@ def extract_string(str, l):
     return result
 
 
+# ---- Description from line 451 ----
+# Write a function to remove all whitespaces from the given string using regex.
+
+
 # ---- Function from line 451 ----
 import re
 
 def remove_whitespaces(text1):
 
   return (re.sub(r'\s+', '',text1))
+
+
+# ---- Description from line 452 ----
+# Write a function that gives loss amount if the given amount has loss else return none.
 
 
 # ---- Function from line 452 ----
@@ -26,6 +38,10 @@ def loss_amount(actual_cost,sale_amount):
   else:
 
     return None
+
+
+# ---- Description from line 453 ----
+# Write a python function to find the sum of even factors of a number.
 
 
 # ---- Function from line 453 ----
@@ -70,6 +86,10 @@ def sumofFactors(n) :
     return res
 
 
+# ---- Description from line 454 ----
+# Write a function that matches a word containing 'z'.
+
+
 # ---- Function from line 454 ----
 import re
 
@@ -86,6 +106,10 @@ def text_match_wordz(text):
                 return('Not matched!')
 
 
+# ---- Description from line 455 ----
+# Write a function to check whether the given month number contains 31 days or not.
+
+
 # ---- Function from line 455 ----
 def check_monthnumb_number(monthnum2):
 
@@ -98,12 +122,20 @@ def check_monthnumb_number(monthnum2):
     return False
 
 
+# ---- Description from line 456 ----
+# Write a function to reverse strings in a given list of string values.
+
+
 # ---- Function from line 456 ----
 def reverse_string_list(stringlist):
 
     result = [x[::-1] for x in stringlist]
 
     return result
+
+
+# ---- Description from line 457 ----
+# Write a python function to find the sublist having minimum length.
 
 
 # ---- Function from line 457 ----
@@ -114,12 +146,20 @@ def Find_Min(lst):
     return minList
 
 
+# ---- Description from line 458 ----
+# Write a function to find the area of a rectangle.
+
+
 # ---- Function from line 458 ----
 def rectangle_area(l,b):
 
   area=l*b
 
   return area
+
+
+# ---- Description from line 459 ----
+# Write a function to remove uppercase substrings from a given string by using regex.
 
 
 # ---- Function from line 459 ----
@@ -134,10 +174,18 @@ def remove_uppercase(str1):
   return (result)
 
 
+# ---- Description from line 460 ----
+# Write a python function to get the first element of each sublist.
+
+
 # ---- Function from line 460 ----
 def Extract(lst): 
 
     return [item[0] for item in lst]
+
+
+# ---- Description from line 461 ----
+# Write a python function to count the upper case characters in a given string.
 
 
 # ---- Function from line 461 ----
@@ -150,6 +198,10 @@ def upper_ctr(str):
           if str[i] >= 'A' and str[i] <= 'Z': upper_ctr += 1
 
           return upper_ctr
+
+
+# ---- Description from line 462 ----
+# Write a function to find all possible combinations of the elements of a given list.
 
 
 # ---- Function from line 462 ----
@@ -166,6 +218,10 @@ def combinations_list(list1):
         result += [el, el+[list1[0]]]
 
     return result
+
+
+# ---- Description from line 463 ----
+# Write a function to find the maximum product subarray of the given array.
 
 
 # ---- Function from line 463 ----
@@ -216,6 +272,10 @@ def max_subarray_product(arr):
 	return max_so_far
 
 
+# ---- Description from line 464 ----
+# Write a function to check if all values are same in a dictionary.
+
+
 # ---- Function from line 464 ----
 def check_value(dict, n):
 
@@ -224,12 +284,20 @@ def check_value(dict, n):
     return result
 
 
+# ---- Description from line 465 ----
+# Write a function to drop empty items from a given dictionary.
+
+
 # ---- Function from line 465 ----
 def drop_empty(dict1):
 
   dict1 = {key:value for (key, value) in dict1.items() if value is not None}
 
   return dict1
+
+
+# ---- Description from line 466 ----
+# Write a function to find the peak element in the given array.
 
 
 # ---- Function from line 466 ----
@@ -258,6 +326,10 @@ def find_peak(arr, n):
 	return find_peak_util(arr, 0, n - 1, n)
 
 
+# ---- Description from line 467 ----
+# Write a python function to convert decimal number to octal number.
+
+
 # ---- Function from line 467 ----
 def decimal_to_Octal(deciNum):
 
@@ -280,6 +352,10 @@ def decimal_to_Octal(deciNum):
     return (octalNum)
 
 
+# ---- Description from line 468 ----
+# Write a function to find the maximum product formed by multiplying numbers of an increasing subsequence of that array.
+
+
 # ---- Function from line 468 ----
 def max_product(arr, n ): 
 
@@ -300,6 +376,10 @@ def max_product(arr, n ):
 						mpis[i] = mpis[j] * arr[i] 
 
 	return max(mpis)
+
+
+# ---- Description from line 469 ----
+# Write a function to find the maximum profit earned from a maximum of k stock transactions
 
 
 # ---- Function from line 469 ----
@@ -334,12 +414,20 @@ def max_profit(price, k):
     return final_profit[k][n-1]
 
 
+# ---- Description from line 470 ----
+# Write a function to find the pairwise addition of the elements of the given tuples.
+
+
 # ---- Function from line 470 ----
 def add_pairwise(test_tup):
 
   res = tuple(i + j for i, j in zip(test_tup, test_tup[1:]))
 
   return (res)
+
+
+# ---- Description from line 471 ----
+# Write a python function to find remainder of array multiplication divided by n.
 
 
 # ---- Function from line 471 ----
@@ -354,10 +442,18 @@ def find_remainder(arr, lens, n):
     return mul % n
 
 
+# ---- Description from line 472 ----
+# Write a python function to check whether the given list contains consecutive numbers or not.
+
+
 # ---- Function from line 472 ----
 def check_Consecutive(l): 
 
     return sorted(l) == list(range(min(l),max(l)+1))
+
+
+# ---- Description from line 473 ----
+# Write a function to find the tuple intersection of elements in the given tuple list irrespective of their order.
 
 
 # ---- Function from line 473 ----
@@ -368,12 +464,20 @@ def tuple_intersection(test_list1, test_list2):
   return (res)
 
 
+# ---- Description from line 474 ----
+# Write a function to replace characters in a string.
+
+
 # ---- Function from line 474 ----
 def replace_char(str1,ch,newch):
 
  str2 = str1.replace(ch, newch)
 
  return str2
+
+
+# ---- Description from line 475 ----
+# Write a function to sort counter by value.
 
 
 # ---- Function from line 475 ----
@@ -388,6 +492,10 @@ def sort_counter(dict1):
  return sort_counter
 
 
+# ---- Description from line 476 ----
+# Write a python function to find the sum of the largest and smallest value in a given array.
+
+
 # ---- Function from line 476 ----
 def big_sum(nums):
 
@@ -396,10 +504,18 @@ def big_sum(nums):
       return sum
 
 
+# ---- Description from line 477 ----
+# Write a python function to convert the given string to lower case.
+
+
 # ---- Function from line 477 ----
 def is_lower(string):
 
   return (string.lower())
+
+
+# ---- Description from line 478 ----
+# Write a function to remove lowercase substrings from a given string.
 
 
 # ---- Function from line 478 ----
@@ -414,6 +530,10 @@ def remove_lowercase(str1):
  return result
 
 
+# ---- Description from line 479 ----
+# Write a python function to find the first digit of a given number.
+
+
 # ---- Function from line 479 ----
 def first_Digit(n) :  
 
@@ -422,6 +542,10 @@ def first_Digit(n) :
         n = n / 10; 
 
     return int(n)
+
+
+# ---- Description from line 480 ----
+# Write a python function to find the maximum occurring character in a given string.
 
 
 # ---- Function from line 480 ----
@@ -450,6 +574,10 @@ def get_max_occuring_char(str1):
   return ch
 
 
+# ---- Description from line 481 ----
+# Write a function to determine if there is a subset of the given set with sum equal to the given sum.
+
+
 # ---- Function from line 481 ----
 def is_subset_sum(set, n, sum):
 
@@ -468,6 +596,10 @@ def is_subset_sum(set, n, sum):
 	return is_subset_sum(set, n-1, sum) or is_subset_sum(set, n-1, sum-set[n-1])
 
 
+# ---- Description from line 482 ----
+# Write a function to find sequences of one upper case letter followed by lower case letters in the given string by using regex.
+
+
 # ---- Function from line 482 ----
 import re 
 
@@ -482,6 +614,10 @@ def match(text):
 		else: 
 
 				return('No')
+
+
+# ---- Description from line 483 ----
+# Write a python function to find the first natural number whose factorial is divisible by x.
 
 
 # ---- Function from line 483 ----
@@ -502,12 +638,20 @@ def first_Factorial_Divisible_Number(x):
     return i
 
 
+# ---- Description from line 484 ----
+# Write a function to remove the matching tuples from the given two tuples.
+
+
 # ---- Function from line 484 ----
 def remove_matching_tuple(test_list1, test_list2):
 
   res = [sub for sub in test_list1 if sub not in test_list2]
 
   return (res)
+
+
+# ---- Description from line 485 ----
+# Write a function to find the largest palindromic number in the given array.
 
 
 # ---- Function from line 485 ----
@@ -548,6 +692,10 @@ def largest_palindrome(A, n) :
 	return -1
 
 
+# ---- Description from line 486 ----
+# Write a function to compute binomial probability for the given number.
+
+
 # ---- Function from line 486 ----
 def nCr(n, r): 
 
@@ -570,6 +718,10 @@ def binomial_probability(n, k, p):
 	return (nCr(n, k) * pow(p, k) *	pow(1 - p, n - k))
 
 
+# ---- Description from line 487 ----
+# Write a function to sort a list of tuples in increasing order by the last element in each tuple.
+
+
 # ---- Function from line 487 ----
 def sort_tuple(tup): 
 
@@ -590,6 +742,10 @@ def sort_tuple(tup):
 	return tup
 
 
+# ---- Description from line 488 ----
+# Write a function to find the area of a pentagon.
+
+
 # ---- Function from line 488 ----
 import math
 
@@ -598,6 +754,10 @@ def area_pentagon(a):
   area=(math.sqrt(5*(5+2*math.sqrt(5)))*pow(a,2))/4.0
 
   return area
+
+
+# ---- Description from line 489 ----
+# Write a python function to find the frequency of the largest value in a given array.
 
 
 # ---- Function from line 489 ----
@@ -622,6 +782,10 @@ def frequency_Of_Largest(n,arr):
     return freq
 
 
+# ---- Description from line 490 ----
+# Write a function to extract all the pairs which are symmetric in the given tuple list.
+
+
 # ---- Function from line 490 ----
 def extract_symmetric(test_list):
 
@@ -632,6 +796,10 @@ def extract_symmetric(test_list):
   return (res)
 
 
+# ---- Description from line 491 ----
+# Write a function to find the sum of geometric progression series.
+
+
 # ---- Function from line 491 ----
 import math
 
@@ -640,6 +808,10 @@ def sum_gp(a,n,r):
  total = (a * (1 - math.pow(r, n ))) / (1- r)
 
  return total
+
+
+# ---- Description from line 492 ----
+# Write a function to search an element in the given array by using binary search.
 
 
 # ---- Function from line 492 ----
@@ -670,6 +842,10 @@ def binary_search(item_list,item):
 				first = mid + 1	
 
 	return found
+
+
+# ---- Description from line 493 ----
+# Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates.
 
 
 # ---- Function from line 493 ----
@@ -774,12 +950,20 @@ def calculate_polygons(startx, starty, endx, endy, radius):
     return polygons
 
 
+# ---- Description from line 494 ----
+# Write a function to convert the given binary tuple to integer.
+
+
 # ---- Function from line 494 ----
 def binary_to_integer(test_tup):
 
   res = int("".join(str(ele) for ele in test_tup), 2)
 
   return (str(res))
+
+
+# ---- Description from line 495 ----
+# Write a function to remove lowercase substrings from a given string by using regex.
 
 
 # ---- Function from line 495 ----
@@ -794,6 +978,10 @@ def remove_lowercase(str1):
   return (result)
 
 
+# ---- Description from line 496 ----
+# Write a function to find the smallest integers from a given list of numbers using heap queue algorithm.
+
+
 # ---- Function from line 496 ----
 import heapq as hq
 
@@ -802,6 +990,10 @@ def heap_queue_smallest(nums,n):
   smallest_nums = hq.nsmallest(n, nums)
 
   return smallest_nums
+
+
+# ---- Description from line 497 ----
+# Write a function to find the surface area of a cone.
 
 
 # ---- Function from line 497 ----
@@ -814,6 +1006,10 @@ def surfacearea_cone(r,h):
   SA = math.pi * r * (r + l)
 
   return SA
+
+
+# ---- Description from line 498 ----
+# Write a python function to find gcd of two positive integers.
 
 
 # ---- Function from line 498 ----
@@ -836,12 +1032,20 @@ def gcd(x, y):
     return gcd
 
 
+# ---- Description from line 499 ----
+# Write a function to find the diameter of a circle.
+
+
 # ---- Function from line 499 ----
 def diameter_circle(r):
 
   diameter=2*r
 
   return diameter
+
+
+# ---- Description from line 500 ----
+# Write a function to concatenate all elements of the given list into a string.
 
 
 # ---- Function from line 500 ----
@@ -854,6 +1058,10 @@ def concatenate_elements(list):
     ans = ans+ ' '+i
 
   return (ans)
+
+
+# ---- Description from line 501 ----
+# Write a python function to find common divisor between two numbers in a given pair.
 
 
 # ---- Function from line 501 ----
@@ -896,6 +1104,10 @@ def num_comm_div(x,y):
   return result
 
 
+# ---- Description from line 502 ----
+# Write a python function to find remainder of two numbers.
+
+
 # ---- Function from line 502 ----
 def find(n,m):
 
@@ -904,12 +1116,20 @@ def find(n,m):
   return (r)
 
 
+# ---- Description from line 503 ----
+# Write a function to add consecutive numbers of a given list.
+
+
 # ---- Function from line 503 ----
 def add_consecutive_nums(nums):
 
     result = [b+a for a, b in zip(nums[:-1], nums[1:])]
 
     return result
+
+
+# ---- Description from line 504 ----
+# Write a python function to find the cube sum of first n natural numbers.
 
 
 # ---- Function from line 504 ----
@@ -922,6 +1142,10 @@ def sum_Of_Series(n):
         sum += i * i*i       
 
     return sum
+
+
+# ---- Description from line 505 ----
+# Write a function to move all zeroes to the end of the given array.
 
 
 # ---- Function from line 505 ----
@@ -942,6 +1166,10 @@ def re_order(A):
         A[i] = 0
 
     return A
+
+
+# ---- Description from line 506 ----
+# Write a function to calculate the permutation coefficient of given p(n, k).
 
 
 # ---- Function from line 506 ----
@@ -972,6 +1200,10 @@ def permutation_coefficient(n, k):
 	return P[n][k]
 
 
+# ---- Description from line 507 ----
+# Write a function to remove specific words from a given list.
+
+
 # ---- Function from line 507 ----
 def remove_words(list1, removewords):
 
@@ -984,6 +1216,10 @@ def remove_words(list1, removewords):
     return list1
 
 
+# ---- Description from line 508 ----
+# Write a function to check if the common elements between two given lists are in the same order or not.
+
+
 # ---- Function from line 508 ----
 def same_order(l1, l2):
 
@@ -994,6 +1230,10 @@ def same_order(l1, l2):
     l2 = [e for e in l2 if e in common_elements]
 
     return l1 == l2
+
+
+# ---- Description from line 509 ----
+# Write a python function to find the average of odd numbers till a given odd number.
 
 
 # ---- Function from line 509 ----
@@ -1020,6 +1260,10 @@ def average_Odd(n) :
     return sm//count
 
 
+# ---- Description from line 510 ----
+# Write a function to find the number of subsequences having product smaller than k for the given non negative array.
+
+
 # ---- Function from line 510 ----
 def no_of_subsequences(arr, k): 
 
@@ -1042,6 +1286,10 @@ def no_of_subsequences(arr, k):
 	return dp[k][n]
 
 
+# ---- Description from line 511 ----
+# Write a python function to find minimum sum of factors of a given number.
+
+
 # ---- Function from line 511 ----
 def find_Min_Sum(num): 
 
@@ -1062,6 +1310,10 @@ def find_Min_Sum(num):
     sum += num 
 
     return sum
+
+
+# ---- Description from line 512 ----
+# Write a function to count the element frequency in the mixed nested tuple.
 
 
 # ---- Function from line 512 ----
@@ -1092,6 +1344,10 @@ def count_element_freq(test_tuple):
   return (res)
 
 
+# ---- Description from line 513 ----
+# Write a function to convert tuple into list by adding the given string after every element.
+
+
 # ---- Function from line 513 ----
 def add_str(test_tup, K):
 
@@ -1100,12 +1356,20 @@ def add_str(test_tup, K):
   return (res)
 
 
+# ---- Description from line 514 ----
+# Write a function to find the summation of tuple elements in the given tuple list.
+
+
 # ---- Function from line 514 ----
 def sum_elements(test_tup):
 
   res = sum(list(test_tup))
 
   return (res)
+
+
+# ---- Description from line 515 ----
+# Write a function to check if there is a subset with sum divisible by m.
 
 
 # ---- Function from line 515 ----
@@ -1142,6 +1406,10 @@ def modular_sum(arr, n, m):
 		DP[arr[i] % m] = True
 
 	return DP[0]
+
+
+# ---- Description from line 516 ----
+# Write a function to sort a list of elements using radix sort.
 
 
 # ---- Function from line 516 ----
@@ -1181,6 +1449,10 @@ def radix_sort(nums):
     return nums
 
 
+# ---- Description from line 517 ----
+# Write a python function to find the largest postive number from the given list.
+
+
 # ---- Function from line 517 ----
 def largest_pos(list1): 
 
@@ -1195,6 +1467,10 @@ def largest_pos(list1):
     return max
 
 
+# ---- Description from line 518 ----
+# Write a function to find the square root of a perfect number.
+
+
 # ---- Function from line 518 ----
 import math
 
@@ -1205,6 +1481,10 @@ def sqrt_root(num):
  return sqrt_root
 
 
+# ---- Description from line 519 ----
+# Write a function to calculate volume of a tetrahedron.
+
+
 # ---- Function from line 519 ----
 import math
 
@@ -1213,6 +1493,10 @@ def volume_tetrahedron(num):
 	volume = (num ** 3 / (6 * math.sqrt(2)))	
 
 	return round(volume, 2)
+
+
+# ---- Description from line 520 ----
+# Write a function to find the lcm of the given array elements.
 
 
 # ---- Function from line 520 ----
@@ -1260,6 +1544,11 @@ def get_lcm(l):
 
   return lcm
 
+
+# ---- Description from line 522 ----
+# Write a function to find the longest bitonic subsequence for the given array.
+
+
 # ---- Function from line 522 ----
 def lbs(arr): 
 
@@ -1294,6 +1583,10 @@ def lbs(arr):
 	return maximum
 
 
+# ---- Description from line 523 ----
+# Write a function to check whether a given string has a capital letter, a lower case letter, a number and specified length using lambda function.
+
+
 # ---- Function from line 523 ----
 def check_string(str1):
 
@@ -1314,6 +1607,10 @@ def check_string(str1):
         result.append('Valid string.')
 
     return result
+
+
+# ---- Description from line 524 ----
+# Write a function to find the sum of maximum increasing subsequence of the given array.
 
 
 # ---- Function from line 524 ----
@@ -1346,10 +1643,18 @@ def max_sum_increasing_subsequence(arr, n):
 	return max
 
 
+# ---- Description from line 525 ----
+# Write a python function to check whether two given lines are parallel or not.
+
+
 # ---- Function from line 525 ----
 def parallel_lines(line1, line2):
 
   return line1[0]/line1[1] == line2[0]/line2[1]
+
+
+# ---- Description from line 526 ----
+# Write a python function to capitalize first and last letters of each word of a given string.
 
 
 # ---- Function from line 526 ----
@@ -1364,6 +1669,10 @@ def capitalize_first_last_letters(str1):
         result += word[:-1] + word[-1].upper() + " "
 
      return result[:-1]
+
+
+# ---- Description from line 527 ----
+# Write a function to find all pairs in an integer array whose sum is equal to a given number.
 
 
 # ---- Function from line 527 ----
@@ -1382,6 +1691,10 @@ def get_pairs_count(arr, n, sum):
     return count
 
 
+# ---- Description from line 528 ----
+# Write a function to find the list of lists with minimum length.
+
+
 # ---- Function from line 528 ----
 def min_length(list1):
 
@@ -1390,6 +1703,10 @@ def min_length(list1):
    min_list = min((x) for x in   list1)
 
    return(min_length, min_list)
+
+
+# ---- Description from line 529 ----
+# Write a function to find the nth jacobsthal-lucas number.
 
 
 # ---- Function from line 529 ----
@@ -1406,6 +1723,10 @@ def jacobsthal_lucas(n):
 		dp[i] = dp[i - 1] + 2 * dp[i - 2]; 
 
 	return dp[n]
+
+
+# ---- Description from line 530 ----
+# Write a function to find the ration of negative numbers in an array of integers.
 
 
 # ---- Function from line 530 ----
@@ -1430,6 +1751,10 @@ def negative_count(nums):
     return round(n1/n,2)
 
 
+# ---- Description from line 531 ----
+# Write a function to find minimum number of coins that make a given value.
+
+
 # ---- Function from line 531 ----
 import sys 
 
@@ -1452,6 +1777,10 @@ def min_coins(coins, m, V):
                 res = sub_res + 1  
 
     return res
+
+
+# ---- Description from line 532 ----
+# Write a function to check if the two given strings are permutations of each other.
 
 
 # ---- Function from line 532 ----
@@ -1482,6 +1811,10 @@ def check_permutation(str1, str2):
   return True
 
 
+# ---- Description from line 533 ----
+# Write a function to remove particular data type elements from the given tuple.
+
+
 # ---- Function from line 533 ----
 def remove_datatype(test_tuple, data_type):
 
@@ -1494,6 +1827,10 @@ def remove_datatype(test_tuple, data_type):
       res.append(ele)
 
   return (res)
+
+
+# ---- Description from line 534 ----
+# Write a function to search a literals string in a string and also find the location within the original string where the pattern occurs.
 
 
 # ---- Function from line 534 ----
@@ -1510,6 +1847,10 @@ def search_literal(pattern,text):
  return (s, e)
 
 
+# ---- Description from line 535 ----
+# Write a function to find the top or bottom surface area of a cylinder.
+
+
 # ---- Function from line 535 ----
 def topbottom_surfacearea(r):
 
@@ -1518,10 +1859,18 @@ def topbottom_surfacearea(r):
   return toporbottomarea
 
 
+# ---- Description from line 536 ----
+# Write a function to select the nth items of a list.
+
+
 # ---- Function from line 536 ----
 def nth_items(list,n):
 
  return list[::n]
+
+
+# ---- Description from line 537 ----
+# Write a python function to find the first repeated word in a given string.
 
 
 # ---- Function from line 537 ----
@@ -1542,6 +1891,10 @@ def first_repeated_word(str1):
   return 'None'
 
 
+# ---- Description from line 538 ----
+# Write a python function to convert a given string list to a tuple.
+
+
 # ---- Function from line 538 ----
 def string_list_to_tuple(str1):
 
@@ -1550,12 +1903,20 @@ def string_list_to_tuple(str1):
     return result
 
 
+# ---- Description from line 539 ----
+# Write a function to create a list containing the power of said number in bases raised to the corresponding number in the index using map function.
+
+
 # ---- Function from line 539 ----
 def basesnum_coresspondingnum(bases_num,index):
 
   result = list(map(pow, bases_num, index))
 
   return result
+
+
+# ---- Description from line 540 ----
+# Write a python function to find the difference between highest and least frequencies in a given array.
 
 
 # ---- Function from line 540 ----
@@ -1582,6 +1943,10 @@ def find_Diff(arr,n):
             count = 0
 
     return max_count - min_count
+
+
+# ---- Description from line 541 ----
+# Write a function to find if the given number is abundant or not.
 
 
 # ---- Function from line 541 ----
@@ -1624,12 +1989,20 @@ def check_abundant(n):
 		return False
 
 
+# ---- Description from line 542 ----
+# Write a function to replace all occurrences of spaces, commas, or dots with a colon in the given string by using regex.
+
+
 # ---- Function from line 542 ----
 import re
 
 def fill_spaces(text):
 
   return (re.sub("[ ,.]", ":", text))
+
+
+# ---- Description from line 543 ----
+# Write a function to add two numbers and print number of digits of sum.
 
 
 # ---- Function from line 543 ----
@@ -1648,12 +2021,20 @@ def count_digits(num1,num2):
     return count
 
 
+# ---- Description from line 544 ----
+# Write a function to flatten the tuple list to a string.
+
+
 # ---- Function from line 544 ----
 def flatten_tuple(test_list):
 
   res = ' '.join([idx for tup in test_list for idx in tup])
 
   return (res)
+
+
+# ---- Description from line 545 ----
+# Write a python function to toggle only first and last bits of a given number.
 
 
 # ---- Function from line 545 ----
@@ -1680,6 +2061,10 @@ def toggle_F_and_L_bits(n) :
     return n ^ take_L_and_F_set_bits(n)
 
 
+# ---- Description from line 546 ----
+# Write a function to find the last occurrence of a character in a string.
+
+
 # ---- Function from line 546 ----
 def last_occurence_char(string,char):
 
@@ -1700,6 +2085,10 @@ def last_occurence_char(string,char):
     return flag + 1
 
 
+# ---- Description from line 547 ----
+# Write a python function to find the sum of hamming distances of all consecutive numbers from o to n.
+
+
 # ---- Function from line 547 ----
 def Total_Hamming_Distance(n):   
 
@@ -1714,6 +2103,10 @@ def Total_Hamming_Distance(n):
         i = i * 2     
 
     return sum
+
+
+# ---- Description from line 548 ----
+# Write a function to find the length of the longest increasing subsequence of the given sequence.
 
 
 # ---- Function from line 548 ----
@@ -1740,6 +2133,10 @@ def longest_increasing_subsequence(arr):
 	return maximum
 
 
+# ---- Description from line 549 ----
+# Write a python function to find the sum of fifth power of first n odd natural numbers.
+
+
 # ---- Function from line 549 ----
 def odd_Num_Sum(n) : 
 
@@ -1754,6 +2151,10 @@ def odd_Num_Sum(n) :
         sm = sm + (j*j*j*j*j)     
 
     return sm
+
+
+# ---- Description from line 550 ----
+# Write a python function to find the maximum element in a sorted and rotated array.
 
 
 # ---- Function from line 550 ----
@@ -1786,12 +2187,20 @@ def find_Max(arr,low,high):
         return find_Max(arr,mid + 1,high)
 
 
+# ---- Description from line 551 ----
+# Write a function to extract a specified column from a given nested list.
+
+
 # ---- Function from line 551 ----
 def extract_column(list1, n):
 
    result = [i.pop(n) for i in list1]
 
    return result
+
+
+# ---- Description from line 552 ----
+# Write a python function to check whether a given sequence is linear or not.
 
 
 # ---- Function from line 552 ----
@@ -1808,12 +2217,20 @@ def Seq_Linear(seq_nums):
     return "Non Linear Sequence"
 
 
+# ---- Description from line 553 ----
+# Write a function to convert the given tuple to a floating-point number.
+
+
 # ---- Function from line 553 ----
 def tuple_to_float(test_tup):
 
   res = float('.'.join(str(ele) for ele in test_tup))
 
   return (res)
+
+
+# ---- Description from line 554 ----
+# Write a python function to find odd numbers from a mixed list.
 
 
 # ---- Function from line 554 ----
@@ -1830,6 +2247,10 @@ def Split(list):
     return od_li
 
 
+# ---- Description from line 555 ----
+# Write a python function to find the difference between sum of cubes of first n natural numbers and the sum of first n natural numbers.
+
+
 # ---- Function from line 555 ----
 def difference(n) :  
 
@@ -1838,6 +2259,10 @@ def difference(n) :
     res = S*(S-1);  
 
     return res;
+
+
+# ---- Description from line 556 ----
+# Write a python function to count the pairs with xor as an odd number.
 
 
 # ---- Function from line 556 ----
@@ -1856,6 +2281,10 @@ def find_Odd_Pair(A,N) :
     return oddPair
 
 
+# ---- Description from line 557 ----
+# Write a function to toggle characters case in a string.
+
+
 # ---- Function from line 557 ----
 def toggle_string(string):
 
@@ -1864,10 +2293,18 @@ def toggle_string(string):
  return string1
 
 
+# ---- Description from line 558 ----
+# Write a python function to find the digit distance between two integers.
+
+
 # ---- Function from line 558 ----
 def digit_distance_nums(n1, n2):
 
          return sum(map(int,str(abs(n1-n2))))
+
+
+# ---- Description from line 559 ----
+# Write a function to find the largest sum of contiguous subarray in the given array.
 
 
 # ---- Function from line 559 ----
@@ -1892,12 +2329,20 @@ def max_sub_array_sum(a, size):
   return max_so_far
 
 
+# ---- Description from line 560 ----
+# Write a function to find the union of elements of the given tuples.
+
+
 # ---- Function from line 560 ----
 def union_elements(test_tup1, test_tup2):
 
   res = tuple(set(test_tup1 + test_tup2))
 
   return (res)
+
+
+# ---- Description from line 561 ----
+# Write a function to assign with each element, its pair elements from other similar pairs in the given tuple.
 
 
 # ---- Function from line 561 ----
@@ -1914,6 +2359,10 @@ def assign_elements(test_list):
   return (res)
 
 
+# ---- Description from line 562 ----
+# Write a python function to find the maximum length of sublist.
+
+
 # ---- Function from line 562 ----
 def Find_Max_Length(lst):  
 
@@ -1922,12 +2371,20 @@ def Find_Max_Length(lst):
     return maxLength
 
 
+# ---- Description from line 563 ----
+# Write a function to extract values between quotation marks of a string.
+
+
 # ---- Function from line 563 ----
 import re
 
 def extract_values(text):
 
  return (re.findall(r'"(.*?)"', text))
+
+
+# ---- Description from line 564 ----
+# Write a python function to count unequal element pairs from the given array.
 
 
 # ---- Function from line 564 ----
@@ -1946,10 +2403,18 @@ def count_Pairs(arr,n):
     return cnt;
 
 
+# ---- Description from line 565 ----
+# Write a python function to split a string into characters.
+
+
 # ---- Function from line 565 ----
 def split(word): 
 
     return [char for char in word]
+
+
+# ---- Description from line 566 ----
+# Write a function to get the sum of a non-negative integer.
 
 
 # ---- Function from line 566 ----
@@ -1964,12 +2429,20 @@ def sum_digits(n):
     return n % 10 + sum_digits(int(n / 10))
 
 
+# ---- Description from line 567 ----
+# Write a function to check whether a specified list is sorted or not.
+
+
 # ---- Function from line 567 ----
 def issort_list(list1):
 
     result = all(list1[i] <= list1[i+1] for i in range(len(list1)-1))
 
     return result
+
+
+# ---- Description from line 568 ----
+# Write a function to create a list of empty dictionaries.
 
 
 # ---- Function from line 568 ----
@@ -1980,12 +2453,20 @@ def empty_list(length):
  return empty_list
 
 
+# ---- Description from line 569 ----
+# Write a function to sort each sublist of strings in a given list of lists.
+
+
 # ---- Function from line 569 ----
 def sort_sublists(list1):
 
     result = list(map(sorted,list1)) 
 
     return result
+
+
+# ---- Description from line 570 ----
+# Write a function to remove words from a given list of strings containing a character or string.
 
 
 # ---- Function from line 570 ----
@@ -2000,6 +2481,10 @@ def remove_words(list1, charlist):
         new_list.append(new_words)
 
     return new_list
+
+
+# ---- Description from line 571 ----
+# Write a function to find maximum possible sum of disjoint pairs for the given array of integers and a number k.
 
 
 # ---- Function from line 571 ----
@@ -2028,10 +2513,18 @@ def max_sum_pair_diff_lessthan_K(arr, N, K):
 	return dp[N - 1]
 
 
+# ---- Description from line 572 ----
+# Write a python function to remove two duplicate numbers from a given number of lists.
+
+
 # ---- Function from line 572 ----
 def two_unique_nums(nums):
 
   return [i for i in nums if nums.count(i)==1]
+
+
+# ---- Description from line 573 ----
+# Write a python function to calculate the product of the unique numbers of a given list.
 
 
 # ---- Function from line 573 ----
@@ -2048,12 +2541,20 @@ def unique_product(list_data):
     return p
 
 
+# ---- Description from line 574 ----
+# Write a function to find the surface area of a cylinder.
+
+
 # ---- Function from line 574 ----
 def surfacearea_cylinder(r,h):
 
   surfacearea=((2*3.1415*r*r) +(2*3.1415*r*h))
 
   return surfacearea
+
+
+# ---- Description from line 575 ----
+# Write a python function to find nth number in a sequence which is not a multiple of a given number.
 
 
 # ---- Function from line 575 ----
@@ -2072,6 +2573,10 @@ def count_no (A,N,L,R):
             break
 
     return (i)
+
+
+# ---- Description from line 576 ----
+# Write a python function to check whether an array is subarray of another or not.
 
 
 # ---- Function from line 576 ----
@@ -2100,6 +2605,10 @@ def is_Sub_Array(A,B,n,m):
     return False;
 
 
+# ---- Description from line 577 ----
+# Write a python function to find the last digit in factorial of a given number.
+
+
 # ---- Function from line 577 ----
 def last_Digit_Factorial(n): 
 
@@ -2116,6 +2625,10 @@ def last_Digit_Factorial(n):
       return 0
 
 
+# ---- Description from line 578 ----
+# Write a function to interleave lists of the same length.
+
+
 # ---- Function from line 578 ----
 def interleave_lists(list1,list2,list3):
 
@@ -2124,12 +2637,20 @@ def interleave_lists(list1,list2,list3):
     return result
 
 
+# ---- Description from line 579 ----
+# Write a function to find the dissimilar elements in the given two tuples.
+
+
 # ---- Function from line 579 ----
 def find_dissimilar(test_tup1, test_tup2):
 
   res = tuple(set(test_tup1) ^ set(test_tup2))
 
   return (res)
+
+
+# ---- Description from line 580 ----
+# Write a function to extract the even elements in the nested mixed tuple.
 
 
 # ---- Function from line 580 ----
@@ -2156,10 +2677,18 @@ def extract_even(test_tuple):
   return (res)
 
 
+# ---- Description from line 581 ----
+# Write a python function to find the surface area of the square pyramid.
+
+
 # ---- Function from line 581 ----
 def surface_Area(b,s): 
 
     return 2 * b * s + pow(b,2)
+
+
+# ---- Description from line 582 ----
+# Write a function to check if a dictionary is empty or not.
 
 
 # ---- Function from line 582 ----
@@ -2172,6 +2701,10 @@ def my_dict(dict1):
   else:
 
      return True
+
+
+# ---- Description from line 583 ----
+# Write a function for nth catalan number.
 
 
 # ---- Function from line 583 ----
@@ -2190,6 +2723,10 @@ def catalan_number(num):
     return res_num
 
 
+# ---- Description from line 584 ----
+# Write a function to find all adverbs and their positions in a given sentence by using regex.
+
+
 # ---- Function from line 584 ----
 import re
 
@@ -2198,6 +2735,10 @@ def find_adverbs(text):
   for m in re.finditer(r"\w+ly", text):
 
     return ('%d-%d: %s' % (m.start(), m.end(), m.group(0)))
+
+
+# ---- Description from line 585 ----
+# Write a function to find the n - expensive price items from a given dataset using heap queue algorithm.
 
 
 # ---- Function from line 585 ----
@@ -2210,12 +2751,20 @@ def expensive_items(items,n):
   return expensive_items
 
 
+# ---- Description from line 586 ----
+# Write a python function to split the array and add the first part to the end.
+
+
 # ---- Function from line 586 ----
 def split_Arr(a,n,k):  
 
    b = a[:k] 
 
    return (a[k::]+b[::])
+
+
+# ---- Description from line 587 ----
+# Write a function to convert a list to a tuple.
 
 
 # ---- Function from line 587 ----
@@ -2226,12 +2775,20 @@ def list_tuple(listx):
   return tuplex
 
 
+# ---- Description from line 588 ----
+# Write a python function to find the difference between largest and smallest value in a given array.
+
+
 # ---- Function from line 588 ----
 def big_diff(nums):
 
      diff= max(nums)-min(nums)
 
      return diff
+
+
+# ---- Description from line 589 ----
+# Write a function to find perfect squares between two given numbers.
 
 
 # ---- Function from line 589 ----
@@ -2256,6 +2813,10 @@ def perfect_squares(a, b):
     return lists
 
 
+# ---- Description from line 590 ----
+# Write a function to convert polar coordinates to rectangular coordinates.
+
+
 # ---- Function from line 590 ----
 import cmath
 
@@ -2270,6 +2831,10 @@ def polar_rect(x,y):
  return (cn,cn1)
 
 
+# ---- Description from line 591 ----
+# Write a python function to interchange the first and last elements in a list.
+
+
 # ---- Function from line 591 ----
 def swap_List(newList): 
 
@@ -2282,6 +2847,10 @@ def swap_List(newList):
     newList[size - 1] = temp  
 
     return newList
+
+
+# ---- Description from line 592 ----
+# Write a python function to find sum of product of binomial co-efficients.
 
 
 # ---- Function from line 592 ----
@@ -2304,6 +2873,10 @@ def sum_Of_product(n):
     return binomial_Coeff(2 * n,n - 1);
 
 
+# ---- Description from line 593 ----
+# Write a function to remove leading zeroes from an ip address.
+
+
 # ---- Function from line 593 ----
 import re
 
@@ -2314,6 +2887,10 @@ def removezero_ip(ip):
  return string
 
 
+# ---- Description from line 594 ----
+# Write a function to find the difference of first even and odd number of a given list.
+
+
 # ---- Function from line 594 ----
 def diff_even_odd(list1):
 
@@ -2322,6 +2899,10 @@ def diff_even_odd(list1):
     first_odd = next((el for el in list1 if el%2!=0),-1)
 
     return (first_even-first_odd)
+
+
+# ---- Description from line 595 ----
+# Write a python function to count minimum number of swaps required to convert one binary string to another.
 
 
 # ---- Function from line 595 ----
@@ -2344,12 +2925,20 @@ def min_Swaps(str1,str2) :
         return ("Not Possible")
 
 
+# ---- Description from line 596 ----
+# Write a function to find the size of the given tuple.
+
+
 # ---- Function from line 596 ----
 import sys 
 
 def tuple_size(tuple_list):
 
   return (sys.getsizeof(tuple_list))
+
+
+# ---- Description from line 597 ----
+# Write a function to find kth element from the given two sorted arrays.
 
 
 # ---- Function from line 597 ----
@@ -2398,6 +2987,10 @@ def find_kth(arr1, arr2, m, n, k):
 	return sorted1[k - 1]
 
 
+# ---- Description from line 598 ----
+# Write a function to check whether the given number is armstrong or not.
+
+
 # ---- Function from line 598 ----
 def armstrong_number(number):
 
@@ -2432,6 +3025,10 @@ def armstrong_number(number):
            return False
 
 
+# ---- Description from line 599 ----
+# Write a function to find sum and average of first n natural numbers.
+
+
 # ---- Function from line 599 ----
 def sum_average(number):
 
@@ -2446,6 +3043,10 @@ def sum_average(number):
  return (total,average)
 
 
+# ---- Description from line 600 ----
+# Write a python function to check whether the given number is even or not using bitwise operator.
+
+
 # ---- Function from line 600 ----
 def is_Even(n) : 
 
@@ -2456,6 +3057,10 @@ def is_Even(n) :
     else :
 
         return False;
+
+
+# ---- Description from line 601 ----
+# Write a function to find the longest chain which can be formed from the given set of pairs.
 
 
 # ---- Function from line 601 ----
@@ -2492,6 +3097,10 @@ def max_chain_length(arr, n):
 	return max
 
 
+# ---- Description from line 602 ----
+# Write a python function to find the first repeated character in a given string.
+
+
 # ---- Function from line 602 ----
 def first_repeated_char(str1):
 
@@ -2502,6 +3111,10 @@ def first_repeated_char(str1):
       return c 
 
   return "None"
+
+
+# ---- Description from line 603 ----
+# Write a function to get a lucid number smaller than or equal to n.
 
 
 # ---- Function from line 603 ----
@@ -2532,10 +3145,18 @@ def get_ludic(n):
 	return ludics
 
 
+# ---- Description from line 604 ----
+# Write a function to reverse words in a given string.
+
+
 # ---- Function from line 604 ----
 def reverse_words(s):
 
         return ' '.join(reversed(s.split()))
+
+
+# ---- Description from line 605 ----
+# Write a function to check if the given integer is a prime number.
 
 
 # ---- Function from line 605 ----
@@ -2558,6 +3179,10 @@ def prime_num(num):
           return False
 
 
+# ---- Description from line 606 ----
+# Write a function to convert degrees to radians.
+
+
 # ---- Function from line 606 ----
 import math
 
@@ -2566,6 +3191,10 @@ def radian_degree(degree):
  radian = degree*(math.pi/180)
 
  return radian
+
+
+# ---- Description from line 607 ----
+# Write a function to search a literals string in a string and also find the location within the original string where the pattern occurs by using regex.
 
 
 # ---- Function from line 607 ----
@@ -2586,6 +3215,10 @@ def find_literals(text, pattern):
   return (match.re.pattern, s, e)
 
 
+# ---- Description from line 608 ----
+# Write a python function to find nth bell number.
+
+
 # ---- Function from line 608 ----
 def bell_Number(n): 
 
@@ -2604,6 +3237,10 @@ def bell_Number(n):
     return bell[n][0]
 
 
+# ---- Description from line 609 ----
+# Write a python function to find minimum possible value for the given periodic function.
+
+
 # ---- Function from line 609 ----
 def floor_Min(A,B,N):
 
@@ -2612,10 +3249,18 @@ def floor_Min(A,B,N):
     return (A*x) // B
 
 
+# ---- Description from line 610 ----
+# Write a python function to remove the k'th element from a given list.
+
+
 # ---- Function from line 610 ----
 def remove_kth_element(list1, L):
 
     return  list1[:L-1] + list1[L:]
+
+
+# ---- Description from line 611 ----
+# Write a function to find the maximum of nth column from the given tuple list.
 
 
 # ---- Function from line 611 ----
@@ -2626,10 +3271,18 @@ def max_of_nth(test_list, N):
   return (res)
 
 
+# ---- Description from line 612 ----
+# Write a python function to merge the first and last elements separately in a list of lists.
+
+
 # ---- Function from line 612 ----
 def merge(lst):  
 
     return [list(ele) for ele in list(zip(*lst))]
+
+
+# ---- Description from line 613 ----
+# Write a function to find the maximum value in record list as tuple attribute in the given tuple list.
 
 
 # ---- Function from line 613 ----
@@ -2640,12 +3293,20 @@ def maximum_value(test_list):
   return (res)
 
 
+# ---- Description from line 614 ----
+# Write a function to find the cumulative sum of all the values that are present in the given tuple list.
+
+
 # ---- Function from line 614 ----
 def cummulative_sum(test_list):
 
   res = sum(map(sum, test_list))
 
   return (res)
+
+
+# ---- Description from line 615 ----
+# Write a function to find average value of the numbers in a given tuple of tuples.
 
 
 # ---- Function from line 615 ----
@@ -2656,12 +3317,20 @@ def average_tuple(nums):
     return result
 
 
+# ---- Description from line 616 ----
+# Write a function to perfom the modulo of tuple elements in the given two tuples.
+
+
 # ---- Function from line 616 ----
 def tuple_modulo(test_tup1, test_tup2):
 
   res = tuple(ele1 % ele2 for ele1, ele2 in zip(test_tup1, test_tup2)) 
 
   return (res)
+
+
+# ---- Description from line 617 ----
+# Write a function to check for the number of jumps required of given length to reach a point of form (d, 0) from origin in a 2d plane.
 
 
 # ---- Function from line 617 ----
@@ -2690,12 +3359,20 @@ def min_Jumps(a, b, d):
         return 2
 
 
+# ---- Description from line 618 ----
+# Write a function to divide two lists using map and lambda function.
+
+
 # ---- Function from line 618 ----
 def div_list(nums1,nums2):
 
   result = map(lambda x, y: x / y, nums1, nums2)
 
   return list(result)
+
+
+# ---- Description from line 619 ----
+# Write a function to move all the numbers in it to the given string.
 
 
 # ---- Function from line 619 ----
@@ -2720,6 +3397,10 @@ def move_num(test_str):
   return (res)
 
 
+# ---- Description from line 620 ----
+# Write a function to find the largest subset where each pair is divisible.
+
+
 # ---- Function from line 620 ----
 def largest_subset(a, n):
 
@@ -2742,12 +3423,20 @@ def largest_subset(a, n):
 	return max(dp)
 
 
+# ---- Description from line 621 ----
+# Write a function to increment the numeric values in the given strings by k.
+
+
 # ---- Function from line 621 ----
 def increment_numerics(test_list, K):
 
   res = [str(int(ele) + K) if ele.isdigit() else ele for ele in test_list]
 
   return res
+
+
+# ---- Description from line 622 ----
+# Write a function to find the median of two sorted arrays of same size.
 
 
 # ---- Function from line 622 ----
@@ -2802,6 +3491,10 @@ def get_median(arr1, arr2, n):
   return (m1 + m2)/2
 
 
+# ---- Description from line 623 ----
+# Write a function to find the n-th power of individual elements in a list using lambda function.
+
+
 # ---- Function from line 623 ----
 def nth_nums(nums,n):
 
@@ -2810,10 +3503,18 @@ def nth_nums(nums,n):
  return nth_nums
 
 
+# ---- Description from line 624 ----
+# Write a python function to convert the given string to upper case.
+
+
 # ---- Function from line 624 ----
 def is_upper(string):
 
   return (string.upper())
+
+
+# ---- Description from line 625 ----
+# Write a python function to interchange first and last elements in a given list.
 
 
 # ---- Function from line 625 ----
@@ -2830,6 +3531,10 @@ def swap_List(newList):
     return newList
 
 
+# ---- Description from line 626 ----
+# Write a python function to find the largest triangle that can be inscribed in the semicircle.
+
+
 # ---- Function from line 626 ----
 def triangle_area(r) :  
 
@@ -2838,6 +3543,10 @@ def triangle_area(r) :
         return -1
 
     return r * r
+
+
+# ---- Description from line 627 ----
+# Write a python function to find the smallest missing number from the given array.
 
 
 # ---- Function from line 627 ----
@@ -2858,6 +3567,10 @@ def find_First_Missing(array,start,end):
         return find_First_Missing(array,mid+1,end) 
 
     return find_First_Missing(array,start,mid)
+
+
+# ---- Description from line 628 ----
+# Write a function to replace all spaces in the given string with character * list item * list item * list item * list item '%20'.
 
 
 # ---- Function from line 628 ----
@@ -2906,6 +3619,10 @@ def replace_spaces(string):
   return ''.join(string)
 
 
+# ---- Description from line 629 ----
+# Write a python function to find even numbers from a mixed list.
+
+
 # ---- Function from line 629 ----
 def Split(list): 
 
@@ -2918,6 +3635,10 @@ def Split(list):
             ev_li.append(i)  
 
     return ev_li
+
+
+# ---- Description from line 630 ----
+# Write a function to extract all the adjacent coordinates of the given coordinate tuple.
 
 
 # ---- Function from line 630 ----
@@ -2940,6 +3661,10 @@ def get_coordinates(test_tup):
   return (res)
 
 
+# ---- Description from line 631 ----
+# Write a function to replace whitespaces with an underscore and vice versa in a given string by using regex.
+
+
 # ---- Function from line 631 ----
 import re
 
@@ -2956,6 +3681,10 @@ def replace_spaces(text):
   return (text)
 
 
+# ---- Description from line 632 ----
+# Write a python function to move all zeroes to the end of the given list.
+
+
 # ---- Function from line 632 ----
 def move_zero(num_list):
 
@@ -2966,6 +3695,10 @@ def move_zero(num_list):
     x.extend(a)
 
     return (x)
+
+
+# ---- Description from line 633 ----
+# Write a python function to find the sum of xor of all pairs of numbers in the given array.
 
 
 # ---- Function from line 633 ----
@@ -2982,6 +3715,10 @@ def pair_OR_Sum(arr,n) :
     return ans
 
 
+# ---- Description from line 634 ----
+# Write a python function to find the sum of fourth power of first n even natural numbers.
+
+
 # ---- Function from line 634 ----
 def even_Power_Sum(n): 
 
@@ -2994,6 +3731,10 @@ def even_Power_Sum(n):
         sum = sum + (j*j*j*j); 
 
     return sum;
+
+
+# ---- Description from line 635 ----
+# Write a function to push all values into a heap and then pop off the smallest values one at a time.
 
 
 # ---- Function from line 635 ----
@@ -3010,6 +3751,10 @@ def heap_sort(iterable):
     return [hq.heappop(h) for i in range(len(h))]
 
 
+# ---- Description from line 636 ----
+# Write a python function to check if roots of a quadratic equation are reciprocal of each other or not.
+
+
 # ---- Function from line 636 ----
 def Check_Solution(a,b,c): 
 
@@ -3020,6 +3765,10 @@ def Check_Solution(a,b,c):
     else: 
 
         return ("No");
+
+
+# ---- Description from line 637 ----
+# Write a function to check whether the given amount has no profit and no loss
 
 
 # ---- Function from line 637 ----
@@ -3034,6 +3783,10 @@ def noprofit_noloss(actual_cost,sale_amount):
     return False
 
 
+# ---- Description from line 638 ----
+# Write a function to calculate wind chill index.
+
+
 # ---- Function from line 638 ----
 import math
 
@@ -3044,12 +3797,20 @@ def wind_chill(v,t):
  return int(round(windchill, 0))
 
 
+# ---- Description from line 639 ----
+# Write a function to sum the length of the names of a given list of names after removing the names that start with a lowercase letter.
+
+
 # ---- Function from line 639 ----
 def sample_nam(sample_names):
 
   sample_names=list(filter(lambda el:el[0].isupper() and el[1:].islower(),sample_names))
 
   return len(''.join(sample_names))
+
+
+# ---- Description from line 640 ----
+# Write a function to remove the parenthesis area in a string.
 
 
 # ---- Function from line 640 ----
@@ -3062,10 +3823,18 @@ def remove_parenthesis(items):
     return (re.sub(r" ?\([^)]+\)", "", item))
 
 
+# ---- Description from line 641 ----
+# Write a function to find the nth nonagonal number.
+
+
 # ---- Function from line 641 ----
 def is_nonagonal(n): 
 
 	return int(n * (7 * n - 5) / 2)
+
+
+# ---- Description from line 642 ----
+# Write a function to remove similar rows from the given tuple matrix.
 
 
 # ---- Function from line 642 ----
@@ -3074,6 +3843,10 @@ def remove_similar_row(test_list):
   res = set(sorted([tuple(sorted(set(sub))) for sub in test_list]))
 
   return (res)
+
+
+# ---- Description from line 643 ----
+# Write a function that matches a word containing 'z', not at the start or end of the word.
 
 
 # ---- Function from line 643 ----
@@ -3092,10 +3865,18 @@ def text_match_wordz_middle(text):
                 return('Not matched!')
 
 
+# ---- Description from line 644 ----
+# Write a python function to reverse an array upto a given position.
+
+
 # ---- Function from line 644 ----
 def reverse_Array_Upto_K(input, k): 
 
   return (input[k-1::-1] + input[k:])
+
+
+# ---- Description from line 645 ----
+# Write a function to find the product of it’s kth index in the given tuples.
 
 
 # ---- Function from line 645 ----
@@ -3116,6 +3897,10 @@ def find_k_product(test_list, K):
   return (res)
 
 
+# ---- Description from line 646 ----
+# Write a python function to count number of cubes of size k in a cube of size n.
+
+
 # ---- Function from line 646 ----
 def No_of_cubes(N,K):
 
@@ -3128,12 +3913,20 @@ def No_of_cubes(N,K):
     return No
 
 
+# ---- Description from line 647 ----
+# Write a function to split a string at uppercase letters.
+
+
 # ---- Function from line 647 ----
 import re
 
 def split_upperstring(text):
 
  return (re.findall('[A-Z][^A-Z]*', text))
+
+
+# ---- Description from line 648 ----
+# Write a function to exchange the position of every n-th value with (n+1)th value and (n+1)th value with n-th value in a given list.
 
 
 # ---- Function from line 648 ----
@@ -3146,6 +3939,10 @@ def exchange_elements(lst):
     return list(chain.from_iterable(zip_longest(lst[1::2], lst[::2])))
 
 
+# ---- Description from line 649 ----
+# Write a python function to calculate the sum of the numbers in a list between the indices of a specified range.
+
+
 # ---- Function from line 649 ----
 def sum_Range_list(nums, m, n):                                                                                                                                                                                                
 
@@ -3156,6 +3953,10 @@ def sum_Range_list(nums, m, n):
         sum_range += nums[i]                                                                                                                                                                                                  
 
     return sum_range
+
+
+# ---- Description from line 650 ----
+# Write a python function to check whether the given two arrays are equal or not.
 
 
 # ---- Function from line 650 ----
@@ -3178,12 +3979,20 @@ def are_Equal(arr1,arr2,n,m):
     return True
 
 
+# ---- Description from line 651 ----
+# Write a function to check if one tuple is a subset of another tuple.
+
+
 # ---- Function from line 651 ----
 def check_subset(test_tup1, test_tup2):
 
   res = set(test_tup2).issubset(test_tup1)
 
   return (res)
+
+
+# ---- Description from line 652 ----
+# Write a function to flatten the given tuple matrix into the tuple list with each tuple representing each column.
 
 
 # ---- Function from line 652 ----
@@ -3194,6 +4003,10 @@ def matrix_to_list(test_list):
   res = list(zip(*temp))
 
   return (str(res))
+
+
+# ---- Description from line 653 ----
+# Write a function to group a sequence of key-value pairs into a dictionary of lists using collections module.
 
 
 # ---- Function from line 653 ----
@@ -3210,12 +4023,20 @@ def grouping_dictionary(l):
     return d
 
 
+# ---- Description from line 654 ----
+# Write a function to find the perimeter of a rectangle.
+
+
 # ---- Function from line 654 ----
 def rectangle_perimeter(l,b):
 
   perimeter=2*(l+b)
 
   return perimeter
+
+
+# ---- Description from line 655 ----
+# Write a python function to find the sum of fifth power of n natural numbers.
 
 
 # ---- Function from line 655 ----
@@ -3228,6 +4049,10 @@ def fifth_Power_Sum(n) :
         sm = sm + (i*i*i*i*i) 
 
     return sm
+
+
+# ---- Description from line 656 ----
+# Write a python function to find the minimum sum of absolute differences of two arrays.
 
 
 # ---- Function from line 656 ----
@@ -3244,6 +4069,10 @@ def find_Min_Sum(a,b,n):
         sum = sum + abs(a[i] - b[i]) 
 
     return sum
+
+
+# ---- Description from line 657 ----
+# Write a python function to find the first digit in factorial of a given number.
 
 
 # ---- Function from line 657 ----
@@ -3268,6 +4097,10 @@ def first_Digit(n) :
     return math.floor(fact)
 
 
+# ---- Description from line 658 ----
+# Write a function to find the item with maximum occurrences in a given list.
+
+
 # ---- Function from line 658 ----
 def max_occurrences(list1):
 
@@ -3286,6 +4119,10 @@ def max_occurrences(list1):
             result = i 
 
     return result
+
+
+# ---- Description from line 659 ----
+# Write a python function to print duplicants from a list of integers.
 
 
 # ---- Function from line 659 ----
@@ -3308,6 +4145,10 @@ def Repeat(x):
     return repeated
 
 
+# ---- Description from line 660 ----
+# Write a python function to choose points from two ranges such that no point lies in both the ranges.
+
+
 # ---- Function from line 660 ----
 def find_Points(l1,r1,l2,r2): 
 
@@ -3316,6 +4157,10 @@ def find_Points(l1,r1,l2,r2):
     y = max(r1,r2) if (r1 != r2) else -1
 
     return (x,y)
+
+
+# ---- Description from line 661 ----
+# Write a function to find the maximum sum that can be formed which has no three consecutive elements present.
 
 
 # ---- Function from line 661 ----
@@ -3342,12 +4187,20 @@ def max_sum_of_three_consecutive(arr, n):
 	return sum[n-1]
 
 
+# ---- Description from line 662 ----
+# Write a function to sort a list in a dictionary.
+
+
 # ---- Function from line 662 ----
 def sorted_dict(dict1):
 
   sorted_dict = {x: sorted(y) for x, y in dict1.items()}
 
   return sorted_dict
+
+
+# ---- Description from line 663 ----
+# Write a function to find the largest possible value of k such that k modulo x is y.
 
 
 # ---- Function from line 663 ----
@@ -3366,6 +4219,10 @@ def find_max_val(n, x, y):
 	return (ans if (ans >= 0 and
 
 					ans <= n) else -1)
+
+
+# ---- Description from line 664 ----
+# Write a python function to find the average of even numbers till a given even number.
 
 
 # ---- Function from line 664 ----
@@ -3392,6 +4249,10 @@ def average_Even(n) :
     return sm // count
 
 
+# ---- Description from line 665 ----
+# Write a python function to shift first element to the end of given list.
+
+
 # ---- Function from line 665 ----
 def move_last(num_list):
 
@@ -3402,6 +4263,10 @@ def move_last(num_list):
     x.extend(a)
 
     return (x)
+
+
+# ---- Description from line 666 ----
+# Write a function to count occurrence of a character in a string.
 
 
 # ---- Function from line 666 ----
@@ -3418,12 +4283,20 @@ def count_char(string,char):
  return count
 
 
+# ---- Description from line 667 ----
+# Write a python function to count number of vowels in the string.
+
+
 # ---- Function from line 667 ----
 def Check_Vow(string, vowels): 
 
     final = [each for each in string if each in vowels] 
 
     return(len(final))
+
+
+# ---- Description from line 668 ----
+# Write a python function to replace multiple occurence of character by single.
 
 
 # ---- Function from line 668 ----
@@ -3436,6 +4309,10 @@ def replace(string, char):
     string = re.sub(pattern, char, string) 
 
     return string
+
+
+# ---- Description from line 669 ----
+# Write a function to check whether the given ip address is valid or not using regex.
 
 
 # ---- Function from line 669 ----
@@ -3460,6 +4337,10 @@ def check_IP(Ip):
 		return ("Invalid IP address")
 
 
+# ---- Description from line 670 ----
+# Write a python function to check whether a sequence of numbers has a decreasing trend or not.
+
+
 # ---- Function from line 670 ----
 def decreasing_trend(nums):
 
@@ -3470,6 +4351,10 @@ def decreasing_trend(nums):
     else:
 
         return False
+
+
+# ---- Description from line 671 ----
+# Write a python function to set the right most unset bit.
 
 
 # ---- Function from line 671 ----
@@ -3494,6 +4379,10 @@ def set_Right_most_Unset_Bit(n):
     return ((1 << (pos - 1)) | n)
 
 
+# ---- Description from line 672 ----
+# Write a function to find maximum of three numbers.
+
+
 # ---- Function from line 672 ----
 def max_of_three(num1,num2,num3): 
 
@@ -3512,6 +4401,10 @@ def max_of_three(num1,num2,num3):
     return lnum
 
 
+# ---- Description from line 673 ----
+# Write a python function to convert a list of multiple integers into a single integer.
+
+
 # ---- Function from line 673 ----
 def convert(list): 
 
@@ -3522,6 +4415,10 @@ def convert(list):
     return (res)
 
 
+# ---- Description from line 674 ----
+# Write a function to remove duplicate words from a given string using collections module.
+
+
 # ---- Function from line 674 ----
 from collections import OrderedDict
 
@@ -3530,6 +4427,10 @@ def remove_duplicate(string):
   result = ' '.join(OrderedDict((w,w) for w in string.split()).keys())
 
   return result
+
+
+# ---- Description from line 675 ----
+# Write a function to add two integers. however, if the sum is between the given range it will return 20.
 
 
 # ---- Function from line 675 ----
@@ -3546,6 +4447,10 @@ def sum_nums(x, y,m,n):
         return sum_nums
 
 
+# ---- Description from line 676 ----
+# Write a function to remove everything except alphanumeric characters from the given string by using regex.
+
+
 # ---- Function from line 676 ----
 import re
 
@@ -3554,6 +4459,10 @@ def remove_extra_char(text1):
   pattern = re.compile('[\W_]+')
 
   return (pattern.sub('', text1))
+
+
+# ---- Description from line 677 ----
+# Write a function to check if the triangle is valid or not.
 
 
 # ---- Function from line 677 ----
@@ -3570,6 +4479,10 @@ def validity_triangle(a,b,c):
     return False
 
 
+# ---- Description from line 678 ----
+# Write a python function to remove spaces from a given string.
+
+
 # ---- Function from line 678 ----
 def remove_spaces(str1):
 
@@ -3578,10 +4491,18 @@ def remove_spaces(str1):
   return str1
 
 
+# ---- Description from line 679 ----
+# Write a function to access dictionary key’s element by index.
+
+
 # ---- Function from line 679 ----
 def access_key(ditionary,key):
 
   return list(ditionary)[key]
+
+
+# ---- Description from line 680 ----
+# Write a python function to check whether a sequence of numbers has an increasing trend or not.
 
 
 # ---- Function from line 680 ----
@@ -3594,6 +4515,10 @@ def increasing_trend(nums):
     else:
 
         return False
+
+
+# ---- Description from line 681 ----
+# Write a python function to find the smallest prime divisor of a number.
 
 
 # ---- Function from line 681 ----
@@ -3616,12 +4541,20 @@ def smallest_Divisor(n):
     return n;
 
 
+# ---- Description from line 682 ----
+# Write a function to multiply two lists using map and lambda function.
+
+
 # ---- Function from line 682 ----
 def mul_list(nums1,nums2):
 
   result = map(lambda x, y: x * y, nums1, nums2)
 
   return list(result)
+
+
+# ---- Description from line 683 ----
+# Write a python function to check whether the given number can be represented by sum of two squares or not.
 
 
 # ---- Function from line 683 ----
@@ -3644,6 +4577,10 @@ def sum_Square(n) :
         i = i+1     
 
     return False
+
+
+# ---- Description from line 684 ----
+# Write a python function to count occurences of a character in a repeated string.
 
 
 # ---- Function from line 684 ----
@@ -3672,6 +4609,10 @@ def count_Char(str,x):
             count += 1
 
     return count
+
+
+# ---- Description from line 685 ----
+# Write a python function to find sum of prime numbers between 1 to n.
 
 
 # ---- Function from line 685 ----
@@ -3706,6 +4647,10 @@ def sum_Of_Primes(n):
     return sum
 
 
+# ---- Description from line 686 ----
+# Write a function to find the frequency of each element in the given list.
+
+
 # ---- Function from line 686 ----
 from collections import defaultdict 
 
@@ -3718,6 +4663,10 @@ def freq_element(test_tup):
     res[ele] += 1
 
   return (str(dict(res)))
+
+
+# ---- Description from line 687 ----
+# Write a function to find the greatest common divisor (gcd) of two integers by using recursion.
 
 
 # ---- Function from line 687 ----
@@ -3740,6 +4689,10 @@ def recur_gcd(a, b):
 		return recur_gcd(low, high%low)
 
 
+# ---- Description from line 688 ----
+# Write a function to get the length of a complex number.
+
+
 # ---- Function from line 688 ----
 import cmath
 
@@ -3750,6 +4703,10 @@ def len_complex(a,b):
   length=abs(cn)
 
   return length
+
+
+# ---- Description from line 689 ----
+# ## write a function to find the minimum number of jumps to reach the end of the array for the given array of integers where each element represents the max number of steps that can be made forward from that element. > indented block > indented block
 
 
 # ---- Function from line 689 ----
@@ -3778,12 +4735,20 @@ def min_jumps(arr, n):
 	return jumps[n-1]
 
 
+# ---- Description from line 690 ----
+# Write a function to multiply consecutive numbers of a given list.
+
+
 # ---- Function from line 690 ----
 def mul_consecutive_nums(nums):
 
     result = [b*a for a, b in zip(nums[:-1], nums[1:])]
 
     return result
+
+
+# ---- Description from line 691 ----
+# Write a function to group the 1st elements on the basis of 2nd elements in the given tuple list.
 
 
 # ---- Function from line 691 ----
@@ -3798,6 +4763,10 @@ def group_element(test_list):
     res[key] = [ele[0] for ele in val] 
 
   return (res)
+
+
+# ---- Description from line 692 ----
+# Write a python function to find the last two digits in factorial of a given number.
 
 
 # ---- Function from line 692 ----
@@ -3816,12 +4785,20 @@ def last_Two_Digits(N):
     return (fac)
 
 
+# ---- Description from line 693 ----
+# Write a function to remove multiple spaces in a string by using regex.
+
+
 # ---- Function from line 693 ----
 import re
 
 def remove_multiple_spaces(text1):
 
   return (re.sub(' +',' ',text1))
+
+
+# ---- Description from line 694 ----
+# Write a function to extract unique values from the given dictionary values.
 
 
 # ---- Function from line 694 ----
@@ -3832,12 +4809,20 @@ def extract_unique(test_dict):
   return res
 
 
+# ---- Description from line 695 ----
+# Write a function to check if each element of the second tuple is greater than its corresponding index in the first tuple.
+
+
 # ---- Function from line 695 ----
 def check_greater(test_tup1, test_tup2):
 
   res = all(x < y for x, y in zip(test_tup1, test_tup2))
 
   return (res)
+
+
+# ---- Description from line 696 ----
+# Write a function to zip two given lists of lists.
 
 
 # ---- Function from line 696 ----
@@ -3848,6 +4833,10 @@ def zip_list(list1,list2):
  return result
 
 
+# ---- Description from line 697 ----
+# Write a function to find number of even elements in the given list using lambda function.
+
+
 # ---- Function from line 697 ----
 def count_even(array_nums):
 
@@ -3856,12 +4845,20 @@ def count_even(array_nums):
    return count_even
 
 
+# ---- Description from line 698 ----
+# Write a function to sort dictionary items by tuple product of keys for the given dictionary with tuple keys.
+
+
 # ---- Function from line 698 ----
 def sort_dict_item(test_dict):
 
   res = {key: test_dict[key] for key in sorted(test_dict.keys(), key = lambda ele: ele[1] * ele[0])}
 
   return  (res)
+
+
+# ---- Description from line 699 ----
+# Write a python function to find the minimum number of swaps required to convert one binary string to another.
 
 
 # ---- Function from line 699 ----
@@ -3884,6 +4881,10 @@ def min_Swaps(str1,str2) :
         return ("Not Possible")
 
 
+# ---- Description from line 700 ----
+# Write a function to count the number of elements in a list which are within a specific range.
+
+
 # ---- Function from line 700 ----
 def count_range_in_list(li, min, max):
 
@@ -3896,6 +4897,10 @@ def count_range_in_list(li, min, max):
 			ctr += 1
 
 	return ctr
+
+
+# ---- Description from line 701 ----
+# Write a function to find the equilibrium index of the given array.
 
 
 # ---- Function from line 701 ----
@@ -3916,6 +4921,10 @@ def equilibrium_index(arr):
     left_sum += num
 
   return -1
+
+
+# ---- Description from line 702 ----
+# Write a function to find the minimum number of elements that should be removed such that amax-amin<=k.
 
 
 # ---- Function from line 702 ----
@@ -3968,6 +4977,10 @@ def removals(arr, n, k):
 	return ans
 
 
+# ---- Description from line 703 ----
+# Write a function to check whether the given key is present in the dictionary or not.
+
+
 # ---- Function from line 703 ----
 def is_key_present(d,x):
 
@@ -3978,6 +4991,10 @@ def is_key_present(d,x):
   else:
 
      return False
+
+
+# ---- Description from line 704 ----
+# Write a function to calculate the harmonic sum of n-1.
 
 
 # ---- Function from line 704 ----
@@ -3992,6 +5009,10 @@ def harmonic_sum(n):
     return 1 / n + (harmonic_sum(n - 1))
 
 
+# ---- Description from line 705 ----
+# Write a function to sort a list of lists by length and value.
+
+
 # ---- Function from line 705 ----
 def sort_sublists(list1):
 
@@ -4000,6 +5021,10 @@ def sort_sublists(list1):
       list1.sort(key=len)
 
       return  list1
+
+
+# ---- Description from line 706 ----
+# Write a function to find whether an array is subset of another array.
 
 
 # ---- Function from line 706 ----
@@ -4022,6 +5047,10 @@ def is_subset(arr1, m, arr2, n):
 			return False
 
 	return True
+
+
+# ---- Description from line 707 ----
+# Write a python function to count the total set bits from 1 to n.
 
 
 # ---- Function from line 707 ----
@@ -4052,12 +5081,20 @@ def count_Set_Bits(n) :
     return cnt;
 
 
+# ---- Description from line 708 ----
+# Write a python function to convert a string to a list.
+
+
 # ---- Function from line 708 ----
 def Convert(string): 
 
     li = list(string.split(" ")) 
 
     return li
+
+
+# ---- Description from line 709 ----
+# Write a function to count unique keys for each value present in the tuple.
 
 
 # ---- Function from line 709 ----
@@ -4082,12 +5119,20 @@ def get_unique(test_list):
   return (str(res_dict))
 
 
+# ---- Description from line 710 ----
+# Write a function to access the initial and last data of the given tuple record.
+
+
 # ---- Function from line 710 ----
 def front_and_rear(test_tup):
 
   res = (test_tup[0], test_tup[-1])
 
   return (res)
+
+
+# ---- Description from line 711 ----
+# Write a python function to check whether the product of digits of a number at even and odd places is equal or not.
 
 
 # ---- Function from line 711 ----
@@ -4124,6 +5169,10 @@ def product_Equal(n):
     return False
 
 
+# ---- Description from line 712 ----
+# Write a function to remove duplicates from a list of lists.
+
+
 # ---- Function from line 712 ----
 import itertools
 
@@ -4136,12 +5185,20 @@ def remove_duplicate(list1):
  return remove_duplicate
 
 
+# ---- Description from line 713 ----
+# Write a function to check if the given tuple contains all valid values or not.
+
+
 # ---- Function from line 713 ----
 def check_valid(test_tup):
 
   res = not any(map(lambda ele: not ele, test_tup))
 
   return (res)
+
+
+# ---- Description from line 714 ----
+# Write a python function to count the number of distinct power of prime factor of given number.
 
 
 # ---- Function from line 714 ----
@@ -4184,6 +5241,10 @@ def count_Fac(n):
     return count
 
 
+# ---- Description from line 715 ----
+# Write a function to convert the given string of integers into a tuple.
+
+
 # ---- Function from line 715 ----
 def str_to_tuple(test_str):
 
@@ -4192,12 +5253,20 @@ def str_to_tuple(test_str):
   return (res)
 
 
+# ---- Description from line 716 ----
+# Write a function to find the perimeter of a rombus.
+
+
 # ---- Function from line 716 ----
 def rombus_perimeter(a):
 
   perimeter=4*a
 
   return perimeter
+
+
+# ---- Description from line 717 ----
+# Write a function to calculate the standard deviation.
 
 
 # ---- Function from line 717 ----
@@ -4240,6 +5309,10 @@ def avg_calc(ls):
     return mean
 
 
+# ---- Description from line 718 ----
+# Write a function to create a list taking alternate elements from another given list.
+
+
 # ---- Function from line 718 ----
 def alternate_elements(list1):
 
@@ -4250,6 +5323,10 @@ def alternate_elements(list1):
         result.append(item)
 
     return result
+
+
+# ---- Description from line 719 ----
+# Write a function that matches a string that has an a followed by zero or more b's.
 
 
 # ---- Function from line 719 ----
@@ -4268,6 +5345,10 @@ def text_match(text):
                 return('Not matched!')
 
 
+# ---- Description from line 720 ----
+# Write a function to add a dictionary to the tuple.
+
+
 # ---- Function from line 720 ----
 def add_dict_to_tuple(test_tup, test_dict):
 
@@ -4278,6 +5359,10 @@ def add_dict_to_tuple(test_tup, test_dict):
   test_tup = tuple(test_tup)
 
   return (test_tup)
+
+
+# ---- Description from line 721 ----
+# Write a function to find a path with the maximum average over all existing paths for the given square matrix of size n*n.
 
 
 # ---- Function from line 721 ----
@@ -4308,12 +5393,20 @@ def maxAverageOfPath(cost, N):
 	return dp[N - 1][N - 1] / (2 * N - 1)
 
 
+# ---- Description from line 722 ----
+# Write a function to filter the height and width of students which are stored in a dictionary.
+
+
 # ---- Function from line 722 ----
 def filter_data(students,h,w):
 
     result = {k: s for k, s in students.items() if s[0] >=h and s[1] >=w}
 
     return result
+
+
+# ---- Description from line 723 ----
+# Write a function to count the same pair in two given lists using map function.
 
 
 # ---- Function from line 723 ----
@@ -4326,10 +5419,18 @@ def count_same_pair(nums1, nums2):
     return result
 
 
+# ---- Description from line 724 ----
+# Write a function to calculate the sum of all digits of the base to the specified power.
+
+
 # ---- Function from line 724 ----
 def power_base_sum(base, power):
 
     return sum([int(i) for i in str(pow(base, power))])
+
+
+# ---- Description from line 725 ----
+# Write a function to extract values between quotation marks of the given string by using regex.
 
 
 # ---- Function from line 725 ----
@@ -4340,12 +5441,20 @@ def extract_quotation(text1):
   return (re.findall(r'"(.*?)"', text1))
 
 
+# ---- Description from line 726 ----
+# Write a function to multiply the adjacent elements of the given tuple.
+
+
 # ---- Function from line 726 ----
 def multiply_elements(test_tup):
 
   res = tuple(i * j for i, j in zip(test_tup, test_tup[1:]))
 
   return (res)
+
+
+# ---- Description from line 727 ----
+# Write a function to remove all characters except letters and numbers using regex
 
 
 # ---- Function from line 727 ----
@@ -4358,12 +5467,20 @@ def remove_char(S):
   return result
 
 
+# ---- Description from line 728 ----
+# Write a function to sum elements in two lists.
+
+
 # ---- Function from line 728 ----
 def sum_list(lst1,lst2):
 
   res_list = [lst1[i] + lst2[i] for i in range(len(lst1))] 
 
   return res_list
+
+
+# ---- Description from line 729 ----
+# Write a function to add two lists using map and lambda function.
 
 
 # ---- Function from line 729 ----
@@ -4374,12 +5491,20 @@ def add_list(nums1,nums2):
   return list(result)
 
 
+# ---- Description from line 730 ----
+# Write a function to remove consecutive duplicates of a given list.
+
+
 # ---- Function from line 730 ----
 from itertools import groupby
 
 def consecutive_duplicates(nums):
 
     return [key for key, group in groupby(nums)]
+
+
+# ---- Description from line 731 ----
+# Write a function to find the lateral surface area of a cone.
 
 
 # ---- Function from line 731 ----
@@ -4394,12 +5519,20 @@ def lateralsurface_cone(r,h):
   return LSA
 
 
+# ---- Description from line 732 ----
+# Write a function to replace all occurrences of spaces, commas, or dots with a colon.
+
+
 # ---- Function from line 732 ----
 import re
 
 def replace_specialchar(text):
 
  return (re.sub("[ ,.]", ":", text))
+
+
+# ---- Description from line 733 ----
+# Write a function to find the index of the first occurrence of a given number in a sorted array.
 
 
 # ---- Function from line 733 ----
@@ -4430,6 +5563,10 @@ def find_first_occurrence(A, x):
     return result
 
 
+# ---- Description from line 734 ----
+# Write a python function to find sum of products of all possible subarrays.
+
+
 # ---- Function from line 734 ----
 def sum_Of_Subarray_Prod(arr,n):
 
@@ -4450,6 +5587,10 @@ def sum_Of_Subarray_Prod(arr,n):
         i -= 1
 
     return (ans)
+
+
+# ---- Description from line 735 ----
+# Write a python function to toggle bits of the number except the first and the last bit.
 
 
 # ---- Function from line 735 ----
@@ -4476,6 +5617,10 @@ def toggle_middle_bits(n):
     return n ^ set_middle_bits(n)
 
 
+# ---- Description from line 736 ----
+# Write a function to locate the left insertion point for a specified value in sorted order.
+
+
 # ---- Function from line 736 ----
 import bisect
 
@@ -4484,6 +5629,10 @@ def left_insertion(a, x):
     i = bisect.bisect_left(a, x)
 
     return i
+
+
+# ---- Description from line 737 ----
+# Write a function to check whether the given string is starting with a vowel or not using regex.
 
 
 # ---- Function from line 737 ----
@@ -4502,6 +5651,10 @@ def check_str(string):
 		return ("Invalid")
 
 
+# ---- Description from line 738 ----
+# Write a function to calculate the geometric sum of n-1.
+
+
 # ---- Function from line 738 ----
 def geometric_sum(n):
 
@@ -4514,6 +5667,10 @@ def geometric_sum(n):
     return 1 / (pow(2, n)) + geometric_sum(n - 1)
 
 
+# ---- Description from line 739 ----
+# Write a python function to find the index of smallest triangular number with n digits.
+
+
 # ---- Function from line 739 ----
 import math 
 
@@ -4524,12 +5681,20 @@ def find_Index(n):
     return round(x);
 
 
+# ---- Description from line 740 ----
+# Write a function to convert the given tuple to a key-value dictionary using adjacent elements.
+
+
 # ---- Function from line 740 ----
 def tuple_to_dict(test_tup):
 
   res = dict(test_tup[idx : idx + 2] for idx in range(0, len(test_tup), 2))
 
   return (res)
+
+
+# ---- Description from line 741 ----
+# Write a python function to check whether all the characters are same or not.
 
 
 # ---- Function from line 741 ----
@@ -4546,6 +5711,10 @@ def all_Characters_Same(s) :
     return True
 
 
+# ---- Description from line 742 ----
+# Write a function to caluclate the area of a tetrahedron.
+
+
 # ---- Function from line 742 ----
 import math
 
@@ -4556,12 +5725,20 @@ def area_tetrahedron(side):
   return area
 
 
+# ---- Description from line 743 ----
+# Write a function to rotate a given list by specified number of items to the right direction.
+
+
 # ---- Function from line 743 ----
 def rotate_right(list1,m,n):
 
   result =  list1[-(m):]+list1[:-(n)]
 
   return result
+
+
+# ---- Description from line 744 ----
+# Write a function to check if the given tuple has any none value or not.
 
 
 # ---- Function from line 744 ----
@@ -4572,12 +5749,20 @@ def check_none(test_tup):
   return (res)
 
 
+# ---- Description from line 745 ----
+# Write a function to find numbers within a given range where every number is divisible by every digit it contains.
+
+
 # ---- Function from line 745 ----
 def divisible_by_digits(startnum, endnum):
 
     return [n for n in range(startnum, endnum+1) \
 
                 if not any(map(lambda x: int(x) == 0 or n%int(x) != 0, str(n)))]
+
+
+# ---- Description from line 746 ----
+# Write a function to find area of a sector.
 
 
 # ---- Function from line 746 ----
@@ -4592,6 +5777,10 @@ def sector_area(r,a):
     sectorarea = (pi*r**2) * (a/360)
 
     return sectorarea
+
+
+# ---- Description from line 747 ----
+# Write a function to find the longest common subsequence for the given three string sequence.
 
 
 # ---- Function from line 747 ----
@@ -4628,12 +5817,20 @@ def lcs_of_three(X, Y, Z, m, n, o):
 	return L[m][n][o]
 
 
+# ---- Description from line 748 ----
+# Write a function to put spaces between words starting with capital letters in a given string by using regex.
+
+
 # ---- Function from line 748 ----
 import re
 
 def capital_words_spaces(str1):
 
   return re.sub(r"(\w)([A-Z])", r"\1 \2", str1)
+
+
+# ---- Description from line 749 ----
+# Write a function to sort a given list of strings of numbers numerically.
 
 
 # ---- Function from line 749 ----
@@ -4646,12 +5843,20 @@ def sort_numeric_strings(nums_str):
     return result
 
 
+# ---- Description from line 750 ----
+# Write a function to add the given tuple to the given list.
+
+
 # ---- Function from line 750 ----
 def add_tuple(test_list, test_tup):
 
   test_list += test_tup
 
   return (test_list)
+
+
+# ---- Description from line 751 ----
+# Write a function to check if the given array represents min heap or not.
 
 
 # ---- Function from line 751 ----
@@ -4670,6 +5875,10 @@ def check_min_heap(arr, i):
     return left_child and right_child
 
 
+# ---- Description from line 752 ----
+# Write a function to find the nth jacobsthal number.
+
+
 # ---- Function from line 752 ----
 def jacobsthal_num(n): 
 
@@ -4686,12 +5895,20 @@ def jacobsthal_num(n):
 	return dp[n]
 
 
+# ---- Description from line 753 ----
+# Write a function to find minimum k records from tuple list.
+
+
 # ---- Function from line 753 ----
 def min_k(test_list, K):
 
   res = sorted(test_list, key = lambda x: x[1])[:K]
 
   return (res)
+
+
+# ---- Description from line 754 ----
+# Write a function to find common index elements from three lists.
 
 
 # ---- Function from line 754 ----
@@ -4706,6 +5923,10 @@ def extract_index_list(l1, l2, l3):
             result.append(m)
 
     return result
+
+
+# ---- Description from line 755 ----
+# Write a function to find the second smallest number in a list.
 
 
 # ---- Function from line 755 ----
@@ -4736,6 +5957,10 @@ def second_smallest(numbers):
   return  uniq_items[1]
 
 
+# ---- Description from line 756 ----
+# Write a function that matches a string that has an a followed by zero or one 'b'.
+
+
 # ---- Function from line 756 ----
 import re
 
@@ -4752,6 +5977,10 @@ def text_match_zero_one(text):
                 return('Not matched!')
 
 
+# ---- Description from line 757 ----
+# Write a function to count the pairs of reverse strings in the given string list.
+
+
 # ---- Function from line 757 ----
 def count_reverse_pairs(test_list):
 
@@ -4760,6 +5989,10 @@ def count_reverse_pairs(test_list):
 	test_list)) if test_list[idxn] == str(''.join(list(reversed(test_list[idx]))))]) 
 
   return str(res)
+
+
+# ---- Description from line 758 ----
+# Write a function to count number of unique lists within a list.
 
 
 # ---- Function from line 758 ----
@@ -4778,6 +6011,10 @@ def unique_sublists(list1):
     return result
 
 
+# ---- Description from line 759 ----
+# Write a function to check a decimal with a precision of 2.
+
+
 # ---- Function from line 759 ----
 def is_decimal(num):
 
@@ -4788,6 +6025,10 @@ def is_decimal(num):
     result = dnumre.search(num)
 
     return bool(result)
+
+
+# ---- Description from line 760 ----
+# Write a python function to check whether an array contains only one distinct element or not.
 
 
 # ---- Function from line 760 ----
@@ -4804,6 +6045,10 @@ def unique_Element(arr,n):
         return ('NO')
 
 
+# ---- Description from line 761 ----
+# Write a function to caluclate arc length of an angle.
+
+
 # ---- Function from line 761 ----
 def arc_length(d,a):
 
@@ -4818,6 +6063,10 @@ def arc_length(d,a):
     return arclength
 
 
+# ---- Description from line 762 ----
+# Write a function to check whether the given month number contains 30 days or not.
+
+
 # ---- Function from line 762 ----
 def check_monthnumber_number(monthnum3):
 
@@ -4828,6 +6077,10 @@ def check_monthnumber_number(monthnum3):
   else:
 
     return False
+
+
+# ---- Description from line 763 ----
+# Write a python function to find the minimum difference between any two elements in a given array.
 
 
 # ---- Function from line 763 ----
@@ -4846,6 +6099,10 @@ def find_Min_Diff(arr,n):
     return diff
 
 
+# ---- Description from line 764 ----
+# Write a python function to count numeric values in a given string.
+
+
 # ---- Function from line 764 ----
 def number_ctr(str):
 
@@ -4858,6 +6115,10 @@ def number_ctr(str):
       return  number_ctr
 
 
+# ---- Description from line 765 ----
+# Write a function to find nth polite number.
+
+
 # ---- Function from line 765 ----
 import math 
 
@@ -4866,6 +6127,10 @@ def is_polite(n):
 	n = n + 1
 
 	return (int)(n+(math.log((n + math.log(n, 2)), 2)))
+
+
+# ---- Description from line 766 ----
+# Write a function to iterate over all pairs of consecutive items in a given list.
 
 
 # ---- Function from line 766 ----
@@ -4884,6 +6149,10 @@ def pair_wise(l1):
     return temp
 
 
+# ---- Description from line 767 ----
+# Write a python function to count the number of pairs whose sum is equal to ‘sum’.
+
+
 # ---- Function from line 767 ----
 def get_Pairs_Count(arr,n,sum):
 
@@ -4898,6 +6167,10 @@ def get_Pairs_Count(arr,n,sum):
                 count += 1
 
     return count
+
+
+# ---- Description from line 768 ----
+# Write a python function to check for odd parity of a given number.
 
 
 # ---- Function from line 768 ----
@@ -4920,10 +6193,18 @@ def check_Odd_Parity(x):
         return False
 
 
+# ---- Description from line 769 ----
+# Write a python function to get the difference between two lists.
+
+
 # ---- Function from line 769 ----
 def Diff(li1,li2):
 
     return (list(list(set(li1)-set(li2)) + list(set(li2)-set(li1))))
+
+
+# ---- Description from line 770 ----
+# Write a python function to find the sum of fourth power of first n odd natural numbers.
 
 
 # ---- Function from line 770 ----
@@ -4940,6 +6221,10 @@ def odd_Num_Sum(n) :
         sm = sm + (j*j*j*j)   
 
     return sm
+
+
+# ---- Description from line 771 ----
+# Write a function to check if the given expression is balanced or not.
 
 
 # ---- Function from line 771 ----
@@ -4974,6 +6259,10 @@ def check_expression(exp):
     return not stack
 
 
+# ---- Description from line 772 ----
+# Write a function to remove all the words with k length in the given string.
+
+
 # ---- Function from line 772 ----
 def remove_length(test_str, K):
 
@@ -4984,6 +6273,10 @@ def remove_length(test_str, K):
   res = ' '.join(res)
 
   return (res)
+
+
+# ---- Description from line 773 ----
+# Write a function to find the occurrence and position of the substrings within a string.
 
 
 # ---- Function from line 773 ----
@@ -4998,6 +6291,10 @@ def occurance_substring(text,pattern):
     e = match.end()
 
     return (text[s:e], s, e)
+
+
+# ---- Description from line 774 ----
+# Write a function to check if the string is a valid email address or not using regex.
 
 
 # ---- Function from line 774 ----
@@ -5016,10 +6313,18 @@ def check_email(email):
 		return ("Invalid Email")
 
 
+# ---- Description from line 775 ----
+# Write a python function to check whether every odd index contains odd numbers of a given list.
+
+
 # ---- Function from line 775 ----
 def odd_position(nums):
 
 	return all(nums[i]%2==i%2 for i in range(len(nums)))
+
+
+# ---- Description from line 776 ----
+# Write a function to count those characters which have vowels as their neighbors in the given string.
 
 
 # ---- Function from line 776 ----
@@ -5046,6 +6351,10 @@ def count_vowels(test_str):
   return (res)
 
 
+# ---- Description from line 777 ----
+# Write a python function to find the sum of non-repeated elements in a given array.
+
+
 # ---- Function from line 777 ----
 def find_Sum(arr,n): 
 
@@ -5062,12 +6371,20 @@ def find_Sum(arr,n):
     return sum
 
 
+# ---- Description from line 778 ----
+# Write a function to pack consecutive duplicates of a given list elements into sublists.
+
+
 # ---- Function from line 778 ----
 from itertools import groupby
 
 def pack_consecutive_duplicates(list1):
 
     return [list(group) for key, group in groupby(list1)]
+
+
+# ---- Description from line 779 ----
+# Write a function to count the number of unique lists within a list.
 
 
 # ---- Function from line 779 ----
@@ -5086,6 +6403,10 @@ def unique_sublists(list1):
     return result
 
 
+# ---- Description from line 780 ----
+# Write a function to find the combinations of sums with tuples in the given tuple list.
+
+
 # ---- Function from line 780 ----
 from itertools import combinations 
 
@@ -5094,6 +6415,10 @@ def find_combinations(test_list):
   res = [(b1 + a1, b2 + a2) for (a1, a2), (b1, b2) in combinations(test_list, 2)]
 
   return (res)
+
+
+# ---- Description from line 781 ----
+# Write a python function to check whether the count of divisors is even or odd.
 
 
 # ---- Function from line 781 ----
@@ -5124,6 +6449,10 @@ def count_Divisors(n) :
         return ("Odd")
 
 
+# ---- Description from line 782 ----
+# Write a python function to find the sum of all odd length subarrays.
+
+
 # ---- Function from line 782 ----
 def Odd_Length_Sum(arr):
 
@@ -5136,6 +6465,10 @@ def Odd_Length_Sum(arr):
         Sum += ((((i + 1) *(l - i) + 1) // 2) * arr[i])
 
     return Sum
+
+
+# ---- Description from line 783 ----
+# Write a function to convert rgb color to hsv color.
 
 
 # ---- Function from line 783 ----
@@ -5178,6 +6511,10 @@ def rgb_to_hsv(r, g, b):
     return h, s, v
 
 
+# ---- Description from line 784 ----
+# Write a function to find the product of first even and odd number of a given list.
+
+
 # ---- Function from line 784 ----
 def mul_even_odd(list1):
 
@@ -5188,12 +6525,20 @@ def mul_even_odd(list1):
     return (first_even*first_odd)
 
 
+# ---- Description from line 785 ----
+# Write a function to convert tuple string to integer tuple.
+
+
 # ---- Function from line 785 ----
 def tuple_str_int(test_str):
 
   res = tuple(int(num) for num in test_str.replace('(', '').replace(')', '').replace('...', '').split(', '))
 
   return (res)
+
+
+# ---- Description from line 786 ----
+# Write a function to locate the right insertion point for a specified value in sorted order.
 
 
 # ---- Function from line 786 ----
@@ -5204,6 +6549,10 @@ def right_insertion(a, x):
     i = bisect.bisect_right(a, x)
 
     return i
+
+
+# ---- Description from line 787 ----
+# Write a function that matches a string that has an a followed by three 'b'.
 
 
 # ---- Function from line 787 ----
@@ -5222,12 +6571,20 @@ def text_match_three(text):
                 return('Not matched!')
 
 
+# ---- Description from line 788 ----
+# Write a function to create a new tuple from the given string and list.
+
+
 # ---- Function from line 788 ----
 def new_tuple(test_list, test_str):
 
   res = tuple(test_list + [test_str])
 
   return (res)
+
+
+# ---- Description from line 789 ----
+# Write a function to calculate the perimeter of a regular polygon.
 
 
 # ---- Function from line 789 ----
@@ -5240,10 +6597,18 @@ def perimeter_polygon(s,l):
   return perimeter
 
 
+# ---- Description from line 790 ----
+# Write a python function to check whether every even index contains even numbers of a given list.
+
+
 # ---- Function from line 790 ----
 def even_position(nums):
 
 	return all(nums[i]%2==i%2 for i in range(len(nums)))
+
+
+# ---- Description from line 791 ----
+# Write a function to remove the nested record from the given tuple.
 
 
 # ---- Function from line 791 ----
@@ -5260,10 +6625,18 @@ def remove_nested(test_tup):
   return (res)
 
 
+# ---- Description from line 792 ----
+# Write a python function to count the number of lists in a given number of lists.
+
+
 # ---- Function from line 792 ----
 def count_list(input_list): 
 
     return len(input_list)
+
+
+# ---- Description from line 793 ----
+# Write a python function to find the last position of an element in a sorted array.
 
 
 # ---- Function from line 793 ----
@@ -5296,6 +6669,10 @@ def last(arr,x,n):
     return res
 
 
+# ---- Description from line 794 ----
+# Write a function that matches a string that has an 'a' followed by anything, ending in 'b'.
+
+
 # ---- Function from line 794 ----
 import re
 
@@ -5312,6 +6689,10 @@ def text_starta_endb(text):
                 return('Not matched!')
 
 
+# ---- Description from line 795 ----
+# Write a function to find the n - cheap price items from a given dataset using heap queue algorithm.
+
+
 # ---- Function from line 795 ----
 import heapq
 
@@ -5320,6 +6701,10 @@ def cheap_items(items,n):
   cheap_items = heapq.nsmallest(n, items, key=lambda s: s['price'])
 
   return cheap_items
+
+
+# ---- Description from line 796 ----
+# Write function to find the sum of all items in the given dictionary.
 
 
 # ---- Function from line 796 ----
@@ -5332,6 +6717,10 @@ def return_sum(dict):
     sum = sum + i
 
   return sum
+
+
+# ---- Description from line 797 ----
+# Write a python function to find the sum of all odd natural numbers within the range l and r.
 
 
 # ---- Function from line 797 ----
@@ -5348,6 +6737,10 @@ def sum_in_Range(l,r):
     return sum_Odd(r) - sum_Odd(l - 1)
 
 
+# ---- Description from line 798 ----
+# Write a python function to find the sum of an array.
+
+
 # ---- Function from line 798 ----
 def _sum(arr):  
 
@@ -5360,6 +6753,10 @@ def _sum(arr):
     return(sum)
 
 
+# ---- Description from line 799 ----
+# Write a python function to left rotate the bits of a given number.
+
+
 # ---- Function from line 799 ----
 INT_BITS = 32
 
@@ -5368,12 +6765,20 @@ def left_Rotate(n,d):
     return (n << d)|(n >> (INT_BITS - d))
 
 
+# ---- Description from line 800 ----
+# Write a function to remove all whitespaces from a string.
+
+
 # ---- Function from line 800 ----
 import re
 
 def remove_all_spaces(text):
 
  return (re.sub(r'\s+', '',text))
+
+
+# ---- Description from line 801 ----
+# Write a python function to count the number of equal numbers from three given integers.
 
 
 # ---- Function from line 801 ----
@@ -5390,6 +6795,10 @@ def test_three_equal(x,y,z):
     return (4-len(result))
 
 
+# ---- Description from line 802 ----
+# Write a python function to count the number of rotations required to generate a sorted array.
+
+
 # ---- Function from line 802 ----
 def count_Rotation(arr,n):   
 
@@ -5400,6 +6809,10 @@ def count_Rotation(arr,n):
             return i  
 
     return 0
+
+
+# ---- Description from line 803 ----
+# Write a python function to check whether the given number is a perfect square or not.
 
 
 # ---- Function from line 803 ----
@@ -5418,6 +6831,10 @@ def is_Perfect_Square(n) :
     return False
 
 
+# ---- Description from line 804 ----
+# Write a python function to check whether the product of numbers is even or not.
+
+
 # ---- Function from line 804 ----
 def is_Product_Even(arr,n): 
 
@@ -5430,10 +6847,18 @@ def is_Product_Even(arr,n):
     return False
 
 
+# ---- Description from line 805 ----
+# Write a function to find the list in a list of lists whose sum of elements is the highest.
+
+
 # ---- Function from line 805 ----
 def max_sum_list(lists):
 
  return max(lists, key=sum)
+
+
+# ---- Description from line 806 ----
+# Write a function to find maximum run of uppercase characters in the given string.
 
 
 # ---- Function from line 806 ----
@@ -5462,12 +6887,20 @@ def max_run_uppercase(test_str):
   return (res)
 
 
+# ---- Description from line 807 ----
+# Write a python function to find the first odd number in a given list of numbers.
+
+
 # ---- Function from line 807 ----
 def first_odd(nums):
 
   first_odd = next((el for el in nums if el%2!=0),-1)
 
   return first_odd
+
+
+# ---- Description from line 808 ----
+# Write a function to check if the given tuples contain the k or not.
 
 
 # ---- Function from line 808 ----
@@ -5486,12 +6919,20 @@ def check_K(test_tup, K):
   return (res)
 
 
+# ---- Description from line 809 ----
+# Write a function to check if each element of second tuple is smaller than its corresponding index in first tuple.
+
+
 # ---- Function from line 809 ----
 def check_smaller(test_tup1, test_tup2):
 
   res = all(x > y for x, y in zip(test_tup1, test_tup2))
 
   return (res)
+
+
+# ---- Description from line 810 ----
+# Write a function to iterate over elements repeating each as many times as its count.
 
 
 # ---- Function from line 810 ----
@@ -5504,6 +6945,10 @@ def count_variable(a,b,c,d):
   return list(c.elements())
 
 
+# ---- Description from line 811 ----
+# Write a function to check if two lists of tuples are identical or not.
+
+
 # ---- Function from line 811 ----
 def check_identical(test_list1, test_list2):
 
@@ -5512,12 +6957,20 @@ def check_identical(test_list1, test_list2):
   return (res)
 
 
+# ---- Description from line 812 ----
+# Write a function to abbreviate 'road' as 'rd.' in a given string.
+
+
 # ---- Function from line 812 ----
 import re
 
 def road_rd(street):
 
   return (re.sub('Road$', 'Rd.', street))
+
+
+# ---- Description from line 813 ----
+# Write a function to find length of the string.
 
 
 # ---- Function from line 813 ----
@@ -5532,12 +6985,20 @@ def string_length(str1):
     return count
 
 
+# ---- Description from line 814 ----
+# Write a function to find the area of a rombus.
+
+
 # ---- Function from line 814 ----
 def rombus_area(p,q):
 
   area=(p*q)/2
 
   return area
+
+
+# ---- Description from line 815 ----
+# Write a function to sort the given array without using any sorting algorithm. the given array consists of only 0, 1, and 2.
 
 
 # ---- Function from line 815 ----
@@ -5572,6 +7033,10 @@ def sort_by_dnf(arr, n):
   return arr
 
 
+# ---- Description from line 816 ----
+# Write a function to clear the values of the given tuples.
+
+
 # ---- Function from line 816 ----
 def clear_tuple(test_tup):
 
@@ -5584,12 +7049,20 @@ def clear_tuple(test_tup):
   return (test_tup)
 
 
+# ---- Description from line 817 ----
+# Write a function to find numbers divisible by m or n from a list of numbers using lambda function.
+
+
 # ---- Function from line 817 ----
 def div_of_nums(nums,m,n):
 
  result = list(filter(lambda x: (x % m == 0 or x % n == 0), nums)) 
 
  return result
+
+
+# ---- Description from line 818 ----
+# Write a python function to count lower case letters in a given string.
 
 
 # ---- Function from line 818 ----
@@ -5602,6 +7075,10 @@ def lower_ctr(str):
           if str[i] >= 'a' and str[i] <= 'z': lower_ctr += 1     
 
       return  lower_ctr
+
+
+# ---- Description from line 819 ----
+# Write a function to count the frequency of consecutive duplicate elements in a given list of numbers.
 
 
 # ---- Function from line 819 ----
@@ -5638,6 +7115,10 @@ def count_duplic(lists):
     return element,frequency
 
 
+# ---- Description from line 820 ----
+# Write a function to check whether the given month number contains 28 days or not.
+
+
 # ---- Function from line 820 ----
 def check_monthnum_number(monthnum1):
 
@@ -5650,6 +7131,10 @@ def check_monthnum_number(monthnum1):
     return False
 
 
+# ---- Description from line 821 ----
+# Write a function to merge two dictionaries into a single expression.
+
+
 # ---- Function from line 821 ----
 import collections as ct
 
@@ -5658,6 +7143,10 @@ def merge_dictionaries(dict1,dict2):
     merged_dict = dict(ct.ChainMap({}, dict1, dict2))
 
     return merged_dict
+
+
+# ---- Description from line 822 ----
+# Write a function to return true if the password is valid.
 
 
 # ---- Function from line 822 ----
@@ -5707,6 +7196,10 @@ def pass_validity(p):
     return False
 
 
+# ---- Description from line 823 ----
+# Write a function to check if the given string starts with a substring using regex.
+
+
 # ---- Function from line 823 ----
 import re 
 
@@ -5731,6 +7224,10 @@ def check_substring(string, sample) :
       return ("entered string isnt a substring")
 
 
+# ---- Description from line 824 ----
+# Write a python function to remove even numbers from a given list.
+
+
 # ---- Function from line 824 ----
 def remove_even(l):
 
@@ -5743,12 +7240,20 @@ def remove_even(l):
     return l
 
 
+# ---- Description from line 825 ----
+# Write a python function to access multiple elements of specified index from a given list.
+
+
 # ---- Function from line 825 ----
 def access_elements(nums, list_index):
 
     result = [nums[i] for i in list_index]
 
     return result
+
+
+# ---- Description from line 826 ----
+# Write a python function to find the type of triangle from the given sides.
 
 
 # ---- Function from line 826 ----
@@ -5773,12 +7278,20 @@ def check_Type_Of_Triangle(a,b,c):
         return ("Acute-angled Triangle")
 
 
+# ---- Description from line 827 ----
+# Write a function to sum a specific column of a list in a given list of lists.
+
+
 # ---- Function from line 827 ----
 def sum_column(list1, C):
 
     result = sum(row[C] for row in list1)
 
     return result
+
+
+# ---- Description from line 828 ----
+# Write a function to count alphabets,digits and special charactes in a given string.
 
 
 # ---- Function from line 828 ----
@@ -5803,6 +7316,10 @@ def count_alpha_dig_spl(string):
   return (alphabets,digits,special)
 
 
+# ---- Description from line 829 ----
+# Write a function to find out the second most repeated (or frequent) string in the given sequence.
+
+
 # ---- Function from line 829 ----
 from collections import Counter 
 
@@ -5822,6 +7339,10 @@ def second_frequent(input):
 			return (key)
 
 
+# ---- Description from line 830 ----
+# Write a function to round up a number to specific digits.
+
+
 # ---- Function from line 830 ----
 import math
 
@@ -5830,6 +7351,10 @@ def round_up(a, digits):
     n = 10**-digits
 
     return round(math.ceil(a / n) * n, digits)
+
+
+# ---- Description from line 831 ----
+# Write a python function to count equal element pairs from the given array.
 
 
 # ---- Function from line 831 ----
@@ -5848,6 +7373,10 @@ def count_Pairs(arr,n):
     return cnt;
 
 
+# ---- Description from line 832 ----
+# Write a function to extract the maximum numeric value from a string by using regex.
+
+
 # ---- Function from line 832 ----
 import re 
 
@@ -5860,6 +7389,10 @@ def extract_max(input):
 	return max(numbers)
 
 
+# ---- Description from line 833 ----
+# Write a function to get dictionary keys as a list.
+
+
 # ---- Function from line 833 ----
 def get_key(dict): 
 
@@ -5870,6 +7403,10 @@ def get_key(dict):
         list.append(key)           
 
     return list
+
+
+# ---- Description from line 834 ----
+# Write a function to generate a square matrix filled with elements from 1 to n raised to the power of 2 in spiral order.
 
 
 # ---- Function from line 834 ----
@@ -5932,10 +7469,18 @@ def generate_matrix(n):
         return matrix
 
 
+# ---- Description from line 835 ----
+# Write a python function to find the slope of a line.
+
+
 # ---- Function from line 835 ----
 def slope(x1,y1,x2,y2): 
 
     return (float)(y2-y1)/(x2-x1)
+
+
+# ---- Description from line 836 ----
+# Write a function to find length of the subarray having maximum sum.
 
 
 # ---- Function from line 836 ----
@@ -5974,6 +7519,10 @@ def max_sub_array_sum(a,size):
 	return (end - start + 1)
 
 
+# ---- Description from line 837 ----
+# Write a python function to find the cube sum of first n odd natural numbers.
+
+
 # ---- Function from line 837 ----
 def cube_Sum(n): 
 
@@ -5984,6 +7533,10 @@ def cube_Sum(n):
         sum += (2*i+1)*(2*i+1)*(2*i+1) 
 
     return sum
+
+
+# ---- Description from line 838 ----
+# Write a python function to find minimum number swaps required to make two binary strings equal.
 
 
 # ---- Function from line 838 ----
@@ -6016,6 +7569,10 @@ def min_Swaps(s1,s2) :
         return -1;
 
 
+# ---- Description from line 839 ----
+# Write a function to sort the tuples alphabetically by the first item of each tuple.
+
+
 # ---- Function from line 839 ----
 def sort_tuple(tup): 
 
@@ -6032,6 +7589,10 @@ def sort_tuple(tup):
 	return tup
 
 
+# ---- Description from line 840 ----
+# Write a python function to check whether the roots of a quadratic equation are numerically equal but opposite in sign or not.
+
+
 # ---- Function from line 840 ----
 def Check_Solution(a,b,c):  
 
@@ -6042,6 +7603,10 @@ def Check_Solution(a,b,c):
     else: 
 
         return ("No")
+
+
+# ---- Description from line 841 ----
+# Write a function to count the number of inversions in the given array.
 
 
 # ---- Function from line 841 ----
@@ -6058,6 +7623,10 @@ def get_inv_count(arr, n):
 				inv_count += 1
 
 	return inv_count
+
+
+# ---- Description from line 842 ----
+# Write a function to find the number which occurs for odd number of times in the given array.
 
 
 # ---- Function from line 842 ----
@@ -6078,6 +7647,10 @@ def get_odd_occurence(arr, arr_size):
       return arr[i]
 
   return -1
+
+
+# ---- Description from line 843 ----
+# Write a function to find the nth super ugly number from a given prime list of size k using heap queue algorithm.
 
 
 # ---- Function from line 843 ----
@@ -6104,6 +7677,10 @@ def nth_super_ugly_number(n, primes):
             uglies.append(ugly)
 
     return uglies[-1]
+
+
+# ---- Description from line 844 ----
+# Write a python function to find the kth element in an array containing odd elements first and then even elements.
 
 
 # ---- Function from line 844 ----
@@ -6136,6 +7713,10 @@ def get_Number(n, k):
     return arr[k - 1];
 
 
+# ---- Description from line 845 ----
+# Write a python function to count the number of digits in factorial of a given number.
+
+
 # ---- Function from line 845 ----
 import math 
 
@@ -6152,6 +7733,10 @@ def find_Digits(n):
     x = ((n * math.log10(n / math.e) + math.log10(2 * math.pi * n) /2.0)); 
 
     return math.floor(x) + 1;
+
+
+# ---- Description from line 846 ----
+# Write a function to find the minimum number of platforms required for a railway/bus station.
 
 
 # ---- Function from line 846 ----
@@ -6190,9 +7775,17 @@ def find_platform(arr, dep, n):
     return result
 
 
+# ---- Description from line 847 ----
+# Write a python function to copy a list from a singleton tuple.
+
+
 # ---- Function from line 847 ----
 def lcopy(xs):
   return xs[:]
+
+
+# ---- Description from line 848 ----
+# Write a function to find the area of a trapezium.
 
 
 # ---- Function from line 848 ----
@@ -6201,6 +7794,10 @@ def area_trapezium(base1,base2,height):
  area = 0.5 * (base1 + base2) * height
 
  return area
+
+
+# ---- Description from line 849 ----
+# Write a python function to find sum of all prime divisors of a given number.
 
 
 # ---- Function from line 849 ----
@@ -6217,6 +7814,10 @@ def Sum(N):
                 SumOfPrimeDivisors[j] += i           
 
     return SumOfPrimeDivisors[N]
+
+
+# ---- Description from line 850 ----
+# Write a function to check if a triangle of positive area is possible with the given angles.
 
 
 # ---- Function from line 850 ----
