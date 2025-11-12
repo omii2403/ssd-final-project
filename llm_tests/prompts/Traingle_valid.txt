@@ -1,0 +1,17 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import check_Validity`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: check_Validity  
+Signature: def check_Validity(a: int, b: int, c: int) -> bool  
+Spec: check_Validity(a, b, c) returns True if the three given sides can form a valid triangle based on the triangle inequality rule, otherwise returns False.  
+A triangle is valid if and only if the sum of any two sides is greater than the third side, and all sides are positive.  
+Example:  
+check_Validity(1, 2, 3) → False  
+check_Validity(7, 10, 5) → True  
+Constraints: a, b, and c are integers greater than or equal to zero.

@@ -1,0 +1,30 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import bell_Number`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: bell_Number
+Signature: def bell_Number(n: int) -> int
+
+Spec: bell_Number(n) computes the nth Bell number, which represents the number of ways to partition a set of n elements into non-empty subsets. It uses dynamic programming based on the Bell triangle (Peirce's triangle). The algorithm builds a 2D table where bell[i][j] represents intermediate values, and bell[i][0] gives the ith Bell number.
+
+Mathematical properties:
+- B(0) = 1 (one way to partition empty set)
+- B(n) is strictly increasing for n >= 1
+- B(n) >= 2^(n-1) for n >= 1
+- Bell triangle recurrence: bell[i][j] = bell[i-1][j-1] + bell[i][j-1]
+- First element of row i equals last element of row i-1: bell[i][0] = bell[i-1][i-1]
+
+Example: bell_Number(0) -> 1
+Example: bell_Number(1) -> 1
+Example: bell_Number(2) -> 2
+Example: bell_Number(3) -> 5
+Example: bell_Number(4) -> 15
+Example: bell_Number(5) -> 52
+Example: bell_Number(6) -> 203
+
+Constraints: n >= 0, n is a non-negative integer
