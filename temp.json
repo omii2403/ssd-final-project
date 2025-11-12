@@ -9,4 +9,20 @@
         "assert set_Right_most_Unset_Bit(15) == 15"
     ],
     "challenge_test_list": []
-}
+};
+
+
+
+{"text": "Write a python function to find the maximum occurring character in a given string.",
+ "code": "def get_max_occuring_char(str1):\r\n  ASCII_SIZE = 256\r\n  ctr = [0] * ASCII_SIZE\r\n  max = -1\r\n  ch = ''\r\n  for i in str1:\r\n    ctr[ord(i)]+=1;\r\n  for i in str1:\r\n    if max < ctr[ord(i)]:\r\n      max = ctr[ord(i)]\r\n      ch = i\r\n  return ch", 
+ "task_id": 480, 
+ "test_setup_code": "",
+  "test_list": ["assert get_max_occuring_char(\"data\") == \"a\"", "assert get_max_occuring_char(\"create\") == \"e\"", "assert get_max_occuring_char(\"brilliant girl\") == \"i\""],
+   "challenge_test_list": []
+};
+
+
+   {"text": "Write a python function to check whether the triangle is valid or not if sides are given.", 
+   "code": "def check_Validity(a,b,c):  \r\n    if (a + b <= c) or (a + c <= b) or (b + c <= a) : \r\n        return False\r\n    else: \r\n        return True        ", "task_id": 334, "test_setup_code": "", "test_list": ["assert check_Validity(1,2,3) == False", "assert check_Validity(2,3,5) == False", 
+   "assert check_Validity(7,10,5) == True"], 
+   "challenge_test_list": []}

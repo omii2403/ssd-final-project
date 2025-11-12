@@ -5,12 +5,6 @@
   "constraints": "N is integer >= 0"
 }
 {
-  "id": 324,
-  "name": "sum_of_alternates",
-  "spec": "sum_of_alternates(test_tuple) takes a tuple of integers and returns a tuple containing two sums: the sum of elements at odd indices and the sum of elements at even indices.",
-  "constraints": "test_tuple is a tuple of integers"
-}
-{
   "id" : 671,
   "name": "set_Right_most_Unset_Bit",
   "spec": "set_Right_most_Unset_Bit(n) takes a non-negative integer n and sets the rightmost unset (0) bit to 1, returning the new integer. If all bits are set, it returns n unchanged.",
@@ -22,4 +16,29 @@
   "name": "gold_mine_problem",
   "spec": "get_max_gold(gold, m, n) takes a 2D list 'gold' representing the amount of gold in each cell of a mine with m rows and n columns. The function returns the maximum amount of gold that can be collected starting from any cell in the first column and moving to the right, right-up, or right-down until reaching the last column.",
   "constraints": "gold is a 2D list of non-negative integers with dimensions m x n, where m and n are positive integers."
+}
+
+{
+  "id": 423,
+  "name": "gold_mine_problem",
+  "spec": "get_max_gold(gold, m, n) takes a 2D list 'gold' representing the amount of gold in each cell of a mine with m rows and n columns. The function returns the maximum amount of gold that can be collected starting from any cell in the first column and moving to the right, right-up, or right-down until reaching the last column.",
+  "constraints": "gold is a 2D list of non-negative integers with dimensions m x n, where m and n are positive integers."
+}
+
+{
+  "id": 334,
+  "name": "check_Validity",
+  "spec":"check_Validity(a, b, c) returns True if the three given sides can form a valid triangle based on the triangle inequality rule, otherwise returns False.  
+  A triangle is valid if and only if the sum of any two sides is greater than the third side, and all sides are positive. ",
+  "constraints": "a, b, c are positive real numbers."
+}
+
+
+{
+   "id": 522,
+   "name": "bitonic subsequence",
+   "bug_description": "Changed range(i-1, n) to range(i, n) in the LDS inner loop. This causes the algorithm to compare an element with itself, which should never happen in strictly decreasing subsequence calculation",
+   "Impact": "The condition arr[i] > arr[j] when i == j is always false, so some valid decreasing subsequence relationships are missed, leading to incorrect LDS and LBS calculations.",
+   "spec": "lbs(arr) takes a list of integers and returns the length of the longest bitonic subsequence. A bitonic subsequence is a subsequence that first strictly increases and then strictly decreases. Either the increasing or decreasing part can be empty. For example, [1,2,3,2,1] has a longest bitonic subsequence of length 5. The subsequence [1,11,2,10,4,5,2,1] has longest bitonic subsequence length 6.",
+   "Constraints" : "arr is a list of integers, can be empty or have duplicates"
 }

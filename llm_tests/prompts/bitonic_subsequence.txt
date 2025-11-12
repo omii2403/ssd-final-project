@@ -1,0 +1,16 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import lbs`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: lbs
+Signature: def lbs(arr: List[int]) -> int
+Spec: lbs(arr) takes a list of integers and returns the length of the longest bitonic subsequence. A bitonic subsequence is a subsequence that first strictly increases and then strictly decreases. Either the increasing or decreasing part can be empty. For example, [1,2,3,2,1] has a longest bitonic subsequence of length 5. The subsequence [1,11,2,10,4,5,2,1] has longest bitonic subsequence length 6.
+Example: lbs([0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]) -> 7
+Example: lbs([1, 11, 2, 10, 4, 5, 2, 1]) -> 6
+Example: lbs([80, 60, 30, 40, 20, 10]) -> 5
+Constraints: arr is a list of integers, can be empty or have duplicates
