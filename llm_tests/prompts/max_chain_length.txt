@@ -1,0 +1,22 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import Pair, max_chain_length`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: max_chain_length (with helper class Pair)
+Signature: 
+def max_chain_length(arr: List[Pair], n: int) -> int
+
+Spec: max_chain_length(arr, n) finds the length of the maximum chain of pairs. A chain of pairs is formed when the second element of one pair is strictly less than the first element of the next pair. For pairs (a,b) and (c,d), they can chain if b < c (strict inequality). The function uses dynamic programming to find the longest such chain.
+
+
+Example: arr = [(5,24), (15,25), (27,40), (50,60)], n = 4 -> 3
+Example: arr = [(5,10), (1,11)], n = 2 -> 1
+Example: arr = [(1,2), (3,4), (5,6)], n = 3 -> 3
+Example: arr = [(1,2), (2,3)], n = 2 -> 1 (touching pairs don't chain)
+
+Constraints: n >= 1, arr[i].a < arr[i].b for all valid pairs

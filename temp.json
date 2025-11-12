@@ -1,0 +1,35 @@
+{
+    "text": "Write a python function to set the right most unset bit.",
+    "code": "import math \r\ndef get_Pos_Of_Right_most_Set_Bit(n): \r\n    return int(math.log2(n&-n)+1)   \r\ndef set_Right_most_Unset_Bit(n): \r\n    if (n == 0): \r\n        return 1\r\n    if ((n & (n + 1)) == 0):     \r\n        return n \r\n    pos = get_Pos_Of_Right_most_Set_Bit(~n)      \r\n    return ((1 << (pos - 1)) | n) ",
+    "task_id": 671,
+    "test_setup_code": "",
+    "test_list": [
+        "assert set_Right_most_Unset_Bit(21) == 23",
+        "assert set_Right_most_Unset_Bit(11) == 15",
+        "assert set_Right_most_Unset_Bit(15) == 15"
+    ],
+    "challenge_test_list": []
+};
+
+
+
+{"text": "Write a python function to find the maximum occurring character in a given string.",
+ "code": "def get_max_occuring_char(str1):\r\n  ASCII_SIZE = 256\r\n  ctr = [0] * ASCII_SIZE\r\n  max = -1\r\n  ch = ''\r\n  for i in str1:\r\n    ctr[ord(i)]+=1;\r\n  for i in str1:\r\n    if max < ctr[ord(i)]:\r\n      max = ctr[ord(i)]\r\n      ch = i\r\n  return ch", 
+ "task_id": 480, 
+ "test_setup_code": "",
+  "test_list": ["assert get_max_occuring_char(\"data\") == \"a\"", "assert get_max_occuring_char(\"create\") == \"e\"", "assert get_max_occuring_char(\"brilliant girl\") == \"i\""],
+   "challenge_test_list": []
+};
+
+
+   {"text": "Write a python function to check whether the triangle is valid or not if sides are given.", 
+   "code": "def check_Validity(a,b,c):  \r\n    if (a + b <= c) or (a + c <= b) or (b + c <= a) : \r\n        return False\r\n    else: \r\n        return True        ", "task_id": 334, "test_setup_code": "", "test_list": ["assert check_Validity(1,2,3) == False", "assert check_Validity(2,3,5) == False", 
+   "assert check_Validity(7,10,5) == True"], 
+   "challenge_test_list": []}
+
+
+   {"text": "Write a python function to find sum of product of binomial co-efficients.", 
+   "code": "def binomial_Coeff(n,k): \r\n    C = [0] * (k + 1); \r\n    C[0] = 1; # nC0 is 1 \r\n    for i in range(1,n + 1):  \r\n        for j in range(min(i, k),0,-1): \r\n            C[j] = C[j] + C[j - 1]; \r\n    return C[k]; \r\ndef sum_Of_product(n): \r\n    return binomial_Coeff(2 * n,n - 1); ",
+   "task_id": 592, "test_setup_code": "", 
+   "test_list": ["assert sum_Of_product(3) == 15", "assert sum_Of_product(4) == 56", "assert sum_Of_product(1) == 1"], 
+   "challenge_test_list": []}
