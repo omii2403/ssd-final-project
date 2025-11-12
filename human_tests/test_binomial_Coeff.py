@@ -4,7 +4,7 @@ import sys, os
 from hypothesis import given, strategies as st, assume
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../bug_portfolio')))
 
-from binomial_Coeff_correct import binomial_Coeff, sum_Of_product
+from binomial_Coeff_buggy import binomial_Coeff, sum_Of_product
 
 
 # Property 1: Binomial coefficient symmetry

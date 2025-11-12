@@ -35,11 +35,12 @@
 
 
 {
-   "id": 522,
-   "name": "bitonic subsequence",
-   "bug_description": "Changed range(i-1, n) to range(i, n) in the LDS inner loop. This causes the algorithm to compare an element with itself, which should never happen in strictly decreasing subsequence calculation",
-   "Impact": "The condition arr[i] > arr[j] when i == j is always false, so some valid decreasing subsequence relationships are missed, leading to incorrect LDS and LBS calculations.",
-   "spec": "lbs(arr) takes a list of integers and returns the length of the longest bitonic subsequence. A bitonic subsequence is a subsequence that first strictly increases and then strictly decreases. Either the increasing or decreasing part can be empty. For example, [1,2,3,2,1] has a longest bitonic subsequence of length 5. The subsequence [1,11,2,10,4,5,2,1] has longest bitonic subsequence length 6.",
-   "Constraints" : "arr is a list of integers, can be empty or have duplicates"
+  "id": 592,
+  "name": "binomial coefficient",
+  "bug_description": "Changed the inner loop from range(min(i, k), 0, -1) to range(min(i, k), -1, -1) in the binomial coefficient calculation. This causes the loop to iterate one extra time, attempting to access C[j-1] when j=0, which accesses C[-1] (the last element of the array due to Python's negative indexing), corrupting the Pascal's triangle computation.",
+  "impact": "The bug produces incorrect binomial coefficients for most inputs because it adds wrong values during the dynamic programming calculation. The error is subtle because it doesn't crash (negative indexing wraps around in Python) but silently produces wrong results. This violates fundamental mathematical properties including Pascal's identity, symmetry property, and row sum equaling 2^n.",
+  "spec": "binomial_Coeff(n, k) computes the binomial coefficient C(n, k), which represents the number of ways to choose k items from n items. It uses dynamic programming based on Pascal's triangle. sum_Of_product(n) computes C(2n, n-1), which is the binomial coefficient of 2n choose n-1. Mathematical properties: C(n, 0) = 1 and C(n, n) = 1 for all n >= 0; C(n, k) = C(n, n-k) (symmetry property); C(n, k) = C(n-1, k-1) + C(n-1, k) (Pascal's identity); Sum of row n: C(n, 0) + C(n, 1) + ... + C(n, n) = 2^n",
+  "constraints": "n >= 0, 0 <= k <= n for binomial_Coeff; n >= 1 for sum_Of_product",
 }
+
 
