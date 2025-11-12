@@ -1,5 +1,12 @@
-def check_Validity(a,b,c):  
-    if (a + b <= c) or (a + c <= b) or (b + c <= a) : 
-        return False
-    else: 
-        return True        ", "task_id": 334, "test_setup_code": "", "test_list": ["assert check_Validity(1,2,3) == False", "assert check_Validity(2,3,5) == False"
+def get_max_occuring_char(str1):
+  ASCII_SIZE = 256
+  ctr = [0] * ASCII_SIZE
+  max = -1
+  ch = ''
+  for i in str1:
+    ctr[ord(i)]+=1
+  for i in str1:
+    if max < ctr[ord(i)]:
+      max = ctr[ord(i)]
+      ch = i
+  return ch
