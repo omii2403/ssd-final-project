@@ -6,7 +6,7 @@ from hypothesis import given, strategies as st, assume
 # Fix import path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../bug_portfolio')))
 
-from max_chain_length_correct import Pair, max_chain_length
+from max_chain_length_buggy import Pair, max_chain_length
 
 
 # Property 1: Chain length cannot exceed array size
