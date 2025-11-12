@@ -42,3 +42,4 @@
    "spec": "lbs(arr) takes a list of integers and returns the length of the longest bitonic subsequence. A bitonic subsequence is a subsequence that first strictly increases and then strictly decreases. Either the increasing or decreasing part can be empty. For example, [1,2,3,2,1] has a longest bitonic subsequence of length 5. The subsequence [1,11,2,10,4,5,2,1] has longest bitonic subsequence length 6.",
    "Constraints" : "arr is a list of integers, can be empty or have duplicates"
 }
+

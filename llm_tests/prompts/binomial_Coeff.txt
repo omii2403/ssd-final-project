@@ -1,0 +1,30 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import binomial_Coeff, sum_Of_product`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: binomial_Coeff and sum_Of_product
+Signature: 
+def binomial_Coeff(n: int, k: int) -> int
+def sum_Of_product(n: int) -> int
+
+Spec: binomial_Coeff(n, k) computes the binomial coefficient C(n, k), which represents the number of ways to choose k items from n items. It uses dynamic programming based on Pascal's triangle. The function returns an integer.
+sum_Of_product(n) computes C(2n, n-1), which is the binomial coefficient of 2n choose n-1.
+
+Mathematical properties:
+- C(n, 0) = 1 and C(n, n) = 1 for all n >= 0
+- C(n, k) = C(n, n-k) (symmetry property)
+- C(n, k) = C(n-1, k-1) + C(n-1, k) (Pascal's identity)
+- Sum of row n: C(n, 0) + C(n, 1) + ... + C(n, n) = 2^n
+
+Example: binomial_Coeff(5, 2) -> 10
+Example: binomial_Coeff(6, 3) -> 20
+Example: binomial_Coeff(4, 2) -> 6
+Example: sum_Of_product(3) -> 15 (which is C(6, 2))
+Example: sum_Of_product(4) -> 56 (which is C(8, 3))
+
+Constraints: n >= 0, 0 <= k <= n for binomial_Coeff; n >= 1 for sum_Of_product
