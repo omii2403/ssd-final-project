@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import decimal_To_Binary`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: find_Max
+Signature: def find_Max(arr: List[int], low: int, high: int) -> int
+Spec: find_Max(arr, low, high) takes a list 'arr' (sorted and rotated array) and two indices 'low' and 'high', and returns the maximum value in the sublist arr[low:high+1] using a divide-and-conquer approach.
+Example: find_Max([4, 5, 6, 7, 0, 1, 2], 0, 6) -> 7
+Constraints: arr is a list of integers, and low and high are valid indices within the bounds of arr.
