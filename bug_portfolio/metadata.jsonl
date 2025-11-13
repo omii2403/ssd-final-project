@@ -57,12 +57,12 @@
 }
 
 {
-   "id": 522,
-   "name": "bitonic_subsequence",
-   "bug_description": "Changed the strict inequality operator > to non-strict inequality operator >= in the Longest Increasing Subsequence (LIS) comparison on line 6. The condition was changed from arr[i] > arr[j] to arr[i] >= arr[j].",
-   "impact": "This bug causes the function to incorrectly calculate the length of the longest bitonic subsequence when the input list contains duplicate elements. By using a non-strict comparison, the algorithm may count equal elements as part of an increasing sequence, which violates the definition of a strictly increasing subsequence. As a result, the final computed length of the bitonic subsequence may be longer than it should be, leading to incorrect results for inputs with repeated values.",
-    "spec": "lbs(arr) takes a list of integers and returns the length of the longest bitonic subsequence. A bitonic subsequence is a subsequence that first strictly increases and then strictly decreases. Either the increasing or decreasing part can be empty. For example, [1,2,3,2,1] has a longest bitonic subsequence of length 5. The subsequence [1,11,2,10,4,5,2,1] has longest bitonic subsequence length 6.",
-    "constraints": "arr is a list of integers, can be empty or have duplicates"
+  "id": 522,
+  "name": "bitonic_subsequence",
+  "bug_description": "Changed the strict inequality operator > to non-strict inequality operator >= in the Longest Increasing Subsequence (LIS) comparison on line 6. The condition was changed from arr[i] > arr[j] to arr[i] >= arr[j].",
+  "impact": "This bug causes the function to incorrectly calculate the length of the longest bitonic subsequence when the input list contains duplicate elements. By using a non-strict comparison, the algorithm may count equal elements as part of an increasing sequence, which violates the definition of a strictly increasing subsequence. As a result, the final computed length of the bitonic subsequence may be longer than it should be, leading to incorrect results for inputs with repeated values.",
+  "spec": "lbs(arr) takes a list of integers and returns the length of the longest bitonic subsequence. A bitonic subsequence is a subsequence that first strictly increases and then strictly decreases. Either the increasing or decreasing part can be empty. For example, [1,2,3,2,1] has a longest bitonic subsequence of length 5. The subsequence [1,11,2,10,4,5,2,1] has longest bitonic subsequence length 6.",
+  "constraints": "arr is a list of integers, can be empty or have duplicates"
 }
 
 {
@@ -115,11 +115,8 @@
   "name": "sort_by_dnf",
   "spec": "sort_by_dnf(arr, n) takes a list arr consisting of only 0s, 1s, and 2s, and an integer n representing the length of the list. The function sorts the list in-place using the Dutch National Flag algorithm and returns the sorted list.",
   "constraints": "arr is a list of integers containing only 0s, 1s, and 2s; n is a positive integer representing the length of arr.",
-  "bug_description": " In the case where arr[mid] == 1, the line 'mid = mid + 2' incorrectly increments mid by 2 instead of 1. This causes the algorithm to skip over elements, leading to incorrect sorting of the array.",
-  
+  "bug_description": " In the case where arr[mid] == 1, the line 'mid = mid + 2' incorrectly increments mid by 2 instead of 1. This causes the algorithm to skip over elements, leading to incorrect sorting of the array."
 }
-
-{"text": "Write a function to return true if the password is valid.", "code": "import re\r\ndef pass_validity(p):\r\n x = True\r\n while x:  \r\n    if (len(p)<6 or len(p)>12):\r\n        break\r\n    elif not re.search(\"[a-z]\",p):\r\n        break\r\n    elif not re.search(\"[0-9]\",p):\r\n        break\r\n    elif not re.search(\"[A-Z]\",p):\r\n        break\r\n    elif not re.search(\"[$#@]\",p):\r\n        break\r\n    elif re.search(\"\\s\",p):\r\n        break\r\n    else:\r\n        return True\r\n        x=False\r\n        break\r\n\r\n if x:\r\n    return False", "task_id": 822, "test_setup_code": "", "test_list": ["assert pass_validity(\"password\")==False", "assert pass_validity(\"Password@10\")==True", "assert pass_validity(\"password@10\")==False"], "challenge_test_list": []}
 
 {
   "id": 822,
