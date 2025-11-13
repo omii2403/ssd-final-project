@@ -1,0 +1,15 @@
+ You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import pass_validity`.      
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: pass_validity 
+Signature: pass_validity(p) 
+
+"spec": "pass_validity(p) takes a string p representing a password and returns True if the password is valid according to the following criteria: it must be between 6 and 12 characters long, contain at least one lowercase letter, one uppercase letter, one digit, one special character from the set {$, #, @}, and must not contain any whitespace characters. If the password does not meet all these criteria, the function returns False.",
+  "constraints": "p is a non-empty string.",
+  "example": "Input: p = 'Password@10'\nOutput: True\n\nInput: p = 'password'\nOutput: False",
