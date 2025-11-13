@@ -27,7 +27,8 @@
   "name": "sumofFactors",
   "spec": "sumofFactors is python function to find the sum of even factors of a number. The function takes a positive integer n as input and returns the sum of all its even factors.",
   "constraints": "n is a positive integer",
-  "bug_description": "The function doesn't correctly handle the case when n is 2. It should return 2 as the sum of even factors but due to a missing condition, it returns 3 instead."
+  "bug_description": "The function doesn't correctly handle the case when n is 2. It should return 2 as the sum of even factors but due to a missing condition, it returns 3 instead.",
+  "impact": "This bug causes incorrect results for the input n = 2, where the expected output is 2, but the function returns 3. This violates the mathematical definition of factors and can lead to confusion when using the function for calculations involving even factors."
 }
 
 {
@@ -35,8 +36,8 @@
   "name": "first_Digit",
   "spec": "first_Digit(n) takes a non-negative integer n and returns the first digit of n! (n factorial).",
   "constraints": "n is a non-negative integer", 
-  "example": "For example, first_Digit(5) returns 1 since 5! = 120 and the first digit is 1.",
-  "bug_description": " The while loop that removes trailing digits runs only while fact is greater than 10, which causes it to stop prematurely when fact is exactly 10, leading to incorrect results for certain inputs.";
+  "bug_description": " The while loop that removes trailing digits runs only while fact is greater than 10, which causes it to stop prematurely when fact is exactly 10, leading to incorrect results for certain inputs.",
+  "impact": "This bug causes incorrect results for inputs where n! ends with a zero, such as n = 5 (5! = 120). The expected first digit is 1, but due to the bug, the function returns 2. This violates the mathematical definition of the first digit of a number and can lead to confusion when using the function for calculations involving factorials."
 }  
 
 {
@@ -44,7 +45,8 @@
   "name": "find_max_val",
   "spec": "find_max_val(n, x, y) takes three integers n, x, and y, and returns the largest integer k such that 0 <= k <= n and k modulo x equals y. If no such k exists, it returns -1.",
   "constraints": "n, x, and y are integers with n >= 0, x > 0, and 0 <= y < x.",
-  "bug_description": "return (ans if (ans > 0 and ans <= n) else -1) should be return (ans if (ans >= 0 and ans <= n) else -1) to correctly handle the case when k = 0 is a valid solution."
+  "bug_description": "return (ans if (ans > 0 and ans <= n) else -1) should be return (ans if (ans >= 0 and ans <= n) else -1) to correctly handle the case when k = 0 is a valid solution.",
+  "impact": "This bug causes the function to incorrectly return -1 when the largest valid k is 0, which violates the problem constraints and leads to incorrect results for certain inputs."
 }
 
 {
@@ -88,4 +90,42 @@
   "impact": "Violates the definition of a valid chain of pairs. A chain is valid only if the second element of the previous pair is strictly less than the first element of the current pair. By using >=, the algorithm incorrectly allows chains where arr[i].a == arr[j].b (touching pairs), which should not form valid chain links. This produces inflated maximum chain lengths for arrays containing pairs with touching boundaries, such as (1,2) and (2,3) incorrectly chaining together.",
   "spec": "max_chain_length(arr, n) finds the length of the maximum chain of pairs using dynamic programming. A chain is formed when pairs satisfy strict inequality: the second element of one pair must be strictly less than the first element of the next pair (b < c for pairs (a,b) and (c,d)).",
   "constraints": "n >= 1, arr[i].a < arr[i].b for all valid pairs"
+}
+
+{
+  "id": 685,
+  "name": "sum_Of_Primes",
+  "spec": "sum_Of_Primes(n) takes a positive integer n and returns the sum of all prime numbers between 1 and n (inclusive).",
+  "constraints": "n is a positive integer",
+  "bug_description": " The condition in the while loop should be 'while p * p <= n:' instead of 'while p * p < n:'. This change is necessary to ensure that all prime factors up to the square root of n are considered, including the case when p * p equals n.",
+  "impact": "This bug causes the function to miss certain prime numbers when n is a perfect square. For example, when n = 9, the function fails to mark 3 as non-prime because it does not check p * p = 9. As a result, the sum of primes calculated by the function will be incorrect for inputs that are perfect squares, leading to inaccurate results."
+}
+
+{
+  "id": 806,
+  "name": "max_run_uppercase",
+  "spec": "max_run_uppercase(test_str) takes a string test_str and returns the length of the longest consecutive sequence (run) of uppercase characters in the string.",
+  "constraints": "test_str is a non-empty string containing alphabetic characters.",
+  "bug_description" : " In the else block, the line 'cnt = -1' incorrectly resets the count of consecutive uppercase characters to -1 instead of 0. This causes the function to undercount the length of uppercase runs following a non-uppercase character.",
+  "impact": "This bug causes the function to return incorrect results for strings where uppercase runs are separated by non-uppercase characters. For example, in the string 'aaAAABBBccDDDDDeE', the longest run of uppercase characters is 'DDDDD' with a length of 5. However, due to the bug, the function returns 4 instead of 5, leading to inaccurate results."
+}
+
+{
+  "id": 815,
+  "name": "sort_by_dnf",
+  "spec": "sort_by_dnf(arr, n) takes a list arr consisting of only 0s, 1s, and 2s, and an integer n representing the length of the list. The function sorts the list in-place using the Dutch National Flag algorithm and returns the sorted list.",
+  "constraints": "arr is a list of integers containing only 0s, 1s, and 2s; n is a positive integer representing the length of arr.",
+  "bug_description": " In the case where arr[mid] == 1, the line 'mid = mid + 2' incorrectly increments mid by 2 instead of 1. This causes the algorithm to skip over elements, leading to incorrect sorting of the array.",
+  
+}
+
+{"text": "Write a function to return true if the password is valid.", "code": "import re\r\ndef pass_validity(p):\r\n x = True\r\n while x:  \r\n    if (len(p)<6 or len(p)>12):\r\n        break\r\n    elif not re.search(\"[a-z]\",p):\r\n        break\r\n    elif not re.search(\"[0-9]\",p):\r\n        break\r\n    elif not re.search(\"[A-Z]\",p):\r\n        break\r\n    elif not re.search(\"[$#@]\",p):\r\n        break\r\n    elif re.search(\"\\s\",p):\r\n        break\r\n    else:\r\n        return True\r\n        x=False\r\n        break\r\n\r\n if x:\r\n    return False", "task_id": 822, "test_setup_code": "", "test_list": ["assert pass_validity(\"password\")==False", "assert pass_validity(\"Password@10\")==True", "assert pass_validity(\"password@10\")==False"], "challenge_test_list": []}
+
+{
+  "id": 822,
+  "name": "pass_validity",
+  "spec": "pass_validity(p) takes a string p representing a password and returns True if the password is valid according to the following criteria: it must be between 6 and 12 characters long, contain at least one lowercase letter, one uppercase letter, one digit, one special character from the set {$, #, @}, and must not contain any whitespace characters. If the password does not meet all these criteria, the function returns False.",
+  "constraints": "p is a non-empty string.",
+  "bug_description": "In  the line checking for whitespace characters, the regex pattern is incorrectly written as '\\s ' (with an extra space) instead of '\\s'. This causes the function to fail to identify passwords that contain whitespace characters, leading to incorrect validation results.",
+  "impact": " This bug causes the function to incorrectly validate passwords that contain whitespace characters. The incorrect regex pattern fails to match whitespace, allowing passwords with spaces, tabs, or other whitespace characters to be considered valid. This violates the password policy and can lead to security vulnerabilities by permitting weak passwords that do not meet the specified criteria."
 }

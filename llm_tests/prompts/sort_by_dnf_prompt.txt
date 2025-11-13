@@ -1,0 +1,16 @@
+ You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import sort_by_dnf`.     
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: sort_by_dnf
+Signature: "sort_by_dnf(arr, n) 
+
+  "spec": "sort_by_dnf(arr, n) takes a list arr consisting of only 0s, 1s, and 2s, and an integer n representing the length of the list. The function sorts the list in-place using the Dutch National Flag algorithm and returns the sorted list.",
+  "constraints": "arr is a list of integers containing only 0s, 1s, and 2s; n is a positive integer representing the length of arr.",
+  "example": "Input: arr = [1, 2, 0, 1, 0, 1, 2, 1, 1], n = 9\nOutput: [0, 0, 1, 1, 1, 1, 1, 2, 2]",
+  pytest 
