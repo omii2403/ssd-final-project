@@ -236,10 +236,10 @@ After completing the analysis in `Report.ipynb`, you'll find:
 ### Sample Scorecard Output
 | Metric | Count |
 |--------|-------|
-| Bugs found only by LLM tests | X |
-| Bugs found only by Human properties | Y |
-| Bugs found by both | Z |
-| Bugs found by neither | W |
+| Bugs found only by LLM tests | 1 |
+| Bugs found only by Human properties | 5 |
+| Bugs found by both | 9 |
+| Bugs found by neither | 1 |
 
 ---
 
