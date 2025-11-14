@@ -61,6 +61,16 @@
   "constraints": "n >= 1, arr[i].a < arr[i].b for all valid pairs",
 }
 
+{
+  "id": 661,
+  "name": "max sum of three consecutive",
+  "bug_description": "Changed sum[i-3] to sum[i-2] in the dynamic programming recurrence relation. The correct formula considers three cases: skip current element, take current + best from i-2, or take three consecutive elements (current, previous, and best from i-3). By using sum[i-2] instead of sum[i-3], the algorithm fails to properly enforce the constraint that no more than three consecutive elements can be selected.",
+  "impact": "Violates the core constraint that no more than three consecutive elements can be selected. The bug allows the algorithm to potentially select 4 or more consecutive elements because it doesn't properly maintain the required gap when taking three consecutive elements. This produces inflated sums that exceed the correct answer and violate the problem's fundamental constraint. Arrays with patterns like [100, 100, 100, 100, 1] will return 400 (4 consecutive) instead of 300 (3 consecutive).",
+  "spec": "max_sum_of_three_consecutive(arr, n) finds the maximum sum of elements from the array with the constraint that no more than three consecutive elements can be selected. Uses dynamic programming with recurrence: sum[i] = max(sum[i-1], sum[i-2] + arr[i], arr[i] + arr[i-1] + sum[i-3]).",
+  "constraints": "n >= 1, arr contains integers (can be negative), no more than 3 consecutive elements can be selected",
+}
+
+
 
 
 

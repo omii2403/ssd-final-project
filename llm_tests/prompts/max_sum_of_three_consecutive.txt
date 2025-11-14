@@ -1,0 +1,17 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import max_sum_of_three_consecutive`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: max_sum_of_three_consecutive
+Signature: def max_sum_of_three_consecutive(arr: List[int], n: int) -> int
+
+Spec: max_sum_of_three_consecutive(arr, n) finds the maximum sum of elements from the array with the constraint that no more than three consecutive elements can be selected. The function uses dynamic programming where sum[i] represents the maximum sum possible up to index i while respecting the constraint.
+
+Key constraint: No more than 3 consecutive elements can be selected.
+
+Constraints: n >= 1, arr contains integers (can be negative)
