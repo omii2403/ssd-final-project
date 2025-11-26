@@ -1,2 +1,8 @@
 .hypothesis
 .pytest_cache
+.vscode\
+venv\
+results_summary.csv
+final_scorecard.csv
+.ipynb_checkpoints\
+**/__pycache__/

@@ -1,0 +1,25 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import sum_Of_Primes`.   
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: sum_Of_Primes
+Signature: sum_Of_Primes(n) -> int  
+Spec: "sum_Of_Primes python function to find the sum of even factors of a number. The function takes a positive integer n as input and returns the sum of all its even factors."  
+"constraints": "n is a positive integer",
+  examples": [
+    {
+      "input": 10,
+      "output": 17,
+      "explanation": "The prime numbers between 1 and 10 are 2, 3, 5, and 7. Their sum is 2 + 3 + 5 + 7 = 17."
+    },
+    {
+      "input": 20,
+      "output": 77,
+      "explanation": "The prime numbers between 1 and 20 are 2, 3, 5, 7, 11, 13, 17, and 19. Their sum is 2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 = 77."
+    }
+  ],

@@ -1,0 +1,17 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import max_run_uppercase`.    
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: max_run_uppercase
+Signature: max_run_uppercase(test_str)   
+Spec: "max_run_uppercase python function to find the sum of even factors of a number. The function takes a positive integer n as input and returns the sum of all its even factors."   
+"constraints": "test_str is a non-empty string containing alphabetic characters.",
+    "example": {
+        "input": "aaAAABBBccDDDDDeE",
+        "output": 5
+    },
