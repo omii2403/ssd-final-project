@@ -153,3 +153,39 @@
   "bug_description": "The condition in the while loop should be 'if current >= n*n:' instead of 'if current > n*n:'. This change is necessary to ensure that the loop continues until all n^2 elements are filled in the matrix, including the case when current equals n^2.",
   "impact": "This bug causes the function to produce an incomplete matrix when n is greater than 1."
 }
+
+{
+  "id": 819,
+  "name": "count_duplic",
+  "spec": "count_duplic(lists) takes a list of numbers and returns two lists: one containing the elements and the other containing the frequency of consecutive duplicate elements.",
+  "constraints": "lists is a non-empty list of integers.",
+  "bug_description": "The line 'element.append(lists[i])' at the end of the function should be 'element.append(lists[i+1])' to correctly append the last unique element after the loop completes.",
+  "impact": "This bug causes the function to miss appending the last unique element in the input list, leading to incorrect results when the last element is different from the second last."
+}
+
+{
+  "id": 706,
+  "name": "is_subset",
+  "spec": "is_subset(arr1, m, arr2, n) takes two lists arr1 and arr2, along with their respective lengths m and n. The function returns True if arr2 is a subset of arr1, meaning all elements of arr2 are present in arr1. Otherwise, it returns False.",
+  "constraints": "arr1 and arr2 are lists; m and n are positive integers representing the lengths of arr1 and arr2 respectively.",
+  "bug_description": "The 2nd for loop is starting from 1 instead of 0.",
+  "impact": "This bug causes the function to incorrectly return False when the first element of arr2 is not present in arr1, leading to inaccurate subset checks."
+}
+
+{
+  "id": 733,
+  "name": "find_first_occurrence",
+  "spec": "find_first_occurrence(A, x) takes a sorted list A and an integer x, and returns the index of the first occurrence of x in A. If x is not present in A, the function returns -1.",
+  "constraints": "A is a sorted list of integers; x is an integer.",
+  "bug_description": "The condition 'elif x < A[mid] - 1:' should be 'elif x < A[mid]:'.",
+  "impact": "This bug causes the function to incorrectly search for the first occurrence of x in the list A, leading to incorrect results when x is present in A."
+}
+
+{
+  "id": 548,
+  "name": "longest_increasing_subsequence",
+  "spec": "longest_increasing_subsequence(arr) takes a list of integers arr and returns the length of the longest increasing subsequence (LIS) in arr using dynamic programming.",
+  "constraints": "arr is a list of integers, can be empty or have duplicates",
+  "bug_description": "In 2nd loop, range for i is set to 1 to n instead of 0 to n.",
+  "impact": "This bug causes the function to miss considering the first element of the array when calculating the longest increasing subsequence, leading to incorrect results."
+}

@@ -14,8 +14,3 @@ def find_Max(arr,low,high):
     else: 
         return find_Max(arr,mid + 1,high)
     
-# Example usage:
-arr = [3, 2, 1, 9, 8, 7]
-n = len(arr)  
-max_element = find_Max(arr, 0, 5) 
-print("The maximum element is:", max_element)

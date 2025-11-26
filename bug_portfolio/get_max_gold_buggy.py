@@ -17,6 +17,6 @@ def get_max_gold(gold, m, n):
                 right_down = goldTable[row+1][col+1] 
             goldTable[row][col] = gold[row][col] + max(right, right_up, right_down) 
     res = goldTable[0][0] 
-    for i in range(1, m-1): 
+    for i in range(1, m-1): # bug: changed from m to m-1
         res = max(res, goldTable[i][0])  
     return res

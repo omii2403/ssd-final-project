@@ -4,5 +4,5 @@ def find_max_val(n, x, y):
 	for k in range(n + 1): 
 		if (k % x == y): 
 			ans = max(ans, k) 
-	return (ans if (ans > 0 and # bug fix: changed from >= 0 to > 0
+	return (ans if (ans > 0 and # bug: changed from >= 0 to > 0
 					ans <= n) else -1)
