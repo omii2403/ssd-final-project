@@ -153,3 +153,12 @@
   "bug_description": "The condition in the while loop should be 'if current >= n*n:' instead of 'if current > n*n:'. This change is necessary to ensure that the loop continues until all n^2 elements are filled in the matrix, including the case when current equals n^2.",
   "impact": "This bug causes the function to produce an incomplete matrix when n is greater than 1."
 }
+
+{
+  "id": 783,
+  "name": "rgb_to_hsv",
+  "spec": "rgb_to_hsv(r, g, b) converts a color from the RGB color space to the HSV (Hue, Saturation, Value) color space. The inputs r, g, and b are integers in the range 0 to 255, representing the red, green, and blue components of the color. The function returns a tuple (h, s, v) where h is the hue in degrees in the range [0, 360), s is the saturation in percentage in the range [0, 100], and v is the value/brightness in percentage in the range [0, 100]. For grayscale colors where r == g == b, the saturation must be 0 and the hue is defined as 0.",
+  "constraints": "r, g, and b are integers between 0 and 255 inclusive. The function must handle all valid RGB colors, including pure primaries, secondary colors, grayscale values, near-black, and near-white colors.",
+  "bug_description": "In the branch where the green component is the maximum (mx == g), the formula for computing the hue uses an incorrect constant offset: it adds 60 degrees instead of 120 degrees. Specifically, it computes h = (60 * ((b - r) / df) + 60) % 360, whereas the correct formula should use +120. This shifts the hue for green-dominant colors into the wrong sector of the color wheel.",
+  "impact": "For colors where the green component is the largest and the color is not grayscale, the computed hue value is incorrect. For example, a pure green RGB color (0, 255, 0) should have a hue of approximately 120 degrees, but the buggy implementation produces a hue near 60 degrees. This leads to misrepresentation of green-dominant colors in HSV-based processing, which can cause downstream errors in tasks like color-based segmentation, filtering, or visualization."
+}
