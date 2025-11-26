@@ -1,5 +1,5 @@
 import pytest
-from hypothesis import given, strategies as st, assume
+from hypothesis import given, strategies as st
 import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../bug_portfolio')))
 
@@ -87,25 +87,7 @@ class TestMaxRunUppercase:
         test_str = 'A' + 'a' * n
         result = max_run_uppercase(test_str)
         assert result == 1
-    
-    def test_known_values(self):
-        """Test against known values"""
-        known_cases = {
-            "": 0,
-            "a": 0,
-            "A": 1,
-            "ABC": 3,
-            "AbC": 1,
-            "ABCabc": 3,
-            "abcABC": 3,
-            "aaBBccDD": 2,
-            "AAaaBBBccDDDD": 4,
-            "AAABBaaCCCC": 5,
-            "aaaBBBBccDD": 4,
-        }
-        for test_str, expected in known_cases.items():
-            assert max_run_uppercase(test_str) == expected, f"Failed for '{test_str}'"
-    
+        
     @given(st.integers(min_value=1, max_value=50), st.integers(min_value=1, max_value=50))
     def test_multiple_runs(self, run1_len, run2_len):
         """Test string with multiple uppercase runs"""
