@@ -162,3 +162,12 @@
   "bug_description": "In the branch where the green component is the maximum (mx == g), the formula for computing the hue uses an incorrect constant offset: it adds 60 degrees instead of 120 degrees. Specifically, it computes h = (60 * ((b - r) / df) + 60) % 360, whereas the correct formula should use +120. This shifts the hue for green-dominant colors into the wrong sector of the color wheel.",
   "impact": "For colors where the green component is the largest and the color is not grayscale, the computed hue value is incorrect. For example, a pure green RGB color (0, 255, 0) should have a hue of approximately 120 degrees, but the buggy implementation produces a hue near 60 degrees. This leads to misrepresentation of green-dominant colors in HSV-based processing, which can cause downstream errors in tasks like color-based segmentation, filtering, or visualization."
 }
+
+{
+  "id": 836,
+  "name": "max_sub_array_sum",
+  "spec": "max_sub_array_sum(a, size) takes a list of integers a of length size and returns the length of a contiguous subarray whose sum is maximal among all contiguous subarrays of a. If multiple subarrays have the same maximum sum, the function is intended to return the length of the earliest such subarray (the one with the smallest starting index). The return value is a positive integer between 1 and size.",
+  "constraints": "a is a non-empty list of integers, and size is a positive integer equal to len(a). Elements of a may be negative, zero, or positive. The function must handle arrays where all values are negative, all are non-negative, or a mix of both.",
+  "bug_description": "In the condition that updates the current best subarray, the comparison uses '<=' instead of '<'. Specifically, the buggy code uses 'if max_so_far <= max_ending_here:' instead of 'if max_so_far < max_ending_here:'. This changes how ties are broken when multiple subarrays share the same maximum sum, causing the algorithm to prefer later subarrays instead of the earliest one.",
+  "impact": "When there are multiple contiguous subarrays with the same maximum sum, the function may return the length of a later subarray rather than the earliest one. This leads to incorrect behavior relative to the intended specification. For example, in some arrays where two different subarrays have the same maximum sum but different lengths, the buggy implementation may report the length of the later subarray, disagreeing with the expected result produced by a correct, deterministic tie-breaking rule based on earliest starting index."
+}

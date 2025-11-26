@@ -1,0 +1,15 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import max_sub_array_sum`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: max_sub_array_sum
+Signature: def max_sub_array_sum(a: list[int], size: int) -> int
+Spec: max_sub_array_sum(a, size) takes a list of integers `a` of length `size` and returns the length of a contiguous subarray that has the maximum possible sum among all contiguous subarrays of `a`. The function should consider all possible contiguous subarrays and choose one whose sum is maximal. If multiple subarrays have the same maximum sum, the function should return the length of the earliest such subarray (the one with the smallest starting index). The return value is a positive integer between 1 and `size`.
+Example: For a = [1, -2, 3, 4, -1, 2], the subarray [3, 4, -1, 2] has sum 8, which is the maximum possible sum, so max_sub_array_sum(a, 6) should return 4.
+Constraints: `a` is a non-empty list of integers, `size` is a positive integer equal to len(a). The list may contain positive, zero, and negative integers. The function must handle cases where all numbers are negative, all are non-negative, or a mix of both.
