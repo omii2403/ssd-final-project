@@ -171,3 +171,12 @@
   "bug_description": "In the condition that updates the current best subarray, the comparison uses '<=' instead of '<'. Specifically, the buggy code uses 'if max_so_far <= max_ending_here:' instead of 'if max_so_far < max_ending_here:'. This changes how ties are broken when multiple subarrays share the same maximum sum, causing the algorithm to prefer later subarrays instead of the earliest one.",
   "impact": "When there are multiple contiguous subarrays with the same maximum sum, the function may return the length of a later subarray rather than the earliest one. This leads to incorrect behavior relative to the intended specification. For example, in some arrays where two different subarrays have the same maximum sum but different lengths, the buggy implementation may report the length of the later subarray, disagreeing with the expected result produced by a correct, deterministic tie-breaking rule based on earliest starting index."
 }
+
+{
+  "id": 541,
+  "name": "get_sum",
+  "spec": "get_sum(n) takes a positive integer n and returns the sum of all proper divisors of n, where proper divisors are positive integers less than n that divide n evenly. For example, get_sum(6) should return 6 (1 + 2 + 3), get_sum(28) should return 28, and get_sum(10) should return 8 (1 + 2 + 5). The function may return the result as a float due to internal division, but numerically it must equal the arithmetic sum of the proper divisors.",
+  "constraints": "n is a positive integer greater than or equal to 1. The function must correctly handle prime numbers, perfect numbers, composite numbers, and perfect squares, and should operate efficiently for moderately large n.",
+  "bug_description": "The loop that searches for divisors iterates while i < sqrt(n) instead of i <= sqrt(n). This off-by-one error causes the algorithm to skip the divisor equal to sqrt(n) when n is a perfect square, so one of the divisor pairs is never fully accounted for.",
+  "impact": "For perfect square values of n, one of the factors equal to sqrt(n) is omitted, leading to an underestimated sum of proper divisors. For example, for n = 16 the correct sum of proper divisors is 15 (1 + 2 + 4 + 8), but the buggy implementation only counts divisors arising from smaller i values and then subtracts n, producing an incorrect result. This can cause misclassification of numbers in downstream tasks that rely on accurate divisor sums, such as checking for perfect or amicable numbers."
+}
