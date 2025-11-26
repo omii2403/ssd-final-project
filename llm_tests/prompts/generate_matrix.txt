@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import generate_matrix`.  
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: generate_matrix
+Signature: def generate_matrix(n: int) -> List[List[int]]
+Spec: "generate_matrix is a python function to generate a square matrix filled with elements from 1 to n raised to the power of 2 in spiral order."
+Example: "For n = 3, the output should be [[1, 2, 3], [8, 9, 4], [7, 6, 5]]",
+"constraints": "n is a non-negative integer",

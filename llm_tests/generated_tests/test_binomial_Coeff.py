@@ -1,7 +1,6 @@
 import pytest
 import math
 import sys, os
-from hypothesis import given, strategies as st, assume
 
 # Correct the path to the bug_portfolio directory
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../bug_portfolio')))

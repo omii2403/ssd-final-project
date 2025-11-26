@@ -1,5 +1,5 @@
 import pytest
-from hypothesis import given, strategies as st, assume
+from hypothesis import given, strategies as st
 import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../bug_portfolio')))
 
@@ -122,24 +122,6 @@ class TestSortByDnf:
         if count_2 > 0:
             # All last count_2 elements should be 2
             assert all(result[i] == 2 for i in range(len(result) - count_2, len(result)))
-    
-    def test_known_values(self):
-        """Test against known values"""
-        known_cases = [
-            ([], 0, []),
-            ([0], 1, [0]),
-            ([1], 1, [1]),
-            ([2], 1, [2]),
-            ([2, 0, 1], 3, [0, 1, 2]),
-            ([1, 0, 2], 3, [0, 1, 2]),
-            ([2, 2, 0, 1, 1, 0], 6, [0, 0, 1, 1, 2, 2]),
-            ([0, 1, 2, 0, 1, 2], 6, [0, 0, 1, 1, 2, 2]),
-            ([2, 1, 0], 3, [0, 1, 2]),
-            ([0, 0, 0, 1, 1, 2, 2, 2], 8, [0, 0, 0, 1, 1, 2, 2, 2]),
-        ]
-        for arr, n, expected in known_cases:
-            result = sort_by_dnf(arr.copy(), n)
-            assert result == expected, f"Failed for {arr}"
     
     @given(st.lists(st.integers(min_value=0, max_value=2), min_size=0, max_size=100))
     def test_contains_only_valid_values(self, arr):

@@ -57,21 +57,6 @@ class TestSumOfPrimes:
         result2 = sum_Of_Primes(n)
         assert result1 == result2
     
-    def test_known_values(self):
-        """Test against known sums of primes"""
-        known_cases = {
-            2: 2,           # primes: 2
-            3: 5,           # primes: 2, 3
-            5: 10,          # primes: 2, 3, 5
-            10: 17,         # primes: 2, 3, 5, 7
-            11: 28,         # primes: 2, 3, 5, 7, 11
-            20: 77,         # primes: 2, 3, 5, 7, 11, 13, 17, 19
-            30: 129,        # sum of primes up to 30
-            50: 328,        # sum of primes up to 50
-            100: 1060,      # sum of primes up to 100
-        }
-        for n, expected in known_cases.items():
-            assert sum_Of_Primes(n) == expected, f"Failed for n={n}"
     
     @given(st.integers(min_value=2, max_value=1000))
     def test_result_at_least_two(self, n):

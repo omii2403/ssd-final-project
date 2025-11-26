@@ -126,3 +126,30 @@
   "bug_description": "In  the line checking for whitespace characters, the regex pattern is incorrectly written as '\\s ' (with an extra space) instead of '\\s'. This causes the function to fail to identify passwords that contain whitespace characters, leading to incorrect validation results.",
   "impact": " This bug causes the function to incorrectly validate passwords that contain whitespace characters. The incorrect regex pattern fails to match whitespace, allowing passwords with spaces, tabs, or other whitespace characters to be considered valid. This violates the password policy and can lead to security vulnerabilities by permitting weak passwords that do not meet the specified criteria."
 }
+
+{
+  "id": 826,
+  "name": "check_Type_Of_Triangle",
+  "spec": "check_Type_Of_Triangle(a, b, c) takes three positive real numbers a, b, and c representing the lengths of the sides of a triangle. The function returns a string indicating the type of triangle based on the lengths of its sides: 'Right-angled Triangle' if it is a right-angled triangle, 'Obtuse-angled Triangle' if it is an obtuse-angled triangle, and 'Acute-angled Triangle' if it is an acute-angled triangle.",
+  "constraints": "a, b, c are positive real numbers that can form a valid triangle.",
+  "bug_description": " The condition to check for a right-angled triangle is incorrect. It should use addition for all comparisons instead of subtraction. The correct condition is 'if (sqa == sqb + sqc or sqb == sqa + sqc or sqc == sqa + sqb):' to properly apply the Pythagorean theorem. ", 
+  "impact": "This bug causes the function to incorrectly classify certain triangles. For example, a triangle with sides 3, 4, and 5 should be classified as a right-angled triangle, but due to the incorrect condition, it may not be recognized as such. This leads to inaccurate results and misclassification of triangle types."
+}
+
+{
+  "id": 831,
+  "name": "count_Pairs",
+  "spec": "count_Pairs(arr, n) takes a list arr of integers and an integer n representing the length of the list. The function returns the count of pairs of equal elements in the list. A pair is defined as two elements arr[i] and arr[j] such that arr[i] == arr[j] and i < j.",
+  "constraints": "arr is a list of integers; n is a positive integer representing the length of arr.",
+  "bug_description": "The inner loop should iterate from i+1 to n instead of i+1 to n-1 to ensure all elements are considered.",
+  "impact": "This bug causes the function to miss counting pairs that include the last element of the array, leading to an incorrect total count of pairs."
+}
+
+{
+  "id": 834,
+  "name": "generate_matrix",
+  "spec": "generate_matrix(n) takes a positive integer n and returns an n x n square matrix filled with elements from 1 to n^2 in spiral order.",
+  "constraints": "n is a positive integer",
+  "bug_description": "The condition in the while loop should be 'if current >= n*n:' instead of 'if current > n*n:'. This change is necessary to ensure that the loop continues until all n^2 elements are filled in the matrix, including the case when current equals n^2.",
+  "impact": "This bug causes the function to produce an incomplete matrix when n is greater than 1."
+}
