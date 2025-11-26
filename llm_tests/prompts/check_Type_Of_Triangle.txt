@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import check_Validity`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: check_Type_Of_Triangle  
+Signature: def check_Type_Of_Triangle(a: int, b: int, c: int) -> bool  
+Spec: check_Type_Of_Triangle(a, b, c) takes three positive real numbers a, b, and c representing the lengths of the sides of a triangle. The function returns a string indicating the type of triangle based on the lengths of its sides: 'Right-angled Triangle' if it is a right-angled triangle, 'Obtuse-angled Triangle' if it is an obtuse-angled triangle, and 'Acute-angled Triangle' if it is an acute-angled triangle.
+Example:  For sides (3, 4, 5), the function should return 'Right-angled Triangle', but due to the bug, it may return 'Acute-angled Triangle' instead.
+Constraints: a, b, c are positive real numbers that can form a valid triangle.

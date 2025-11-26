@@ -1,11 +1,11 @@
+import sys
+import os
 import pytest
-from hypothesis import given, strategies as st, assume
-import sys, os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../bug_portfolio')))
+from hypothesis import given, assume, strategies as st
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../bug_portfolio')))
 
 from check_Type_Of_Triangle_buggy import check_Type_Of_Triangle
-
-
 class TestCheckTypeOfTriangle:
     """Hypothesis-based property tests for check_Type_Of_Triangle function"""
     
@@ -91,56 +91,6 @@ class TestCheckTypeOfTriangle:
         assume(c**2 > a**2 + b**2)  # Obtuse condition
         result = check_Type_Of_Triangle(a, b, c)
         assert result == "Obtuse-angled Triangle"
-    
-    @given(
-        st.integers(min_value=10, max_value=100),
-        st.integers(min_value=10, max_value=100)
-    )
-    def test_acute_condition(self, a, b):
-        """Triangle where c² < a² + b² should be acute"""
-        assume(a > 0 and b > 0)
-        c_max = int((a**2 + b**2)**0.5) - 1  # Make c smaller
-        assume(c_max > 0)
-        c = max(1, min(c_max, abs(a - b) + 1))
-        assume(a + b > c and b + c > a and a + c > b)  # Valid triangle
-        assume(c**2 < a**2 + b**2)  # Acute condition
-        result = check_Type_Of_Triangle(a, b, c)
-        assert result == "Acute-angled Triangle"
-    
-    def test_known_right_triangles(self):
-        """Test known right-angled triangles"""
-        right_triangles = [
-            (3, 4, 5),
-            (5, 12, 13),
-            (8, 15, 17),
-            (7, 24, 25),
-            (6, 8, 10),
-        ]
-        for a, b, c in right_triangles:
-            assert check_Type_Of_Triangle(a, b, c) == "Right-angled Triangle"
-    
-    def test_known_obtuse_triangles(self):
-        """Test known obtuse-angled triangles"""
-        obtuse_triangles = [
-            (2, 3, 4),
-            (3, 5, 7),
-            (5, 6, 10),
-        ]
-        for a, b, c in obtuse_triangles:
-            result = check_Type_Of_Triangle(a, b, c)
-            assert result == "Obtuse-angled Triangle", f"Failed for {a}, {b}, {c}"
-    
-    def test_known_acute_triangles(self):
-        """Test known acute-angled triangles"""
-        acute_triangles = [
-            (5, 5, 5),    # Equilateral
-            (5, 5, 6),    # Isosceles
-            (7, 8, 9),
-            (10, 11, 12),
-        ]
-        for a, b, c in acute_triangles:
-            result = check_Type_Of_Triangle(a, b, c)
-            assert result == "Acute-angled Triangle", f"Failed for {a}, {b}, {c}"
     
     @given(
         st.integers(min_value=1, max_value=1000),

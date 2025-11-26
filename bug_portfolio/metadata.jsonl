@@ -80,8 +80,76 @@
   "bug_description": "Changed the inner loop range from range(1, i+1) to range(1, i+2). This causes the loop to iterate one extra time beyond the valid row length in the Bell triangle, accessing bell[i-1][i] which is outside the valid computed values for that row.",
   "impact": "Produces incorrect Bell numbers because it adds uninitialized zero values from positions that shouldn't be accessed in the triangle construction. The Bell triangle (Peirce's triangle) has a specific structure where row i should only have i+1 elements, and accessing beyond this corrupts the dynamic programming computation. This violates the fundamental Bell triangle recurrence relation and produces wrong results for all n >= 1.",
   "spec": "bell_Number(n) computes the nth Bell number, which represents the number of ways to partition a set of n elements into non-empty subsets. It uses dynamic programming based on the Bell triangle (Peirce's triangle). Bell triangle recurrence: bell[i][j] = bell[i-1][j-1] + bell[i][j-1]. First element of row i equals last element of row i-1: bell[i][0] = bell[i-1][i-1].",
-  "constraints": "n >= 0, n is a non-negative integer",
+  "constraints": "n >= 0, n is a non-negative integer"
 }
 
+{
+  "id": 601,
+  "name": "max_chain_length",
+  "bug_description": "Changed the strict inequality operator > to non-strict inequality operator >= in the chain comparison condition. Changed arr[i].a > arr[j].b to arr[i].a >= arr[j].b.",
+  "impact": "Violates the definition of a valid chain of pairs. A chain is valid only if the second element of the previous pair is strictly less than the first element of the current pair. By using >=, the algorithm incorrectly allows chains where arr[i].a == arr[j].b (touching pairs), which should not form valid chain links. This produces inflated maximum chain lengths for arrays containing pairs with touching boundaries, such as (1,2) and (2,3) incorrectly chaining together.",
+  "spec": "max_chain_length(arr, n) finds the length of the maximum chain of pairs using dynamic programming. A chain is formed when pairs satisfy strict inequality: the second element of one pair must be strictly less than the first element of the next pair (b < c for pairs (a,b) and (c,d)).",
+  "constraints": "n >= 1, arr[i].a < arr[i].b for all valid pairs"
+}
 
+{
+  "id": 685,
+  "name": "sum_Of_Primes",
+  "spec": "sum_Of_Primes(n) takes a positive integer n and returns the sum of all prime numbers between 1 and n (inclusive).",
+  "constraints": "n is a positive integer",
+  "bug_description": " The condition in the while loop should be 'while p * p <= n:' instead of 'while p * p < n:'. This change is necessary to ensure that all prime factors up to the square root of n are considered, including the case when p * p equals n.",
+  "impact": "This bug causes the function to miss certain prime numbers when n is a perfect square. For example, when n = 9, the function fails to mark 3 as non-prime because it does not check p * p = 9. As a result, the sum of primes calculated by the function will be incorrect for inputs that are perfect squares, leading to inaccurate results."
+}
 
+{
+  "id": 806,
+  "name": "max_run_uppercase",
+  "spec": "max_run_uppercase(test_str) takes a string test_str and returns the length of the longest consecutive sequence (run) of uppercase characters in the string.",
+  "constraints": "test_str is a non-empty string containing alphabetic characters.",
+  "bug_description" : " In the else block, the line 'cnt = -1' incorrectly resets the count of consecutive uppercase characters to -1 instead of 0. This causes the function to undercount the length of uppercase runs following a non-uppercase character.",
+  "impact": "This bug causes the function to return incorrect results for strings where uppercase runs are separated by non-uppercase characters. For example, in the string 'aaAAABBBccDDDDDeE', the longest run of uppercase characters is 'DDDDD' with a length of 5. However, due to the bug, the function returns 4 instead of 5, leading to inaccurate results."
+}
+
+{
+  "id": 815,
+  "name": "sort_by_dnf",
+  "spec": "sort_by_dnf(arr, n) takes a list arr consisting of only 0s, 1s, and 2s, and an integer n representing the length of the list. The function sorts the list in-place using the Dutch National Flag algorithm and returns the sorted list.",
+  "constraints": "arr is a list of integers containing only 0s, 1s, and 2s; n is a positive integer representing the length of arr.",
+  "bug_description": " In the case where arr[mid] == 1, the line 'mid = mid + 2' incorrectly increments mid by 2 instead of 1. This causes the algorithm to skip over elements, leading to incorrect sorting of the array."
+}
+
+{
+  "id": 822,
+  "name": "pass_validity",
+  "spec": "pass_validity(p) takes a string p representing a password and returns True if the password is valid according to the following criteria: it must be between 6 and 12 characters long, contain at least one lowercase letter, one uppercase letter, one digit, one special character from the set {$, #, @}, and must not contain any whitespace characters. If the password does not meet all these criteria, the function returns False.",
+  "constraints": "p is a non-empty string.",
+  "bug_description": "In  the line checking for whitespace characters, the regex pattern is incorrectly written as '\\s ' (with an extra space) instead of '\\s'. This causes the function to fail to identify passwords that contain whitespace characters, leading to incorrect validation results.",
+  "impact": " This bug causes the function to incorrectly validate passwords that contain whitespace characters. The incorrect regex pattern fails to match whitespace, allowing passwords with spaces, tabs, or other whitespace characters to be considered valid. This violates the password policy and can lead to security vulnerabilities by permitting weak passwords that do not meet the specified criteria."
+}
+
+{
+  "id": 826,
+  "name": "check_Type_Of_Triangle",
+  "spec": "check_Type_Of_Triangle(a, b, c) takes three positive real numbers a, b, and c representing the lengths of the sides of a triangle. The function returns a string indicating the type of triangle based on the lengths of its sides: 'Right-angled Triangle' if it is a right-angled triangle, 'Obtuse-angled Triangle' if it is an obtuse-angled triangle, and 'Acute-angled Triangle' if it is an acute-angled triangle.",
+  "constraints": "a, b, c are positive real numbers that can form a valid triangle.",
+  "bug_description": " The condition to check for a right-angled triangle is incorrect. It should use addition for all comparisons instead of subtraction. The correct condition is 'if (sqa == sqb + sqc or sqb == sqa + sqc or sqc == sqa + sqb):' to properly apply the Pythagorean theorem. ", 
+  "impact": "This bug causes the function to incorrectly classify certain triangles. For example, a triangle with sides 3, 4, and 5 should be classified as a right-angled triangle, but due to the incorrect condition, it may not be recognized as such. This leads to inaccurate results and misclassification of triangle types."
+}
+
+{
+  "id": 831,
+  "name": "count_Pairs",
+  "spec": "count_Pairs(arr, n) takes a list arr of integers and an integer n representing the length of the list. The function returns the count of pairs of equal elements in the list. A pair is defined as two elements arr[i] and arr[j] such that arr[i] == arr[j] and i < j.",
+  "constraints": "arr is a list of integers; n is a positive integer representing the length of arr.",
+  "bug_description": "The inner loop should iterate from i+1 to n instead of i+1 to n-1 to ensure all elements are considered.",
+  "impact": "This bug causes the function to miss counting pairs that include the last element of the array, leading to an incorrect total count of pairs."
+}
+
+{
+  "id": 834,
+  "name": "generate_matrix",
+  "spec": "generate_matrix(n) takes a positive integer n and returns an n x n square matrix filled with elements from 1 to n^2 in spiral order.",
+  "constraints": "n is a positive integer",
+  "bug_description": "The condition in the while loop should be 'if current >= n*n:' instead of 'if current > n*n:'. This change is necessary to ensure that the loop continues until all n^2 elements are filled in the matrix, including the case when current equals n^2.",
+  "impact": "This bug causes the function to produce an incomplete matrix when n is greater than 1."
+}

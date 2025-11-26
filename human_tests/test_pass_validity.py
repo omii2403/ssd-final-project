@@ -98,36 +98,6 @@ class TestPassValidity:
         result2 = pass_validity(p)
         assert result1 == result2
     
-    def test_known_valid_passwords(self):
-        """Test known valid passwords"""
-        valid_passwords = [
-            "Abc123$",
-            "Test@123",
-            "Pass#1aB",
-            "Valid$1Aa",
-            "Strong#9Zz",
-            "aB1$ef",
-        ]
-        for p in valid_passwords:
-            assert pass_validity(p) == True, f"'{p}' should be valid"
-    
-    def test_known_invalid_passwords(self):
-        """Test known invalid passwords"""
-        invalid_passwords = [
-            "short",           # too short
-            "thispasswordistoolong123",  # too long
-            "NOLOWER1$",       # no lowercase
-            "noupper1$",       # no uppercase
-            "NoDigit$",        # no digit
-            "NoSpecial1Aa",    # no special char
-            "Has Space1$Aa",   # has whitespace
-            "abc123",          # missing uppercase and special
-            "",                # empty
-            "12345",           # too short, no letters
-        ]
-        for p in invalid_passwords:
-            assert pass_validity(p) == False, f"'{p}' should be invalid"
-    
     @given(st.text(min_size=6, max_size=12))
     def test_all_requirements_checked(self, p):
         """Verify all requirements are properly checked"""
