@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import count_Pairs`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: count_duplic
+Signature: def count_duplic(lists: list) -> tuple  
+Spec: count_duplic(lists) takes a list of numbers and returns two lists: one containing the elements and the other containing the frequency of consecutive duplicate elements.
+Example: For lists = [1, 1, 2, 2, 2, 3], the function should return ([1, 2, 3], [2, 3, 1]) because 1 appears consecutively 2 times, 2 appears consecutively 3 times, and 3 appears consecutively 1 time.
+Constraints: lists is a non-empty list of integers.

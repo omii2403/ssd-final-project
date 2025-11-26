@@ -9,7 +9,7 @@ def find_Max(arr,low,high):
         return arr[mid] 
     if (mid > low and arr[mid] < arr[mid - 1]): 
         return arr[mid - 1]  
-    if (arr[low] >= arr[mid]): 
+    if (arr[low] >= arr[mid]): # bug- shoulf be >, not >=
         return find_Max(arr,low,mid - 1) 
     else: 
         return find_Max(arr,mid + 1,high)

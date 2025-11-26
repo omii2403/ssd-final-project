@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import count_Pairs`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: count_duplic
+Signature: def find_first_occurrence(arr: list, target: int) -> int
+Spec: find_first_occurrence(arr, target) takes a sorted list of integers 'arr' and an integer 'target', and returns the index of the first occurrence of 'target' in 'arr'. If 'target' is not found in 'arr', the function returns -1.
+Example: For arr = [1, 2, 2, 2, 3] and target = 2, the function should return 1, as the first occurrence of 2 is at index 1.
+Constraints: arr is a non-empty sorted list of integers and target is integer.
