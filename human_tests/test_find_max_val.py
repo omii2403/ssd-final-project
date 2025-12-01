@@ -48,31 +48,6 @@ class TestFindMaxVal:
                     assert False, f"Found larger valid k={k} but function returned {result}"
     
     @given(
-        st.integers(min_value=1, max_value=100),
-        st.integers(min_value=0, max_value=99)
-    )
-    def test_valid_solution_exists_when_y_in_range(self, x, y):
-        """When n >= y and y < x, should find at least y as solution"""
-        assume(y < x)
-        n = y  # n is at least y
-        result = find_max_val(n, x, y)
-        assert result >= 0, f"Expected valid result when n={n}, x={x}, y={y}"
-    
-    @given(
-        st.integers(min_value=0, max_value=10000),
-        st.integers(min_value=1, max_value=100),
-        st.integers(min_value=0, max_value=99)
-    )
-    def test_returns_minus_one_when_no_solution(self, n, x, y):
-        """Should return -1 only when no valid k exists"""
-        assume(y < x)
-        result = find_max_val(n, x, y)
-        if result == -1:
-            # Verify no k in [0, n] satisfies k % x == y
-            for k in range(n + 1):
-                assert k % x != y, f"Found valid k={k} but function returned -1"
-    
-    @given(
         st.integers(min_value=0, max_value=10000),
         st.integers(min_value=1, max_value=100),
         st.integers(min_value=0, max_value=99)

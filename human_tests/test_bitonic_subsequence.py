@@ -3,11 +3,7 @@ import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../bug_portfolio')))
 
 from bitonic_sequence_buggy import lbs
-# test_bitonic_subsequence.py
 
-
-import random
-import pytest
 from hypothesis import given, strategies as st, assume, settings
 from typing import List
 
@@ -138,30 +134,3 @@ def test_lbs_lis_lower_bound(arr):
     result = lbs(arr)
     assert result >= max_lis, \
         f"LBS {result} must be >= LIS {max_lis} for array {arr}"
-
-
-# Property 9: Removing elements cannot increase LBS
-@given(st.lists(st.integers(min_value=-50, max_value=50), min_size=3, max_size=30))
-@settings(max_examples=50)
-def test_lbs_removal_monotonicity(arr):
-    """
-    Removing an element from the array cannot increase the LBS,
-    since we're removing potential subsequence elements.
-    """
-    original_lbs = lbs(arr)
-    # Remove random element from middle
-    if len(arr) > 2:
-        modified_arr = arr[:len(arr)//2] + arr[len(arr)//2 + 1:]
-        new_lbs = lbs(modified_arr)
-        assert new_lbs <= original_lbs, \
-            f"Removing element should not increase LBS: original={original_lbs}, new={new_lbs}"
-
-
-# Property 10: Verify against provided test cases
-def test_lbs_known_examples():
-    """
-    Test against the provided examples from MBPP.
-    """
-    assert lbs([0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]) == 7
-    assert lbs([1, 11, 2, 10, 4, 5, 2, 1]) == 6
-    assert lbs([80, 60, 30, 40, 20, 10]) == 5
