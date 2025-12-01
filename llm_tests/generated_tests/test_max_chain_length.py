@@ -4,7 +4,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../b
 
 from max_chain_length_buggy import Pair, max_chain_length
 
-
 def sort_pairs(arr):
     """Ensure pairs are sorted by second element (standard approach)."""
     return sorted(arr, key=lambda p: p.b)

@@ -155,6 +155,31 @@
 }
 
 {
+  "id": 783,
+  "name": "rgb_to_hsv",
+  "spec": "rgb_to_hsv(r, g, b) converts a color from the RGB color space to the HSV (Hue, Saturation, Value) color space. The inputs r, g, and b are integers in the range 0 to 255, representing the red, green, and blue components of the color. The function returns a tuple (h, s, v) where h is the hue in degrees in the range [0, 360), s is the saturation in percentage in the range [0, 100], and v is the value/brightness in percentage in the range [0, 100]. For grayscale colors where r == g == b, the saturation must be 0 and the hue is defined as 0.",
+  "constraints": "r, g, and b are integers between 0 and 255 inclusive. The function must handle all valid RGB colors, including pure primaries, secondary colors, grayscale values, near-black, and near-white colors.",
+  "bug_description": "In the branch where the green component is the maximum (mx == g), the formula for computing the hue uses an incorrect constant offset: it adds 60 degrees instead of 120 degrees. Specifically, it computes h = (60 * ((b - r) / df) + 60) % 360, whereas the correct formula should use +120. This shifts the hue for green-dominant colors into the wrong sector of the color wheel.",
+  "impact": "For colors where the green component is the largest and the color is not grayscale, the computed hue value is incorrect. For example, a pure green RGB color (0, 255, 0) should have a hue of approximately 120 degrees, but the buggy implementation produces a hue near 60 degrees. This leads to misrepresentation of green-dominant colors in HSV-based processing, which can cause downstream errors in tasks like color-based segmentation, filtering, or visualization."
+}
+
+{
+  "id": 836,
+  "name": "max_sub_array_sum",
+  "spec": "max_sub_array_sum(a, size) takes a list of integers a of length size and returns the length of a contiguous subarray whose sum is maximal among all contiguous subarrays of a. If multiple subarrays have the same maximum sum, the function is intended to return the length of the earliest such subarray (the one with the smallest starting index). The return value is a positive integer between 1 and size.",
+  "constraints": "a is a non-empty list of integers, and size is a positive integer equal to len(a). Elements of a may be negative, zero, or positive. The function must handle arrays where all values are negative, all are non-negative, or a mix of both.",
+  "bug_description": "In the condition that updates the current best subarray, the comparison uses '<=' instead of '<'. Specifically, the buggy code uses 'if max_so_far <= max_ending_here:' instead of 'if max_so_far < max_ending_here:'. This changes how ties are broken when multiple subarrays share the same maximum sum, causing the algorithm to prefer later subarrays instead of the earliest one.",
+  "impact": "When there are multiple contiguous subarrays with the same maximum sum, the function may return the length of a later subarray rather than the earliest one. This leads to incorrect behavior relative to the intended specification. For example, in some arrays where two different subarrays have the same maximum sum but different lengths, the buggy implementation may report the length of the later subarray, disagreeing with the expected result produced by a correct, deterministic tie-breaking rule based on earliest starting index."
+}
+
+{
+  "id": 541,
+  "name": "get_sum",
+  "spec": "get_sum(n) takes a positive integer n and returns the sum of all proper divisors of n, where proper divisors are positive integers less than n that divide n evenly. For example, get_sum(6) should return 6 (1 + 2 + 3), get_sum(28) should return 28, and get_sum(10) should return 8 (1 + 2 + 5). The function may return the result as a float due to internal division, but numerically it must equal the arithmetic sum of the proper divisors.",
+  "constraints": "n is a positive integer greater than or equal to 1. The function must correctly handle prime numbers, perfect numbers, composite numbers, and perfect squares, and should operate efficiently for moderately large n.",
+  "bug_description": "The loop that searches for divisors iterates while i < sqrt(n) instead of i <= sqrt(n). This off-by-one error causes the algorithm to skip the divisor equal to sqrt(n) when n is a perfect square, so one of the divisor pairs is never fully accounted for.",
+  "impact": "For perfect square values of n, one of the factors equal to sqrt(n) is omitted, leading to an underestimated sum of proper divisors. For example, for n = 16 the correct sum of proper divisors is 15 (1 + 2 + 4 + 8), but the buggy implementation only counts divisors arising from smaller i values and then subtracts n, producing an incorrect result. This can cause misclassification of numbers in downstream tasks that rely on accurate divisor sums, such as checking for perfect or amicable numbers."
+}
   "id": 819,
   "name": "count_duplic",
   "spec": "count_duplic(lists) takes a list of numbers and returns two lists: one containing the elements and the other containing the frequency of consecutive duplicate elements.",

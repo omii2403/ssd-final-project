@@ -1,0 +1,19 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import rgb_to_hsv`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: rgb_to_hsv
+Signature: def rgb_to_hsv(r: int, g: int, b: int) -> tuple[float, float, float]
+Spec: rgb_to_hsv(r, g, b) converts a color from the RGB color space to the HSV (Hue, Saturation, Value) color space. The inputs r, g, and b are integers in the range 0 to 255, representing the red, green, and blue components of the color. The function returns a tuple (h, s, v) where:
+- h is the hue in degrees in the range [0, 360),
+- s is the saturation in percentage in the range [0, 100],
+- v is the value/brightness in percentage in the range [0, 100].
+For grayscale colors where r == g == b, the saturation s must be 0 and the hue h should be 0.
+Example: rgb_to_hsv(255, 0, 0) should return approximately (0, 100, 100) for pure red, rgb_to_hsv(0, 255, 0) approximately (120, 100, 100) for pure green, and rgb_to_hsv(0, 0, 255) approximately (240, 100, 100) for pure blue.
+Constraints: r, g, and b are integers between 0 and 255 inclusive. The function must behave correctly across the full RGB range, including primary colors, secondary colors, grayscale values, very dark colors close to black, and very bright colors close to white.

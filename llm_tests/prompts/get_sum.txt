@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import get_sum`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: get_sum
+Signature: def get_sum(n: int) -> float
+Spec: get_sum(n) takes a positive integer n and returns the sum of all proper divisors of n (all positive divisors less than n that divide n evenly). The computation may internally use floating-point division, so the return type can be a float, but numerically it should match the arithmetic sum of the proper divisors. For example, get_sum(6) should return 6.0 because 1 + 2 + 3 = 6, get_sum(28) should return 28.0, and get_sum(10) should return 8.0 because 1 + 2 + 5 = 8.
+Constraints: n is a positive integer greater than or equal to 1. The function must handle prime numbers, perfect numbers, composite numbers, and perfect squares correctly, and should work efficiently for reasonably large n (e.g., up to at least 10^5).
