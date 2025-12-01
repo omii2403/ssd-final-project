@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import count_Pairs`.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: is_subset
+Signature: def is_subset(set1, set2) -> bool:
+Spec: is_subset(arr1, m, arr2, n) takes two lists arr1 and arr2, along with their respective lengths m and n. The function returns True if arr2 is a subset of arr1, meaning all elements of arr2 are present in arr1. Otherwise, it returns False.
+Example: is_subset([1, 2, 3, 4, 5], 5, [2, 3], 2) should return True because all elements of arr2 are present in arr1.
+Constraints: The input sizes m and n are guaranteed to be non-negative integers.
