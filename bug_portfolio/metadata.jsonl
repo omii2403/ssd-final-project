@@ -4,7 +4,8 @@
   "name": "set_Right_most_Unset_Bit",
   "spec": "set_Right_most_Unset_Bit(n) takes a non-negative integer n and sets the rightmost unset (0) bit to 1, returning the new integer. If all bits are set, it returns n unchanged.",
   "constraints": "n is a non-negative integer",
-  "bug_description": "When n = 0, the function returns 0 instead of 1"
+  "bug_description": "When n = 0, the function returns 0 instead of 1",
+  "impact": "This bug causes the function to return incorrect results for the input n = 0, where the expected output is 1, but the function returns 0. This violates the intended behavior of setting the rightmost unset bit and can lead to confusion when using the function for bit manipulation tasks."
 }
 
 {
@@ -12,16 +13,19 @@
   "name": "find_Max",
   "spec": "find_Max(arr, low, high) takes a list 'arr' (sorted and rotated array) and two indices 'low' and 'high', and returns the maximum value in the sublist arr[low:high+1] using a divide-and-conquer approach.",
   "constraints": "arr is a list of integers, and low and high are valid indices within the bounds of arr.",
-  "bug_description": "the condition if (arr[low] >= arr[mid]) should be if (arr[low] > arr[mid]), as using >= can cause incorrect recursion and miss the maximum element in certain cases."
+  "bug_description": "the condition if (arr[low] >= arr[mid]) should be if (arr[low] > arr[mid]), as using >= can cause incorrect recursion and miss the maximum element in certain cases.",
+  "impact": "This bug causes the function to incorrectly identify the maximum element in certain rotated sorted arrays, leading to inaccurate results and violating the expected behavior of the algorithm."
 }
 
 {
   "id": 423,
-  "name": "gold_mine_problem",
+  "name": "get_max_gold",
   "spec": "get_max_gold(gold, m, n) takes a 2D list 'gold' representing the amount of gold in each cell of a mine with m rows and n columns. The function returns the maximum amount of gold that can be collected starting from any cell in the first column and moving to the right, right-up, or right-down until reaching the last column.",
   "constraints": "gold is a 2D list of non-negative integers with dimensions m x n, where m and n are positive integers.",
-  "bug_description": "The final answer calculation loop doesn't check for the last row's first element. ie loop is running till m-2"
+  "bug_description": "The final answer calculation loop doesn't check for the last row's first element. ie loop is running till m-2",
+  "impact": "Last row's first element is not considered while calculating the final answer, leading to incorrect results when the maximum gold path starts from that cell."
 }
+
 {
   "id": 453,
   "name": "sumofFactors",
@@ -50,46 +54,30 @@
 }
 
 {
-  "id": 334,
-  "name": "check_Validity",
-  "spec":"check_Validity(a, b, c) returns True if the three given sides can form a valid triangle based on the triangle inequality rule, otherwise returns False. A triangle is valid if and only if the sum of any two sides is greater than the third side, and all sides are positive. ",
-  "constraints": "a, b, c are positive real numbers."
-}
-
-{
   "id": 522,
   "name": "bitonic_subsequence",
-  "bug_description": "Changed the strict inequality operator > to non-strict inequality operator >= in the Longest Increasing Subsequence (LIS) comparison on line 6. The condition was changed from arr[i] > arr[j] to arr[i] >= arr[j].",
-  "impact": "This bug causes the function to incorrectly calculate the length of the longest bitonic subsequence when the input list contains duplicate elements. By using a non-strict comparison, the algorithm may count equal elements as part of an increasing sequence, which violates the definition of a strictly increasing subsequence. As a result, the final computed length of the bitonic subsequence may be longer than it should be, leading to incorrect results for inputs with repeated values.",
   "spec": "lbs(arr) takes a list of integers and returns the length of the longest bitonic subsequence. A bitonic subsequence is a subsequence that first strictly increases and then strictly decreases. Either the increasing or decreasing part can be empty. For example, [1,2,3,2,1] has a longest bitonic subsequence of length 5. The subsequence [1,11,2,10,4,5,2,1] has longest bitonic subsequence length 6.",
-  "constraints": "arr is a list of integers, can be empty or have duplicates"
+  "constraints": "arr is a list of integers, can be empty or have duplicates",
+  "bug_description": "Changed the strict inequality operator > to non-strict inequality operator >= in the Longest Increasing Subsequence (LIS) comparison on line 6. The condition was changed from arr[i] > arr[j] to arr[i] >= arr[j].",
+  "impact": "This bug causes the function to incorrectly calculate the length of the longest bitonic subsequence when the input list contains duplicate elements. By using a non-strict comparison, the algorithm may count equal elements as part of an increasing sequence, which violates the definition of a strictly increasing subsequence. As a result, the final computed length of the bitonic subsequence may be longer than it should be, leading to incorrect results for inputs with repeated values."
 }
 
 {
   "id": 592,
   "name": "binomial_Coeff",
-  "bug_description": "Changed the inner loop from range(min(i, k), 0, -1) to range(min(i, k), -1, -1) in the binomial coefficient calculation. This causes the loop to iterate one extra time, attempting to access C[j-1] when j=0, which accesses C[-1] (the last element of the array due to Python's negative indexing), corrupting the Pascal's triangle computation.",
-  "impact": "The bug produces incorrect binomial coefficients for most inputs because it adds wrong values during the dynamic programming calculation. The error is subtle because it doesn't crash (negative indexing wraps around in Python) but silently produces wrong results. This violates fundamental mathematical properties including Pascal's identity, symmetry property, and row sum equaling 2^n.",
   "spec": "binomial_Coeff(n, k) computes the binomial coefficient C(n, k), which represents the number of ways to choose k items from n items. It uses dynamic programming based on Pascal's triangle. sum_Of_product(n) computes C(2n, n-1), which is the binomial coefficient of 2n choose n-1. Mathematical properties: C(n, 0) = 1 and C(n, n) = 1 for all n >= 0; C(n, k) = C(n, n-k) (symmetry property); C(n, k) = C(n-1, k-1) + C(n-1, k) (Pascal's identity); Sum of row n: C(n, 0) + C(n, 1) + ... + C(n, n) = 2^n",
-  "constraints": "n >= 0, 0 <= k <= n for binomial_Coeff; n >= 1 for sum_Of_product"
-}
-
-{
-  "id": 608,
-  "name": "bell_Number",
-  "bug_description": "Changed the inner loop range from range(1, i+1) to range(1, i+2). This causes the loop to iterate one extra time beyond the valid row length in the Bell triangle, accessing bell[i-1][i] which is outside the valid computed values for that row.",
-  "impact": "Produces incorrect Bell numbers because it adds uninitialized zero values from positions that shouldn't be accessed in the triangle construction. The Bell triangle (Peirce's triangle) has a specific structure where row i should only have i+1 elements, and accessing beyond this corrupts the dynamic programming computation. This violates the fundamental Bell triangle recurrence relation and produces wrong results for all n >= 1.",
-  "spec": "bell_Number(n) computes the nth Bell number, which represents the number of ways to partition a set of n elements into non-empty subsets. It uses dynamic programming based on the Bell triangle (Peirce's triangle). Bell triangle recurrence: bell[i][j] = bell[i-1][j-1] + bell[i][j-1]. First element of row i equals last element of row i-1: bell[i][0] = bell[i-1][i-1].",
-  "constraints": "n >= 0, n is a non-negative integer"
+  "constraints": "n >= 0, 0 <= k <= n for binomial_Coeff; n >= 1 for sum_Of_product",
+  "bug_description": "The function is called with incorrect parameters in sum_Of_product. Changed binomial_Coeff(2 * n, n - 1) to binomial_Coeff(2 * n, n).",
+  "impact": "This bug causes sum_Of_product to return incorrect results for all inputs n >= 1. The intended calculation is C(2n, n-1), but due to the incorrect parameter, it computes C(2n, n) instead. This violates the mathematical definition of the problem and leads to inaccurate results in any application relying on this function."
 }
 
 {
   "id": 601,
   "name": "max_chain_length",
-  "bug_description": "Changed the strict inequality operator > to non-strict inequality operator >= in the chain comparison condition. Changed arr[i].a > arr[j].b to arr[i].a >= arr[j].b.",
-  "impact": "Violates the definition of a valid chain of pairs. A chain is valid only if the second element of the previous pair is strictly less than the first element of the current pair. By using >=, the algorithm incorrectly allows chains where arr[i].a == arr[j].b (touching pairs), which should not form valid chain links. This produces inflated maximum chain lengths for arrays containing pairs with touching boundaries, such as (1,2) and (2,3) incorrectly chaining together.",
   "spec": "max_chain_length(arr, n) finds the length of the maximum chain of pairs using dynamic programming. A chain is formed when pairs satisfy strict inequality: the second element of one pair must be strictly less than the first element of the next pair (b < c for pairs (a,b) and (c,d)).",
-  "constraints": "n >= 1, arr[i].a < arr[i].b for all valid pairs"
+  "constraints": "n >= 1, arr[i].a < arr[i].b for all valid pairs",
+  "bug_description": "Changed the strict inequality operator > to non-strict inequality operator >= in the chain comparison condition. Changed arr[i].a > arr[j].b to arr[i].a >= arr[j].b.",
+  "impact": "Violates the definition of a valid chain of pairs. A chain is valid only if the second element of the previous pair is strictly less than the first element of the current pair. By using >=, the algorithm incorrectly allows chains where arr[i].a == arr[j].b (touching pairs), which should not form valid chain links. This produces inflated maximum chain lengths for arrays containing pairs with touching boundaries, such as (1,2) and (2,3) incorrectly chaining together."
 }
 
 {
@@ -115,7 +103,8 @@
   "name": "sort_by_dnf",
   "spec": "sort_by_dnf(arr, n) takes a list arr consisting of only 0s, 1s, and 2s, and an integer n representing the length of the list. The function sorts the list in-place using the Dutch National Flag algorithm and returns the sorted list.",
   "constraints": "arr is a list of integers containing only 0s, 1s, and 2s; n is a positive integer representing the length of arr.",
-  "bug_description": " In the case where arr[mid] == 1, the line 'mid = mid + 2' incorrectly increments mid by 2 instead of 1. This causes the algorithm to skip over elements, leading to incorrect sorting of the array."
+  "bug_description": " In the case where arr[mid] == 1, the line 'mid = mid + 2' incorrectly increments mid by 2 instead of 1.",
+  "impact": "This causes the algorithm to skip over elements, leading to incorrect sorting of the array."
 }
 
 {
@@ -180,6 +169,8 @@
   "bug_description": "The loop that searches for divisors iterates while i < sqrt(n) instead of i <= sqrt(n). This off-by-one error causes the algorithm to skip the divisor equal to sqrt(n) when n is a perfect square, so one of the divisor pairs is never fully accounted for.",
   "impact": "For perfect square values of n, one of the factors equal to sqrt(n) is omitted, leading to an underestimated sum of proper divisors. For example, for n = 16 the correct sum of proper divisors is 15 (1 + 2 + 4 + 8), but the buggy implementation only counts divisors arising from smaller i values and then subtracts n, producing an incorrect result. This can cause misclassification of numbers in downstream tasks that rely on accurate divisor sums, such as checking for perfect or amicable numbers."
 }
+
+{
   "id": 819,
   "name": "count_duplic",
   "spec": "count_duplic(lists) takes a list of numbers and returns two lists: one containing the elements and the other containing the frequency of consecutive duplicate elements.",
