@@ -1,4 +1,6 @@
 import pytest
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../bug_portfolio')))
 from find_longest_conseq_subseq_buggy import find_longest_conseq_subseq
 
 
