@@ -1,0 +1,15 @@
+
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import largest_subset`.  
+- Provide 8-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: largest_subset
+Signature: def largest_subset(a: list[int], n: int) -> int
+Spec: "largest_subset(a, n) takes a list of integers a and an integer n representing the length of the list. The function returns the size of the largest subset of a such that for every pair (a[i], a[j]) in the subset, either a[i] is divisible by a[j] or a[j] is divisible by a[i]."
+Example: "For a = [1, 3, 6, 13, 17, 18] and n = 6, the output should be 4",
+"constraints": "a is a list of positive integers; n is a positive integer representing the length of a.",

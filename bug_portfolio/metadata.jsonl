@@ -224,3 +224,48 @@
   "impact": "This bug causes the function to underestimate or miscompute the length of the longest consecutive subsequence when duplicates appear in the middle of a valid consecutive range. For example, in the array [1, 2, 2, 3], the correct filtered result should remain [1, 2, 3], but the buggy logic can produce incorrect behavior in more complex patterns involving duplicates, leading to incorrect subsequence length."
 }
 
+{
+  "id": 844,
+  "name": "get_Number",
+  "spec": "get_Number(n, k) takes a positive integer n and an integer k, and returns the kth element in an array containing odd elements first and then even elements. The array is constructed such that the first half contains all odd numbers from 1 to n, followed by all even numbers from 2 to n.",
+  "constraints": "n is a positive integer, k is an integer such that 1 <= k <= n.",
+  "bug_description":  "The while loop condition for even numbers is incorrect; it should be 'while (even <= n)' instead of 'while (even < n)'.",
+  "impact": "This bug causes the function to miss including the last even number when constructing the array, leading to incorrect results for certain inputs."
+}
+
+{
+  "id": 849,
+  "name": "Sum",
+  "spec": "Sum(N) takes a positive integer N and returns the sum of all prime divisors of N.",
+  "constraints": "N is a positive integer",
+  "bug_description": "The line 'SumOfPrimeDivisors[j] = i' should be 'SumOfPrimeDivisors[j] += i' to correctly accumulate the sum of prime divisors.",
+  "impact": "This bug causes the function to only consider the last prime divisor instead of summing all prime divisors, leading to incorrect results."
+}
+
+{
+  "id": 622,
+  "name": "get_median",
+  "spec": "get_median(arr1, arr2, n) takes two sorted lists arr1 and arr2 of equal length n and returns the median of the combined sorted array formed by merging arr1 and arr2.",
+  "constraints": "arr1 and arr2 are sorted lists of integers; n is a positive integer representing the length of each list.",
+  "bug_description": " In the condition where arr1[i] > arr2[j], the line 'j += 1' incorrectly increments j by 1 instead of i. This causes the algorithm to skip elements in arr1 when merging the two arrays, leading to incorrect median calculation.",
+  "impact": "This bug causes the function to produce incorrect median values because it fails to correctly merge the two sorted arrays, resulting in an inaccurate median calculation."
+}
+
+{
+  "id" : 620,
+  "name" : "largest_subset",
+  "spec" : "largest_subset(a, n) takes a list of integers a and an integer n representing the length of the list. The function returns the size of the largest subset of a such that for every pair (a[i], a[j]) in the subset, either a[i] is divisible by a[j] or a[j] is divisible by a[i].",
+  "constraints" : "a is a list of positive integers; n is a positive integer representing the length of a.",
+  "bug_description" : "The line 'dp[j] = 1 + mxm' should be 'dp[i] = 1 + mxm' to correctly update the dp array for the current index i instead of j.",
+  "impact" : "This bug causes the function to produce incorrect results for the size of the largest subset, as it fails to properly update the dynamic programming array for each element in the list. This leads to an inaccurate calculation of the maximum subset size.":
+}
+
+{
+  "id": 598,
+  "name": "armstrong_number",
+  "spec": "armstrong_number(number) takes a positive integer number and returns True if the number is an Armstrong number, and False otherwise. An Armstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits. For example, 153 is an Armstrong number because 1^3 + 5^3 + 3^3 = 153.",
+  "constraints": "number is a positive integer",
+  "bug_description": " The line 'temp = temp // 100' incorrectly reduces the number of digits by dividing by 100 instead of 10. This causes the algorithm to skip digits when counting the number of digits in the number, leading to incorrect calculations for the sum of the digits raised to the power of the number of digits.",
+  "impact" : "This bug causes the function to produce incorrect results for most inputs, as the number of digits is not accurately counted. For example, for the input number 153, the function would incorrectly calculate the number of digits as 2 instead of 3, leading to an incorrect sum of the digits raised to the power of 2 instead of 3. This results in the function returning False for numbers that are actually Armstrong numbers."
+}
+

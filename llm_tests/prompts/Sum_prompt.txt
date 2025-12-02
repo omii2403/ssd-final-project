@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import Sum`.  
+- Provide 8-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: Sum
+Signature: def Sum(N: int) -> int
+Spec: "Sum(N) takes a positive integer N and returns the sum of all prime divisors of N."
+Example: "For N = 60, the output should be 10",
+"constraints": "N is a positive integer",
