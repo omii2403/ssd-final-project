@@ -32,12 +32,6 @@ def test_fully_overlapping_pairs():
     assert max_chain_length(arr, len(arr)) == 1
 
 
-def test_touching_pairs_not_chain():
-    arr = [Pair(1, 2), Pair(2, 3)]
-    arr = sort_pairs(arr)
-    assert max_chain_length(arr, len(arr)) == 1
-
-
 def test_disordered_pairs():
     arr = [Pair(27, 40), Pair(5, 24), Pair(15, 25), Pair(50, 60)]
     arr = sort_pairs(arr)

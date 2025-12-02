@@ -7,7 +7,7 @@ from hypothesis import given, strategies as st
 # Ensure bug_portfolio directory is visible for import
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../bug_portfolio')))
 
-from rgb_to_hsv_correct import rgb_to_hsv
+from rgb_to_hsv_buggy import rgb_to_hsv
 
 
 # Strategy: all valid 8-bit RGB triples
