@@ -1,0 +1,18 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import armstrong_number`.
+- Provide 8-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: armstrong_number
+Signature: def armstrong_number(number: int) -> bool
+Spec: armstrong_number(number) takes a positive integer number and returns True if the number is an Armstrong number, and False otherwise. An Armstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits. For example, 153 is an Armstrong number because 1^3 + 5^3 + 3^3 = 153.
+Constraints: number is a positive integer
+examples:
+- input: 153, output: True, explanation: 1^3 + 5^3 + 3^3 = 153
+- input: 9474, output: True, explanation: 9^4 + 4^4 + 7^4 + 4^4 = 9474
+- input: 123, output: False, explanation: 1^3 + 2^3 + 3^3 = 36, which is not equal to 123

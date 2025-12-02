@@ -1,0 +1,14 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named `target`, e.g. `from target import get_Number`.  
+- Provide 8-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: get_Number
+Signature: def get_Number(n: int, k: int) -> int
+Spec: "get_Number is a python function to find the kth element in an array containing odd elements first and then even elements."
+Example: "For n = 8 and k = 5, the output should be 2",
+"constraints": "n and k are positive integers",
