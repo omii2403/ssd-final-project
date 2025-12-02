@@ -14,5 +14,3 @@ Spec: armstrong_number(number) takes a positive integer number and returns True 
 Constraints: number is a positive integer
 examples:
 - input: 153, output: True, explanation: 1^3 + 5^3 + 3^3 = 153
-- input: 9474, output: True, explanation: 9^4 + 4^4 + 7^4 + 4^4 = 9474
-- input: 123, output: False, explanation: 1^3 + 2^3 + 3^3 = 36, which is not equal to 123

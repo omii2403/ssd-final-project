@@ -1,0 +1,5 @@
+Metric,Count,Percentage
+Bugs found only by LLM tests,2,6.67%
+Bugs found only by Human properties,5,16.67%
+Bugs found by both,19,63.33%
+Bugs found by neither,4,13.33%
