@@ -1,0 +1,21 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named target, e.g. from target import get_max_gold.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: find_longest_conseq_subseq
+
+Signature:
+def find_longest_conseq_subseq(arr: List[int], n: int) -> int
+
+Spec:
+find_longest_conseq_subseq(arr, n) returns the length of the longest subsequence of 'arr' where the numbers are consecutive integers. The subsequence does not need to be contiguous in the array, but the values must increase by exactly 1 each time. Duplicate elements are ignored after sorting.
+
+Constraints:
+arr is a list of integers of length n (n ≥ 1).

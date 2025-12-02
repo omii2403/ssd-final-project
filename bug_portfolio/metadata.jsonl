@@ -205,3 +205,22 @@
   "bug_description": "In 2nd loop, range for i is set to 1 to n instead of 0 to n.",
   "impact": "This bug causes the function to miss considering the first element of the array when calculating the longest increasing subsequence, leading to incorrect results."
 }
+
+{
+  "id": 853,
+  "name": "sum_of_odd_Factors",
+  "spec": "sum_of_odd_Factors(n) returns the sum of all odd positive divisors of a number n. Only odd factors are counted; even factors are ignored.",
+  "constraints": "n is a positive integer.",
+  "bug_description": "In the final prime-factor processing step, the condition was incorrectly changed from 'if n >= 2' to 'if n >= 4'. This causes the function to skip multiplying by (1 + n) whenever the remaining value of n is an odd prime less than 4 — specifically n = 3.",
+  "impact": "This bug results in incorrect output for numbers whose last remaining factor is 3. For example, sum_of_odd_Factors(6) should return 4 (odd factors: 1 and 3), but because the final prime 3 is ignored, the buggy version returns only 1. The error is subtle because all numbers whose remaining factor is ≥ 4 behave correctly; only numbers that reduce to 3 at the end produce wrong results."
+}
+
+{
+  "id": 863,
+  "name": "find_longest_conseq_subseq",
+  "spec": "find_longest_conseq_subseq(arr, n) returns the length of the longest subsequence in arr whose elements form consecutive integers when sorted. Duplicate elements are ignored, and only the relative numeric values matter.",
+  "constraints": "arr is a list of integers of length n (n >= 1).",
+  "bug_description": "The condition for detecting consecutive integers was incorrectly changed from 'v[i] == v[i - 1] + 1' to 'v[i] >= v[i - 1] + 1'. This allows the function to treat values that skip over numbers (e.g., 1 and 3) as consecutive, incorrectly extending the length of the subsequence.",
+  "impact": "This bug causes the function to overestimate the length of consecutive subsequences. For example, in the array [1, 3, 4, 5], the correct longest consecutive length is 3 (3, 4, 5), but the buggy function incorrectly counts 1 and 3 as consecutive, producing a longer, incorrect sequence. This error is subtle because the condition still works for strictly increasing inputs but fails whenever gaps greater than 1 appear."
+}
+
