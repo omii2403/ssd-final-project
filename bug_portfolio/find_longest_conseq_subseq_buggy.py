@@ -1,7 +1,7 @@
 # Task 863: Write a function to find the length of the longest sub-sequence such that elements in the subsequences are consecutive integers.
 def find_longest_conseq_subseq(arr, n): 
 	ans = 0
-	count = 1    
+	count = 0
 	arr.sort() 
 	v = [] 
 	v.append(arr[0]) 
