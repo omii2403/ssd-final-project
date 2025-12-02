@@ -13,7 +13,9 @@ def sum_of_odd_Factors(n):
             n = n // i 
             curr_term *= i 
             curr_sum += curr_term    
-        res *= curr_sum  
+        res *= curr_sum
+
+    # BUG: should be n >= 2 to account for odd prime factors, instead of n >= 4  
     if n >= 4: 
         res *= (1 + n) 
     return res
