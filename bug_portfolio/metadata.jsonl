@@ -205,3 +205,13 @@
   "bug_description": "In 2nd loop, range for i is set to 1 to n instead of 0 to n.",
   "impact": "This bug causes the function to miss considering the first element of the array when calculating the longest increasing subsequence, leading to incorrect results."
 }
+
+{
+  "id": 853,
+  "name": "sum_of_odd_Factors",
+  "spec": "sum_of_odd_Factors(n) returns the sum of all odd positive divisors of a number n. Only odd factors are counted; even factors are ignored.",
+  "constraints": "n is a positive integer.",
+  "bug_description": "A subtle floating-point boundary bug was introduced by changing the loop range to use int(math.sqrt(n) + 1.0000000001). This can skip a divisor only when n is reduced to a perfect square inside the loop, causing incorrect sums for rare inputs.",
+  "impact": "The function fails only on uncommon values where intermediate n becomes a perfect square. This bug is difficult for LLMs and Hypothesis to find because it appears only in rare arithmetic cases and the function behaves correctly for most inputs."
+}
+

@@ -1,0 +1,22 @@
+You are an automated test-generator. I will give you a function name, its Python signature, and a short plain-English specification.
+
+Produce a pytest test file that checks the function for correctness and tries to find subtle bugs.
+
+Requirements:
+- Only output a Python pytest file (no prose).
+- Import the function from module named target, e.g. from target import get_max_gold.
+- Provide 6-12 deterministic test cases.
+- Include edge cases, typical cases, and boundary values.
+- Tests must be runnable with pytest.
+
+Function name: sum_of_odd_Factors
+
+Signature:
+def sum_of_odd_Factors(n: int) -> int
+
+Spec:
+sum_of_odd_Factors(n) returns the sum of all **odd** positive factors of n.  
+Examples:  
+sum_of_odd_Factors(12) → odd factors are {1,3} → returns 4  
+sum_of_odd_Factors(21) → odd factors are {1,3,7,21} → returns 32  
+Constraints: n is a positive integer.
